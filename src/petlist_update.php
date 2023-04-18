@@ -17,13 +17,14 @@ $http_method = $_SERVER["REQUEST_METHOD"];
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="update_form">
         <select name="select" id="select">
             <option value="0" selected>진행예정</option>
             <option value="1">진행중</option>
             <option value="2">진행완료</option>
             <option value="2">진행실패</option>
         </select>
+    </div>
     
 </body>
 </html>
