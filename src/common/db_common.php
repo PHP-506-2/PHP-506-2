@@ -261,6 +261,66 @@ function pet_info( &$param_arr )
     return $result;
 }
 
+// --------------------------------- 0418 add 이동호
+// 함수명	: pet_list_insert
+// 기능		: 리스트 작성
+// 파라미터	: Array             &$arr_param
+// 리턴값	: INT/STRING	    $result_cnt/ERRMSG
+// ---------------------------------
+function pet_list_insert( &$arr_param ) 
+{
+    $sql =
+        " INSERT INTO "
+        ."  pet_list( "
+        ."      list_title "
+        ."      ,list_contents "
+        ."      ,list_start "
+        ."      ,list_end "
+        ."      ,list_comp_flg"
+        ."      ,list_location "
+        ." ) "
+        ." VALUES( "
+        ."      :list_title "
+        ."      ,:list_contents "
+        ."      ,:list_start "
+        ."      ,:list_end "
+        ."      ,:list_comp_flg "
+        ."      ,:list_location "
+        ." ) "
+        ;
+    $arr_prepare =
+        array(
+            ":list_title"       => $arr_param["list_title"]
+            ,":list_contents"   => $arr_param["list_contents"]
+            ,":list_start"      => $arr_param["list_start"]
+            ,":list_end"        => $arr_param["list_end"]
+            ,":list_comp_flg"   => $arr_param["list_comp_flg"]
+            ,":list_location"   => $arr_param["list_location"]
+        );
+
+    $conn = null;
+    try 
+    {
+        db_conn( $conn );
+        $conn->beginTransaction();
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result_cnt = $stmt->rowCount();
+        $conn->commit();
+    } 
+    catch ( Exception $e ) 
+    {
+        $conn->rollback();
+        return $e->getMessage();
+    } 
+    finally 
+    {
+        $conn = null;
+    }
+
+    return $result_cnt;
+}
+
 // $arr_prepare
 // = array(
 //     "pet_no" => 1 );
