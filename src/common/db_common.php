@@ -64,9 +64,6 @@ function petlist_detail( &$param_arr )
     }
     return $result[0];
 }
-// $arr_prepare = array("list_no" => 1);
-// $result = petlist_detail( $arr_prepare["list_no"]);
-// var_dump($result);
 
 //----------------------------------------------------
 // 진행 완료로 바꾸는 함수 (최혁재)
@@ -217,7 +214,6 @@ $comp_count = complete_list();
 //----------------(진행완료 / 전체리스트)*100 소수첫째자리 반올림해서 퍼센트 구하기// (최혁재)
 //----------------------------------------------------------------------------------
 $chinmildo =  ($comp_count/$all_count)*100;
-echo $chinmildo."%";
 
 
 //---------------------------------------------------------------------------------
@@ -321,11 +317,6 @@ function pet_list_insert( &$arr_param )
     return $result_cnt;
 }
 
-// $arr_prepare
-// = array(
-//     "pet_no" => 1 );
-// var_dump( pet_info( $arr_prepare["pet_no"] ));
-
 
 //------------------------------------------------ 백유정
 // 함수명   : pet_list_update
@@ -381,17 +372,6 @@ function pet_list_update( &$param_arr )
     return $result_cnt;
 }
 
-// $arr = 
-//         array(
-//             "list_no" => 1
-//             ,"list_title" => "산책가기 7시"
-//             ,"list_start" => "2022-04-18"
-//             ,"list_end" => "2022-04-18"
-//             ,"list_contents" => "testtest1"
-//             ,"list_location" => "파랑병원"
-//         );
-        
-//     echo pet_list_update( $arr );
 
 //------------------------------------------------ 신유진
 // 함수명   : pet_list_list
@@ -431,8 +411,6 @@ function pet_list_list()
     }
     return $result;
 }
-// 함수 확인용
-// var_dump (pet_list_list());
 
 
 // --------------------------------- 0418 백유정
@@ -489,13 +467,4 @@ function pet_profile_insert( &$param_arr )
     return $result_cnt;
 }
 
-$arr = 
-    array(
-        "pet_no" => 1 
-        ,"pet_name" => "삐삐"
-        ,"pet_birth" => "2023-04-17"
-        ,"pet_gender" => "F"
-    );
 
-
-echo pet_profile_insert( $arr );
