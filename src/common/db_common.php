@@ -83,10 +83,10 @@ function petlist_complete( &$param_no )
         ." list_no = :list_no "
         ;
 
-    $arr_prepare
-    = array(
-        ":list_no" => $param_no
-    );
+        $arr_prepare
+        = array(
+            ":list_no" => $param_no
+        );
 
     $conn = null;
     try 
@@ -139,14 +139,21 @@ function all_list()
         ." * "
         ." FROM " 
         ." pet_list "
+        ." LIMIT :limit_start "
     ;
+
+    
+    $arr_prepare
+    = array(
+        ":limit_start" => 100
+    );
 
     $conn = null;
     try 
     {
         db_conn( $conn );
         $stmt = $conn->prepare( $sql );
-        $stmt->execute( $sql);
+        $stmt->execute( $arr_prepare );
         $result = $stmt->fetchAll();
         $all_1 = count($result);
     } 
@@ -158,18 +165,103 @@ function all_list()
     {
         $conn = null;
     }
-    return $all_1;
+    return $all_1 ;
 }
 
-echo all_list();
+$all_count = all_list();
+// echo $all_count ;
 //---------------------------------------------------------------------------------
 //---------진행 완료된 목록 가져와서 개수로 바꾸기----------------------------------
 //-------------------------------------------------------------------------------------
 
+function complete_list()
+{
+    $sql =
+        " SELECT "
+        ." * "
+        ." FROM " 
+        ." pet_list "
+        ." WHERE "
+        ." list_comp_flg = :list_comp_flg "
+    ;
 
+    
+    $arr_prepare
+    = array(
+        ":list_comp_flg" => 2
+    );
 
+    $conn = null;
+    try 
+    {
+        db_conn( $conn );
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result = $stmt->fetchAll();
+        $all_1 = count($result);
+    } 
+    catch (Exception $e) 
+    {
+        $e -> getMessage();
+    }
+    finally
+    {
+        $conn = null;
+    }
+    return $all_1 ;
+}
+
+$comp_count = complete_list();
+// echo $comp_count;
 //--------------------------------------------------------------------------------
 //----------------(진행완료 / 전체리스트)*100 소수첫째자리 반올림해서 퍼센트 구하기//
 //----------------------------------------------------------------------------------
+$chinmildo =  ($comp_count/$all_count)*100;
+echo $chinmildo."%";
 
-?>
+
+//---------------------------------------------------------------------------------
+//---------------------반려동물 정보 가져오는 함수 ----------------------------------
+//---------------------------------------------------------------------------------
+function pet_info( &$param_arr )
+{
+    $sql =
+        " SELECT "
+        ." pet_name "
+        ." ,pet_birth "
+        ." ,pet_gender "
+        ." FROM " 
+        ." pet_profile "
+        ." WHERE "
+        ." pet_no = :pet_no "
+    ;
+
+    
+    $arr_prepare
+    = array(
+        ":pet_no" => $param_arr
+    );
+
+    $conn = null;
+    try 
+    {
+        db_conn( $conn );
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result = $stmt->fetchAll();
+    } 
+    catch (Exception $e) 
+    {
+        $e -> getMessage();
+    }
+    finally
+    {
+        $conn = null;
+    }
+    return $result;
+}
+
+// $arr_prepare
+// = array(
+//     "pet_no" => 1 );
+// var_dump( pet_info( $arr_prepare["pet_no"] ));
