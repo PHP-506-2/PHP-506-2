@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pet_todolist</title>
+</head>
+<body>
+    <div class="petlist_profile_container">
+    </div>
+
+    <div class="petlist_list_container">
+        <h1>**의 TO DO LIST</h1>
+            <!-- **부분은 사용자 지정 이름으로 교체될 예정 -->
+        <table>
+            <!-- <thead>
+                <tr>
+                    <th></th>
+                    <th>제목</th> 
+                </tr>
+            </thead> -->
+            <tbody>
+                <tr>
+                    <td><?php echo $select_board_result['mww_no']; ?></td>
+                    <td><a href=""><?php echo $select_board_result['mww_country']; ?></a></td>
+                    <!-- <td><a href=""><?php //echo $select_board_result['mww_city']; ?></a></td> -->
+                    <td><a href=""><?php echo $select_board_result['mww_title']; ?></a></td>
+                    <td><a href=""><?php echo $select_board_result['mww_write_date']; ?></a></td>
+                    <td><?php echo $select_board_result['mww_thumbup']?></td>
+                    <td><?php echo $select_board_result['mww_hit']; ?></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>
