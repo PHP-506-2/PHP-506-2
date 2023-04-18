@@ -433,3 +433,69 @@ function pet_list_list()
 }
 // 함수 확인용
 // var_dump (pet_list_list());
+
+
+// --------------------------------- 0418 백유정
+// 함수명	: pet_profile_insert
+// 기능		: 프로필 작성
+// 파라미터	: Array             &$arr_param
+// 리턴값	: INT/STRING	    $result_cnt/ERRMSG
+// ---------------------------------
+function pet_profile_insert( &$param_arr ) 
+{
+    $sql =
+        " INSERT INTO "
+        ."  pet_profile( "
+        ."      pet_no "
+        ."      ,pet_name "
+        ."      ,pet_birth "
+        ."      ,pet_gender "
+        ." ) "
+        ." VALUES( "
+        ."      :pet_no "
+        ."      ,:pet_name "
+        ."      ,:pet_birth "
+        ."      ,:pet_gender "
+        ." ) "
+        ;
+    $arr_prepare =
+        array(
+            ":pet_no"       => $param_arr["pet_no"]
+            ,":pet_name"   => $param_arr["pet_name"]
+            ,":pet_birth"      => $param_arr["pet_birth"]
+            ,":pet_gender"        => $param_arr["pet_gender"]
+        );
+
+    $conn = null;
+    try 
+    {
+        db_conn( $conn );
+        $conn->beginTransaction();
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result_cnt = $stmt->rowCount();
+        $conn->commit();
+    } 
+    catch ( Exception $e ) 
+    {
+        $conn->rollback();
+        return $e->getMessage();
+    } 
+    finally 
+    {
+        $conn = null;
+    }
+
+    return $result_cnt;
+}
+
+$arr = 
+    array(
+        "pet_no" => 1 
+        ,"pet_name" => "삐삐"
+        ,"pet_birth" => "2023-04-17"
+        ,"pet_gender" => "F"
+    );
+
+
+echo pet_profile_insert( $arr );

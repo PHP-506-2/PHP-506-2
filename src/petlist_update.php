@@ -17,6 +17,7 @@ $http_method = $_SERVER["REQUEST_METHOD"];
     <title>Document</title>
 </head>
 <body>
+    
         <select name="select" id="select">
             <option value="0" selected>진행예정</option>
             <option value="1">진행중</option>
