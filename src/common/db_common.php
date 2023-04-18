@@ -325,3 +325,70 @@ function pet_list_insert( &$arr_param )
 // = array(
 //     "pet_no" => 1 );
 // var_dump( pet_info( $arr_prepare["pet_no"] ));
+
+
+//------------------------------------------------ 백유정
+// 함수명   : pet_list_update
+// 기능     : 리스트 수정
+// 파라미터 : Array     &$param_update
+// 리턴값   : INT/STFING       $result_cnt/ERRMSG
+//------------------------------------------------
+function pet_list_update( &$param_arr )
+{
+    $sql =
+        " UPDATE "
+        ." pet_list "
+        ." SET "
+        ." list_title = :list_title "
+        ." , list_start = :list_start "
+        ." , list_end = :list_end "
+        ." , list_location = :list_location "
+        ." , list_contents = :list_contents "
+        ." WHERE "
+        ." list_no = :list_no "
+        ;
+
+
+    $arr_prepare = 
+        array(
+            ":list_title" => $param_arr["list_title"]
+            ,":list_start" => $param_arr["list_start"]
+            ,":list_end" => $param_arr["list_end"]
+            ,":list_location" => $param_arr["list_location"]
+            ,":list_contents" => $param_arr["list_contents"]
+            ,":list_no" => $param_arr["list_no"]
+        );
+
+    $conn = null;        
+    try
+    {
+        db_conn( $conn );
+        $conn->beginTransaction();
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result_cnt = $stmt->rowCount();
+        $conn->commit();
+    }
+    catch( Exception $e)
+    {
+        $conn->rollback();
+        return $e->getMessage();
+    }
+    finally
+    {
+        $conn = null;   
+    }
+    return $result_cnt;
+}
+
+// $arr = 
+//         array(
+//             "list_no" => 1
+//             ,"list_title" => "산책가기 7시"
+//             ,"list_start" => "2022-04-18"
+//             ,"list_end" => "2022-04-18"
+//             ,"list_contents" => "testtest1"
+//             ,"list_location" => "파랑병원"
+//         );
+        
+//     echo pet_list_update( $arr );
