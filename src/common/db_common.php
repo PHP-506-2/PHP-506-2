@@ -125,7 +125,7 @@ $sec = date('s');      // 현재 몇초인지 구해줍니다./
 $day = mktime($hour,$min,$sec,05,01,2012);//특정하게 지정된 날짜의 시간을 초단위로 구해줍니다
 $result_day = $now - $day;  //현재시간에서 특정날시간을 빼줍니다./
 $dog_day = $result_day/86400; //초단위결과값을 날짜로 환산해줍니다./
-echo "똥개와 함께한지  $dog_day 일째"; //구해진 날짜값을 출력합니다./
+// echo "똥개와 함께한지  $dog_day 일째"; //구해진 날짜값을 출력합니다./
 
 
 //--------------------------------------------------------------------------
@@ -330,7 +330,7 @@ function pet_list_insert( &$arr_param )
 //------------------------------------------------ 백유정
 // 함수명   : pet_list_update
 // 기능     : 리스트 수정
-// 파라미터 : Array     &$param_update
+// 파라미터 : Array     &$param_arr
 // 리턴값   : INT/STFING       $result_cnt/ERRMSG
 //------------------------------------------------
 function pet_list_update( &$param_arr )
@@ -392,3 +392,44 @@ function pet_list_update( &$param_arr )
 //         );
         
 //     echo pet_list_update( $arr );
+
+//------------------------------------------------ 신유진
+// 함수명   : pet_list_list
+// 기능     :전체 리스트 정보가져오기
+// 파라미터 : Array
+// 리턴값   : Array/String     $result/errorMSG
+//------------------------------------------------
+function pet_list_list()
+{
+    //쿼리문
+    $sql =
+        " SELECT "
+        ." * "
+        ." FROM "
+        ." pet_list "
+        ;
+    
+    //모든 글을 조건없이 배열로 가져온다
+    $arr_prepare =array();
+
+    // DB연결 부분
+    $conn = null;     
+    try
+    {
+        db_conn( $conn );
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result = $stmt->fetchAll();
+    }
+    catch( Exception $e)
+    {
+        return $e->getMessage();
+    }
+    finally
+    {
+        $conn = null;   
+    }
+    return $result;
+}
+// 함수 확인용
+// var_dump (pet_list_list());
