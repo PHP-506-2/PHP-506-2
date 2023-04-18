@@ -254,8 +254,15 @@ function pet_info( &$param_arr )
     {
         $conn = null;
     }
-    return $result;
+    return $result[0];
 }
+$arr
+= array(
+    "pet_no" => 1
+);
+var_dump( pet_info($arr["pet_no"]));
+$ee = pet_info($arr["pet_no"]);
+echo $ee["pet_name"];
 
 // --------------------------------- 0418 add 이동호
 // 함수명	: pet_list_insert
