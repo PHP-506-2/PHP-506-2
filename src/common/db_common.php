@@ -514,4 +514,51 @@ function pet_list_delete( &$param_arr )
     return $result_cnt;
 }
 
+//------------------------------------------------ 백유정
+// 함수명   : pet_list_select
+// 기능     : 특정 pk의 레코드 쿼리
+// 파라미터 : INT     &$param_no
+// 리턴값   : INT/STFING       $result_cnt/ERRMSG
+//------------------------------------------------
 
+function pet_list_select( &$param_no )
+{
+    $sql = 
+    " SELECT "
+    ." pet_list "
+    ." SET "
+    ." list_title = :list_title "
+    ." , list_start = :list_start "
+    ." , list_end = :list_end "
+    ." , list_location = :list_location "
+    ." , list_contents = :list_contents "
+    . " FROM "
+    . " pet_list "
+    . " WHERE "
+    . " list_no = :list_no "
+    ;
+
+    $arr_prepare = 
+        array(
+            ":list_no"    => $param_no
+        );
+
+    $conn = null;
+    try
+    {
+        db_conn( $conn ); 
+        $stmt = $conn->prepare( $sql ); 
+        $stmt->execute( $arr_prepare );
+        $result = $stmt->fetchAll();
+    } 
+    catch( Exception $e )
+    {
+        return $e->getMessage();
+    }
+    finally
+    {
+        $conn = null;
+    }
+
+    return $result[0];
+}
