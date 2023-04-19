@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+
+li{
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.update_form
+{
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: bold;
+    font-size: 18px;
+}
+#select
+{
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: bold;
+    font-size: 18px;
+}
+.update_form_put input
+{
+    border: none;
+}
+.contents
+{
+    vertical-align: top;
+}
+
+.update_form_put input
+{
+    margin-top: 5px;
+}
+.input_contents textarea
+{
+    margin-top: 5px;
+}

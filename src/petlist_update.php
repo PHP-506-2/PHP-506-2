@@ -34,8 +34,9 @@ if( $http_method === "GET")
             );
 
      
-        $result_cnt = petlist_detail( $arr_info );
-
+        $result_cnt = pet_list_update( $arr_info );
+        header( "Location: petlist_detail.php?list_no=".$arr_post["list_no"] );
+        exit();
     }
 
 
@@ -50,13 +51,9 @@ if( $http_method === "GET")
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/pet_profile_bar.css">
+    <link rel="stylesheet" href="../css/petlist_update.css">
     <title>Document</title>
-    <style>
-        li{
-            list-style: none;
-        }
-        
-    </style>
 </head>
 <body>
     <div class="update_form">
@@ -67,31 +64,33 @@ if( $http_method === "GET")
             <option value="3">진행실패</option>
         </select>
      
-        <form method="post" action="petlist_update.php">
-            <label for="bno">번호 : </label>
-            <input type="text" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
-            <br>
-            <label for="title">제목 : </label>
-            <input type="text" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
-            value="<?php echo $result_info['list_title'] ?>">
-            <br>
-            <label for="title">시작일자 : </label>
-            <input type="date" name="list_start"  id="title" required autocomplete="off"
-            value="<?php echo $result_info['list_start'] ?>">
-            <br>
-            <label for="title">기한일자 : </label>
-            <input type="date" name="list_end"  id="title" required autocomplete="off"
-            value="<?php echo $result_info['list_end'] ?>">
-            <br>
-            <label for="title">장소 : </label>
-            <input type="text" name="list_location"  id="title" required placeholder="장소" autocomplete="off"
-            value="<?php echo $result_info['list_location'] ?>">
-            <br>
-            <label for="contents">내용 : </label>
-            <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="48" rows="15" >
-                <?php echo $result_info['list_contents'] ?>
-            </textarea>
-            <br>
+        <form class="update_form_put" method="post" action="petlist_update.php">
+            <!-- <div class="upput"> -->
+                <label for="bno">번호 : </label>
+                <input type="text" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
+                <br>
+                <label for="title">제목 : </label>
+                <input type="text" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
+                value="<?php echo $result_info['list_title'] ?>">
+                <br>
+                <label for="title">시작일자 : </label>
+                <input type="datetime-local" name="list_start"  id="title" required 
+                value="<?php echo $result_info['list_start'] ?>">
+                <br>
+                <label for="title">기한일자 : </label>
+                <input type="datetime-local" name="list_end"  id="title" required
+                value="<?php echo $result_info['list_end'] ?>">
+                <br>
+                <label for="title">장소 : </label>
+                <input type="text" name="list_location"  id="title" required placeholder="장소" autocomplete="off"
+                value="<?php echo $result_info['list_location'] ?>">
+                <br>
+                <br>
+                <label class="contents" for="contents">내용 : </label>
+                <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="48" rows="15" >
+                    <?php echo $result_info['list_contents'] ?>
+                </textarea>
+            <!-- </div>     -->
             <div class="btn_wrap">
                 <button class="btn_fix" type="submit">
                     수정
