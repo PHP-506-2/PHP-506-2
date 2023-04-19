@@ -1,18 +1,15 @@
 <?php
-    // TODO : 취소버튼 클릭시 리스트 페이지로 이동(경로추가)
-    // TODO : 헤더파일 경로 추가
-    // TODO : 리스트파일 경로 추가
     include_once( "./common/define.php" );
     include_once( URL_DB );
     
     $http_method = $_SERVER["REQUEST_METHOD"];
     
     // -------------------------------------------------------
-    // 처리 완료 후 리스트 페이지로 이동
     if ( $http_method === "POST" ) {
         $arr_post = $_POST;
         pet_list_insert( $arr_post );
-        // header( "Location: " ); // 리스트파일 경로 추가 예정
+        $list_no = pet_list_listno_inquiry();
+        header( "Location: petlist_detail.php?list_no=$list_no" ); 
         exit();
     }
     // -------------------------------------------------------
@@ -55,7 +52,7 @@
             <textarea class="input_contents" maxlength="250" name="list_contents" id="contents" placeholder="내용을 입력하세요." required></textarea>
             <br>
             <button type="submit" title="작성">작성</button>
-            <button type="button" title="취소">취소</button>
+            <button type="button" title="취소"><a href="petlist_list.php">취소</a></button>
         </form>
     </div>
 </body>

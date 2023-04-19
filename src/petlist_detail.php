@@ -3,8 +3,11 @@
     include_once( URL_DB );
     
     
-    $arr_prepare = array("list_no" => 1);
-    $result = petlist_detail( $arr_prepare["list_no"]);
+    // $arr_prepare = array("list_no" => 1);
+    // $result = petlist_detail( $arr_prepare["list_no"]);
+
+    $arr_get = $_GET; // 0419 add 이동호
+    $list_no = $arr_get['list_no'];
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +28,7 @@
         <h1>'이백'이의 TO DO LIST</h1><br><br>
         <div > 
         <?php
-        $arr_prepare = array("list_no" => 1);
+        $arr_prepare = array("list_no" => $list_no); // 0419 udt 이동호
         $result = petlist_detail( $arr_prepare["list_no"]);
 
         if ( $result["list_comp_flg"] === 0 )
@@ -70,8 +73,8 @@
         <div> <input class="input_1" type="text" value = "<?php echo $result["list_contents"]?>" readonly > </div> <br>
     <div class="div_lk_1">
         <div class="lk_1">
-        <a class="btn_1" href="petlist_comp.php?list_no=<?php echo $arr_prepare["list_no"] ?>">진행 완료</a>
-        <a class="btn_1" href="petlist_update.php">수정하기</a>
+        <a class="btn_1" href="petlist_comp.php?list_no=<?php echo $arr_prepare["list_no"] ?>">진행 완료</a> <!-- 0419 udt 이동호 -->
+        <a class="btn_1" href="petlist_update.php?list_no=<?php echo $arr_prepare["list_no"] ?>">수정하기</a> <!-- 0419 udt 이동호 -->
         <a class="btn_1" href="petlist_list.php">리스트</a>
         </div>
     </div>

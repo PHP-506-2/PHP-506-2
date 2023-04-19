@@ -91,7 +91,7 @@
                         <!-- 체크박스 이미지로 할지 체크박스 기능으로 할지 -->
                         <div class="todo_item checkbox">□</div>
                         <!-- 제목표시의 오류가 빈번함 -->
-                        <div class="todo_item title"><a href="petlist_detail.php"><?php echo $val['list_title'] ?></a></div>
+                        <div class="todo_item title"><a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a></div>
                         <!-- <button class="delBtn">x</button> -->
                         <!-- DAY-* 표시 -->
                         <div class="todo_item dday">
