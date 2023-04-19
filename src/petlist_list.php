@@ -1,6 +1,7 @@
-<?
+<?php
     include_once( "./common/define.php" );
     include_once( URL_DB );
+    include_once( URL_HEADER );
     // include_once( "C:/Apache24/htdocs/PHP-506-2-2/src/common/db_common.php" );
     
     // list 테이블 전체 정보 획득
@@ -19,19 +20,19 @@
     $ee = pet_info($arr["pet_no"]);
     
     // 페이징 기능을 위한 쿼리--------------------------------------------
-    $arr_get = $_GET;
+        $arr_get = $_GET;
+        
+        $limit_num = 5;
+        
+        // list 테이블 전체 카운트 획득
+        $listallcnt = pet_list_listcnt();
+        // echo $listallcnt;
+        
+        // max page number
+        $max_page_num = ceil( (int)$listallcnt / $limit_num ); 
+        // echo $max_page_num;
     
-    $limit_num = 5;
-    
-    // list 테이블 전체 카운트 획득
-    $listallcnt = pet_list_listcnt();
-    // echo $listallcnt;
-    
-    // max page number
-    $max_page_num = ceil( (int)$listallcnt / $limit_num ); 
-    // echo $max_page_num;
-    
-    if( array_key_exists("page_num",$_GET )) //array_key_exists("page_num",$_GET ) = $_GET 값이 있으면
+        if( array_key_exists("page_num",$_GET )) //array_key_exists("page_num",$_GET ) = $_GET 값이 있으면
         {
             $page_num = $_GET["page_num"];
         }
@@ -52,8 +53,8 @@
         
         // 페이징용 데이터 검색
         $result_paging = pet_list_listpaging( $arr_prepare ); //
-        // ----------------------------------------------------------------
-        ?>
+    // ----------------------------------------------------------------
+?>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -61,21 +62,19 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../css/common.css">
         <title>pet_todolist</title>
-        <link rel="stylesheet" href="../css/petlist_list.css"> <!-- 통합시 경로 수정 -->
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/petlist_list.css">
     </head>
     <body>
         <div class="petlist_main_border">
-            <? include_once( URL_HEADER ); ?>
-            <div class="petlist_container">
-                
-                <div class="petlist_profile_container">
-                    <?php
-                    include_once 'pet_profile_bar.php';
-                    ?>
+            <!-- profile bar test -->
+            <!-- <? //include_once( URL_HEADER ); ?> -->
+            <div class="petlist_profile_container">
+                <?php
+                include_once 'pet_profile_bar.php';
+                ?>
             </div>
-            
             <div class="petlist_list_container">
                 <h1><?php echo "'".mb_substr($result_pet_info['pet_name'],1,2)."'이"; ?>의 TO DO LIST</h1>
                 <!-- **부분은 사용자 지정 이름으로 교체될 예정 -->
