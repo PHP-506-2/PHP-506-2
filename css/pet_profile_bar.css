@@ -18,46 +18,87 @@
     {
         margin: 0;
         padding: 0;
+        background-color: #f9f9f4;
     }
 .wrap
 {
     font-family: 'Cafe24Danjunghae';
     background-color: #f9f9f4;
-    width: 250px;
-    height: 100%;
+    width: 320px;
+    height: 1000px;
 }
 .profile_bar
 {
     width: 250px;
     text-align: center;
+    margin: 0 auto;
 }
 img
 {
-    width: 250px;
-    height: 250px ;
+    width: 200px;
+    height: 200px ;
 }
 
 .profile_main
 {
-    background-color: aqua;
-    width: 250px;
-    text-align: center;
+    margin-top: 50px;
 }
-.profile_img
+.two
 {
-    width: 250px;
-    height: 250px;
-    border: 1px solid #333;
-    border-radius: 25px;
+    margin : 25px 25px ;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }
 .v-line{
     border-left: 1px solid  #bdbdbd;
-    height:100%;
-    left: 280px;
+    height:850px;
+    left: 350px;
     position: absolute;
+    margin-top: 50px;
     }
 .day{
     background-color: rgb(221, 230, 173);
     width: 250px;
     text-align: center;
+}
+.profile_con{
+
+    width: 250px;
+    text-align: center;
+}
+#progress {
+    appearance: none;
+}
+#progress::-webkit-progress-bar {
+    background:#f0f0f0;
+    border-radius:10px;
+    border: 3px solid #2ebf75;
+    box-shadow: inset 3px 3px 10px #ccc;
+}
+#progress::-webkit-progress-value {
+    border-radius:10px;
+    background: #696d5d;
+    border: 1px solid #2ebf75;
+    background: linear-gradient(to right, #d3e7dd, #06aa00);
+}
+.sp_1{
+    margin-top: 3px;
+}
+a{
+    text-decoration: none;
+}
+/* .p_1{
+    margin: -3px;
+} */
+.lk_1{
+    margin-top: 30px;
+    text-align: center;
+}
+.btn_1{
+    border: 1px solid rgb(52, 216, 147);
+    color: rgb(41, 226, 134);
+}
+a:hover {
+    color: #b0ff32;
 }
