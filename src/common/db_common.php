@@ -219,7 +219,7 @@ $chinmildo =  ($comp_count/$all_count)*100;
 //---------------------------------------------------------------------------------
 //---------------------반려동물 정보 가져오는 함수 (최혁재)----------------------------------
 //---------------------------------------------------------------------------------
-function pet_info( &$param_arr )
+function pet_info()
 {
     $sql =
         " SELECT "
@@ -228,14 +228,14 @@ function pet_info( &$param_arr )
         ." ,pet_gender "
         ." FROM " 
         ." pet_profile "
-        ." WHERE "
-        ." pet_no = :pet_no "
+        ." ORDER BY "
+        ." pet_no DESC "
+        ." LIMIT 1 "
     ;
 
     
     $arr_prepare
     = array(
-        ":pet_no" => $param_arr
     );
 
     $conn = null;
@@ -637,3 +637,8 @@ function pet_list_listpaging( &$param_arr ) {
 
     return $result;
 }
+
+
+
+
+var_dump(pet_info());
