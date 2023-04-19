@@ -77,7 +77,7 @@
             </div>
             
             <div class="petlist_list_container">
-                <h1><?php echo $result_pet_info['pet_name']; ?>의 TO DO LIST</h1>
+                <h1><?php echo "'".mb_substr($result_pet_info['pet_name'],1,2)."'이"; ?>의 TO DO LIST</h1>
                 <!-- **부분은 사용자 지정 이름으로 교체될 예정 -->
                 
                 <div class="button petlist_list_insert"><a href="petlist_insert.php">+ 새로 작성하기</a></div>
