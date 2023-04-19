@@ -37,9 +37,9 @@ if ( $http_method === "POST" ) {
                 <input type="date" name="pet_birth"  id="birth" required>
                 <br>
                 <br>
-                <select name="select" id="select">
-                    <option value="0" selected>남</option>
-                    <option value="1">여</option>
+                <select name="pet_gender" id="select">
+                    <option value="M" selected>남</option>
+                    <option value="F">여</option>
                 </select>
             </div>
             <br>
