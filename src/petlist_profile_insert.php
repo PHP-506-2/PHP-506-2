@@ -10,7 +10,7 @@ $http_method = $_SERVER["REQUEST_METHOD"];
 // 처리 완료 후 홈 페이지로 이동
 if ( $http_method === "POST" ) {
     $arr_post = $_POST;
-    pet_list_insert( $arr_post );
+    pet_profile_insert( $arr_post );
     header( "Location: petlist_list.php" );
     exit();
 }
