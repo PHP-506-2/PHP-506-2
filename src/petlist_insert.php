@@ -5,7 +5,7 @@
     include_once( "./common/define.php" );
     include_once( URL_DB );
     include_once( URL_HEADER );
-
+    
     $http_method = $_SERVER["REQUEST_METHOD"];
     
     // -------------------------------------------------------
@@ -17,18 +17,19 @@
         exit();
     }
     // -------------------------------------------------------
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/pet_insert.css">
     <title>petlist_insert</title>
 </head>
 <body>
-    <form action="petlist_insert.php" method="post">
+    <form action="petlist_insert.php" method="post" class="contents">
         <select name="list_comp_flg" id="list_comp_flg">
             <option value="0">진행 예정</option>
             <option value="1">진행 중</option>

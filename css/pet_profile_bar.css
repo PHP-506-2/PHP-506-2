@@ -27,6 +27,8 @@
     background-color: #f9f9f4;
     width: 320px;
     height: 1000px;
+    float: left;
+    margin-right: 50px;
 }
 .profile_bar
 {
