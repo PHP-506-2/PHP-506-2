@@ -16,27 +16,27 @@ if( $http_method === "GET")
             $list_no = $_GET["list_no"];
         }
 
-        $result_info = petlist_detail( $list_no );
+        $result_info = pet_list_select( $list_no );
 
     }
     // POST 일때
-    // else
-    // {
-    //     $arr_post = $_POST;
-    //     $arr_info = 
-    //         array(
-    //             "list_title" => $param_arr["list_title"]
-    //             ,"list_start" => $param_arr["list_start"]
-    //             ,"list_end" => $param_arr["list_end"]
-    //             ,"list_location" => $param_arr["list_location"]
-    //             ,"list_contents" => $param_arr["list_contents"]
-    //             ,"list_no" => $param_arr["list_no"]
-    //         );
+    else
+    {
+        $arr_post = $_POST;
+        $arr_info = 
+            array(
+                "list_no" => $arr_post["list_no"]
+                ,"list_title" => $arr_post["list_title"]
+                ,"list_start" => $arr_post["list_start"]
+                ,"list_end" => $arr_post["list_end"]
+                ,"list_location" => $arr_post["list_location"]
+                ,"list_contents" => $arr_post["list_contents"]
+            );
 
      
-    //     $result_cnt = pet_list_update( $arr_info );
+        $result_cnt = petlist_detail( $arr_info );
 
-    // }
+    }
 
 
 
@@ -67,7 +67,7 @@ if( $http_method === "GET")
             <option value="3">진행실패</option>
         </select>
      
-        <form method="get" action="petlist_update.php">
+        <form method="post" action="petlist_update.php">
             <label for="bno">번호 : </label>
             <input type="text" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
             <br>
