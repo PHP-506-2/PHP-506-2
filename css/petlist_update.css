@@ -1,18 +1,38 @@
 @charset "utf-8";
 
-
+.wrap_mian
+{
+    display: inline-block;
+    width: 100%;
+}
 li{
     list-style: none;
 }
 a {
     text-decoration: none;
 }
+.petlist_profile_container
+{
+    display: inline-block;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
 .update_form
 {
+    display: inline-block;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
     font-family: 'Cafe24Oneprettynight';
     font-weight: bold;
     font-size: 18px;
 }
+
 #select
 {
     font-family: 'Cafe24Oneprettynight';

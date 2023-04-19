@@ -24,12 +24,12 @@
         <div class="profile_bar">
             <div class = "v-line"></div>
             <a class="home" href="petlist_list.php"> <img src="../img/pet.png" alt=""></a>
-            
-            <p class="day"><?php echo $ee["pet_name"]; ?>과 함께한지 +<? echo $dog_day ?></p>
-            <progress id="progress" value="<? echo round($chinmildo) ?>" max="100"></progress>
-            <? echo round($chinmildo)."%" ?>
-            <br>
-            <div class ="sp_1"> <p>♥이백이와의 친밀도♥</p></div>
+            <div class ="sp_1">
+                <p class="day"><?php echo $ee["pet_name"]; ?>과 함께한지 +<? echo $dog_day ?></p>
+                <progress id="progress" value="<? echo round($chinmildo) ?>" max="100"></progress>
+                <p class="per"><? echo round($chinmildo)."%" ?></p>
+                <p>♥이백이와의 친밀도♥</p>
+            </div>
 
             <div class="profile_main">
                 <div class="profile_img">
