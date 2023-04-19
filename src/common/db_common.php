@@ -597,3 +597,43 @@ function pet_list_listcnt()
     
     return $result[0]['cnt'];
 }
+
+// --------------------------------- 0419 add 신유진
+// 페이징 : 게시글 리스트에서 1페이지를 눌렀을때 1페이지 내용만, 2페이지를 눌렀을때 2페이지만 보여주는 것
+// 함수명	: pet_list_listpaging
+// 기능		: 페이징_게시판 정보 검색
+// 파라미터	: Array		&$param_arr
+// 리턴값	: Array		$result
+//------------------------------------------------
+function pet_list_listpaging( &$param_arr ) {
+    $sql =
+        " SELECT "
+        ."      * "
+        ." FROM "
+        ."      pet_list "
+        ." ORDER BY "
+        ."      list_no DESC "
+        ." LIMIT :limit_num OFFSET :offset "
+        ;
+    $arr_prepare = 
+        array(
+            ":limit_num"    => $param_arr["limit_num"]
+            ,":offset"      => $param_arr["offset"]
+        );
+
+    $conn = null;
+    try {
+        db_conn( $conn );
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare ); // 쿼리 실행 후 $result에 담기
+        $result = $stmt->fetchAll();
+    } 
+    catch ( Exception $e ) {
+        return $e->getMessage();
+    } 
+    finally {
+        $conn = null;
+    }
+
+    return $result;
+}
