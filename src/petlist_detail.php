@@ -46,8 +46,8 @@ $result = petlist_detail( $arr_prepare["list_no"]);
 
     <div>
     <button type="button"><a href="petlist_comp.php?list_no=<?php echo $arr_prepare["list_no"] ?>">진행 완료</a> </button>
-    <button><a href="petlist_update.php">수정하기</a></button>
-    <button><a href="petlist_list.php">리스트</a></button>
+    <button><a href="petlist_update.php">수정하기ㄹ</a></button>
+    <button><a href="petlist_list.php">리스트ㄹ</a></button>
     </div>
 
 
