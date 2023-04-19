@@ -7,35 +7,7 @@ li
 {
     list-style-type: none;
 }
-.petlist_container
-{
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: auto;
-    width: 90%;
-    height: 80%;
-}
-.petlist_profile_container
-{
-    display: inline-block;
-    width: 20%;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-}
-.petlist_list_container
-{
-    display: inline-block;
-    width: 80%;
-    position: absolute;
-    top: 0%;
-    /* bottom: 0; */
-    right: 0%;
-}
 .todo_item
 {
-    /* display: grid;
-    background-color: white;
-    grid-template-rows: 10% 50% 20% 20%; */
     display: inline-block;
 }

@@ -145,7 +145,7 @@
                 for ($i = 1; $i <= $max_page_num ; $i++)
                 { 
             ?>
-                <a class="btn btn-outline-dark" href='board_list.php?page_num=<?php echo $i ?> '>
+                <a class="btn btn-outline-dark" href='petlist_list.php?page_num=<?php echo $i ?> '>
                     <?php echo $i ?> 
                 </a>
             <?php
