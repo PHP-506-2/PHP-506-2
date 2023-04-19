@@ -1,19 +1,5 @@
 @charset "utf-8";
 
-
-@font-face {
-    font-family: 'Cafe24Oneprettynight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Cafe24Danjunghae';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 *
     {
         margin: 0;
@@ -26,9 +12,18 @@
     font-family: 'Cafe24Danjunghae';
     background-color: #f9f9f4;
     width: 320px;
-    height: 1000px;
+    height : 60em;
     float: left;
     margin-right: 50px;
+    /* border-right: 1px solid #ccc; */
+}
+.wrap::before {
+    content: '';
+    position : absolute;
+    width: 320px;
+    height : 55em;
+    top : 3em;
+    border-right: 1px solid rgba(204, 204, 204, 0.568);
 }
 .profile_bar
 {
@@ -53,13 +48,6 @@ img
     height: 200px;
     border-radius: 50%;
 }
-.v-line{
-    border-left: 1px solid  #bdbdbd;
-    height:850px;
-    left: 350px;
-    position: absolute;
-    margin-top: 30px;
-    }
 .day{
     background-color: rgb(225, 233, 182);
     width: 230px;

@@ -1,15 +1,4 @@
-@font-face {
-    font-family: 'Cafe24Oneprettynight';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Cafe24Danjunghae';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Danjunghae.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+
 .div_big{
     display : inline-block;
     margin-top: 100px;
