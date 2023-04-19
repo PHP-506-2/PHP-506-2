@@ -514,7 +514,7 @@ function pet_list_delete( &$param_arr )
     return $result_cnt;
 }
 
-//------------------------------------------------ 백유정
+// --------------------------------- 0419 add 백유정
 // 함수명   : pet_list_select
 // 기능     : 특정 pk의 레코드 쿼리
 // 파라미터 : INT     &$param_no
@@ -560,4 +560,40 @@ function pet_list_select( &$param_no )
     }
 
     return $result[0];
+}
+
+// --------------------------------- 0419 add 신유진
+// 함수명   : pet_list_listcnt
+// 기능     :전체 리스트 cnt 숫자깂으로 가져오기
+// 파라미터 : 없음
+// 리턴값   : INT/STRING     $result/errorMSG
+//------------------------------------------------
+function pet_list_listcnt()
+{
+    $sql = 
+        " SELECT " 
+        ."      COUNT(*) cnt "
+        ." FROM " 
+        ."      pet_list"
+        ;
+    $arr_prepare = array();
+
+    $conn = null;
+    try
+    {
+        db_conn( $conn );
+        $stmt = $conn->prepare( $sql );
+        $result = $stmt->execute ( $arr_prepare );
+        $result = $stmt->fetchAll();
+    }
+    catch( Exception $e )
+    {
+        return $e->getMessage();
+    }
+    finally
+    {
+        $conn = null;
+    }
+    
+    return $result[0]['cnt'];
 }
