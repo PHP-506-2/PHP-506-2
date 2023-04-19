@@ -22,6 +22,7 @@
     }
 .wrap
 {
+    margin-top: 50px;
     font-family: 'Cafe24Danjunghae';
     background-color: #f9f9f4;
     width: 320px;
@@ -55,7 +56,7 @@ img
     height:850px;
     left: 350px;
     position: absolute;
-    margin-top: 50px;
+    margin-top: 30px;
     }
 .day{
     background-color: rgb(221, 230, 173);
@@ -96,9 +97,12 @@ a{
     text-align: center;
 }
 .btn_1{
-    border: 1px solid rgb(52, 216, 147);
+    border: 2px solid rgb(52, 216, 147);
+    border-radius: 5px;
     color: rgb(41, 226, 134);
+    padding: 10px;
 }
 a:hover {
-    color: #b0ff32;
+    color: #f190f5;
+    background-color: #f6fd8e;
 }
