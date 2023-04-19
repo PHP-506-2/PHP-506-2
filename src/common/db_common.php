@@ -474,4 +474,47 @@ function pet_profile_insert( &$param_arr )
     return $result_cnt;
 }
 
+// --------------------------------- 0419 add 이동호
+// 함수명	: pet_list_delete
+// 기능		: 리스트 삭제
+// 파라미터	: INT               &$param_arr
+// 리턴값	: INT/STRING	    $result_cnt/ERRMSG
+// ---------------------------------
+function pet_list_delete( &$param_arr ) 
+{
+    $sql =
+        " DELETE "
+        ."  FROM "
+        ."      pet_list "
+        ." WHERE "
+        ."      list_no = :list_no "
+        ;
+    $arr_prepare =
+        array(
+            ":list_no" => $param_arr["list_no"]
+        );
+
+    $conn = null;
+    try 
+    {
+        db_conn( $conn );
+        $conn->beginTransaction();
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result_cnt = $stmt->rowCount();
+        $conn->commit();
+    } 
+    catch ( Exception $e ) 
+    {
+        $conn->rollback();
+        return $e->getMessage();
+    } 
+    finally 
+    {
+        $conn = null;
+    }
+
+    return $result_cnt;
+}
+
 
