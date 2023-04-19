@@ -1,6 +1,6 @@
 <?
-    define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/");
-    define( "URL_DB", SRC_ROOT."PHP-506-2-2/src/common/db_common.php"); 
+    define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
+    define( "URL_DB", DOC_ROOT."PHP-506-2/src/common/db_common.php" ); 
     include_once( URL_DB );
     // include_once( "C:/Apache24/htdocs/PHP-506-2-2/src/common/db_common.php" );
 

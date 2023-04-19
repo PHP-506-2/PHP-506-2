@@ -1,5 +1,6 @@
 <?php
-define( "URL_DB","D:\project\src\common\db_common.php" );
+define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
+define( "URL_DB", DOC_ROOT."PHP-506-2/src/common/db_common.php" ); 
 include_once( URL_DB );
 
     $arr

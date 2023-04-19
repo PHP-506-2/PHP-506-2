@@ -1,6 +1,6 @@
 <?php
-    define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
-    define( "URL_DB", DOC_ROOT."pet_list/src/common/db_common.php" ); // 통합하면 경로 수정해야할듯
+define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
+define( "URL_DB", DOC_ROOT."PHP-506-2/src/common/db_common.php" );
     // define( "URL_HEADER", "" ); // 헤더파일 경로 추가 예정
     include_once( URL_DB );
 
