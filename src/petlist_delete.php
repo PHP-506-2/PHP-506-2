@@ -1,15 +1,15 @@
 <?php
-define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
-define( "URL_DB", DOC_ROOT."PHP-506-2/src/common/db_common.php" );
-    // define( "URL_HEADER", "" ); // 헤더파일 경로 추가 예정
+    include_once( "./common/define.php" );
     include_once( URL_DB );
+    include_once( URL_HEADER );
 
-    $a = 15; // 임시로 글번호 지정
-    $result = petlist_detail( $a );
+    // $a = 15; // 임시로 글번호 지정
+    // $result = petlist_detail( $a );
     // var_dump( $result );
 
-    // $arr_get = $_GET;
-    // petlist_detail( $arr_get["list_no"] );
+    $arr_post = $_POST;
+    var_dump([$arr_post]);
+    petlist_detail( $arr_post["list_no"] );
 
 
     // if ( $result["list_comp_flg"] === 0 ) 
@@ -59,7 +59,7 @@ define( "URL_DB", DOC_ROOT."PHP-506-2/src/common/db_common.php" );
     <br>
     <div> <!-- 버튼 -->
     <form action="petlist_delete_ok.php" method="get">
-        <button type="submit" title="삭제">삭제</button>
+        <button type="submit" title="삭제"><a fref="petlist_delete_ok.php">삭제</a></button>
     </form>
     <form action="petlist.php">
         <button type="button" title="삭제 취소"><a href="petlist.php">삭제 취소</a></button>

@@ -1,7 +1,7 @@
 <?
-    define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
-    define( "URL_DB", DOC_ROOT."PHP-506-2/src/common/db_common.php" ); 
+    include_once( "./common/define.php" );
     include_once( URL_DB );
+    include_once( URL_HEADER );
     // include_once( "C:/Apache24/htdocs/PHP-506-2-2/src/common/db_common.php" );
 
     // list 테이블 전체 정보 획득

@@ -2,12 +2,9 @@
     // TODO : 취소버튼 클릭시 리스트 페이지로 이동(경로추가)
     // TODO : 헤더파일 경로 추가
     // TODO : 리스트파일 경로 추가
-
-
-    define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
-    define( "URL_DB", DOC_ROOT."PHP-506-2/src/common/db_common.php" );
-    // define( "URL_HEADER", "" ); // 헤더파일 경로 추가 예정
+    include_once( "./common/define.php" );
     include_once( URL_DB );
+    include_once( URL_HEADER );
 
     $http_method = $_SERVER["REQUEST_METHOD"];
     
