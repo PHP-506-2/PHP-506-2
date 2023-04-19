@@ -3,11 +3,7 @@
     include_once( COMMON_DEFINE );
     include_once( URL_DB );
 
-    $arr
-    = array(
-        "pet_no" => 1
-    );
-    $ee = pet_info($arr["pet_no"]);
+    $ee = pet_info() ;
 ?>
 
 <!DOCTYPE html>

@@ -1,8 +1,8 @@
 
-.div_big{
-    display : inline-block;
+.petlist_main_border{
+    /* display : inline-block;
     margin-top: 100px;
-    margin-left : 30px;
+    margin-left : 30px; */
     font-family: 'Cafe24Oneprettynight';
     font-weight: bold;
     font-size : 18px;
@@ -11,12 +11,14 @@ a:hover {
     color: #f190f5;
     background-color: #f6fd8e;
 }
-.ll_1{
+.div_lk_1{
     display: inline-block;
-    margin-top: 60px;
-    margin-left: 30px;
+    margin-top: 70px;
+    margin-left: 60px;
 }
 .input_1{
     width: 400px;
     height: 180px;
+    font-family: 'Cafe24Oneprettynight';
+    font-size : 18px;
 }

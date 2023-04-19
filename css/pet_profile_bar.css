@@ -48,6 +48,7 @@ img
     height: 200px;
     border-radius: 50%;
 }
+.two{filter: drop-shadow(10px 20px 10px #000); }
 .day{
     background-color: rgb(225, 233, 182);
     width: 230px;
@@ -57,7 +58,8 @@ img
 .profile_con{
 
     width: 250px;
-    text-align: center;
+    text-align: left;
+    margin-left: 50px;
 }
 #progress {
     appearance: none;
