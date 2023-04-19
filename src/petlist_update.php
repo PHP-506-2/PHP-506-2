@@ -95,9 +95,9 @@ if( $http_method === "GET")
                     </textarea>
                 <!-- </div>     -->
                 <div class="btn_wrap">
-                    <button class="btn_fix" type="submit">
+                    <a class="btn_fix" type="submit">
                         수정
-                    </button>
+                    </a>
                     <a class="trash" href='petlist_delete.php '>
                         삭제
                     </a>
