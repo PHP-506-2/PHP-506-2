@@ -1,3 +1,12 @@
+<?php
+define( "URL_DB","D:\project\src\common\db_common.php" );
+include_once( URL_DB );
+
+
+$arr_prepare = array("list_no" => 1);
+$result = petlist_detail( $arr_prepare["list_no"]);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +16,40 @@
     <title>Document</title>
 </head>
 <body>
-    <dd></dd>
+    
+    <div> 
+    <?php
+    $arr_prepare = array("list_no" => 1);
+    $result = petlist_detail( $arr_prepare["list_no"]);
+
+    if ( $result["list_comp_flg"] === 0 )
+    {
+        echo "진행 예정";
+    }
+    else if ( $result["list_comp_flg"] === 1 )
+    {
+        echo "진행 중";
+    }
+    else if ( $result["list_comp_flg"] === 2 )
+    {
+        echo "진행 완료";
+    }
+    else if ( $result["list_comp_flg"] === 3 )
+    {
+        echo "기간 만료";
+    } ?>
+    </div> <br>
+    <div> <?php echo $result["list_title"]  ?></div> <br>
+    <div> <?php echo $result["list_contents"]  ?></div> <br>
+    <div> <?php echo $result["list_start"]  ?></div> <br>
+    <div> <?php echo $result["list_end"]  ?></div>
+
+    <div>
+    <button type="button"><a href="petlist_comp.php?list_no=<?php echo $arr_prepare["list_no"] ?>">진행 완료</a> </button>
+    <button><a href="petlist_update.php">수정하기</a></button>
+    <button><a href="petlist_list.php">리스트</a></button>
+    </div>
+
+
 </body>
 </html>

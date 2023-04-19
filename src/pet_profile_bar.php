@@ -1,10 +1,7 @@
 <?php
-
-define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/PHP-506-2/src/" );
-define( "URL_DB", SRC_ROOT."common/db_common.php" );
+define( "URL_DB","D:\project\src\common\db_common.php" );
 include_once( URL_DB );
 
-$http_method = $_SERVER["REQUEST_METHOD"];
 
 
 
@@ -22,6 +19,8 @@ $http_method = $_SERVER["REQUEST_METHOD"];
 <body>
     <div class="wrap">
         <div class="profile_bar">
+        <div class = "v-line">
+        </div>
             <a class="home" href="petlist_list.php"> <img src="./pet.png" alt=""></a>
             <p class="day">함께한지 +<? echo $dog_day ?></p>
             <progress value="<? echo round($chinmildo) ?>" max="100"></progress>
@@ -31,10 +30,21 @@ $http_method = $_SERVER["REQUEST_METHOD"];
 
                 </div>
                 <div class="profile_con">
-                    <p>이름 :</p>
+                    <?php  
+                        $arr
+                        = array(
+                            "pet_no" => 1
+                        );
+                        $ee = pet_info($arr["pet_no"]);
+                    ?>
+
+                    <p>이름 : <?php echo $ee["pet_name"]; ?> </p>
+                    <p>입양일 :<?php echo $ee["pet_birth"]; ?> </p>
+                    <p>성별 :<?php echo $ee["pet_gender"]; ?> </p>
                 </div>
             </div>
         </div>
     </div>
+    
 </body>
 </html>
