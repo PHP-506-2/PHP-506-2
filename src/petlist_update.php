@@ -19,24 +19,24 @@ if( $http_method === "GET")
         $result_info = petlist_detail( $list_no );
 
     }
-//     // POST 일때
-//     else
-//     {
-//         $arr_post = $_POST;
-//         $arr_info = 
-//             array(
-//                 "list_title" => $param_arr["list_title"]
-//                 ,"list_start" => $param_arr["list_start"]
-//                 ,"list_end" => $param_arr["list_end"]
-//                 ,"list_location" => $param_arr["list_location"]
-//                 ,"list_contents" => $param_arr["list_contents"]
-//                 ,"list_no" => $param_arr["list_no"]
-//             );
+    // POST 일때
+    // else
+    // {
+    //     $arr_post = $_POST;
+    //     $arr_info = 
+    //         array(
+    //             "list_title" => $param_arr["list_title"]
+    //             ,"list_start" => $param_arr["list_start"]
+    //             ,"list_end" => $param_arr["list_end"]
+    //             ,"list_location" => $param_arr["list_location"]
+    //             ,"list_contents" => $param_arr["list_contents"]
+    //             ,"list_no" => $param_arr["list_no"]
+    //         );
 
      
-//         $result_cnt = pet_list_update( $arr_info );
+    //     $result_cnt = pet_list_update( $arr_info );
 
-//     }
+    // }
 
 
 
@@ -96,7 +96,7 @@ if( $http_method === "GET")
                 <button class="btn_fix" type="submit">
                     수정
                 </button>
-                <a class="trash" href='list_detail.php?board_no=<?php echo $result_info['list_no'] ?>'>
+                <a class="trash" href='petlist_delete.php '>
                     삭제
                 </a>
                 <a class="btn_fix" href='petlist_list.php'>
