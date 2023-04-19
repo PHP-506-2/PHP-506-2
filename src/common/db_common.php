@@ -637,8 +637,3 @@ function pet_list_listpaging( &$param_arr ) {
 
     return $result;
 }
-
-
-
-
-var_dump(pet_info());
