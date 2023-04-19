@@ -25,7 +25,7 @@
                 <p class="day"><?php echo $ee["pet_name"]; ?>과 함께한지 +<? echo $dog_day ?></p>
                 <progress id="progress" value="<? echo round($chinmildo) ?>" max="100"></progress>
                 <p class="per"><? echo round($chinmildo)."%" ?></p>
-                <p>♥이백이와의 친밀도♥</p>
+                <p>♥<?php echo $ee["pet_name"]; ?>와의 친밀도♥</p>
             </div>
 
             <div class="profile_main">

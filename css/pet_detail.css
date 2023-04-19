@@ -1,4 +1,7 @@
 
+h1{
+    font-size: 60px;
+}
 .petlist_main_border{
     /* display : inline-block;
     margin-top: 100px;
@@ -21,4 +24,9 @@ a:hover {
     height: 180px;
     font-family: 'Cafe24Oneprettynight';
     font-size : 18px;
+}
+.div_big {
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: 40px;
 }
