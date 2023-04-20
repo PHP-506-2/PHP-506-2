@@ -109,16 +109,17 @@ function petlist_complete( &$param_no )
 
 //--------------------------------------------------------//
 //---------------강아지 키운 날짜 계산----------------------//(최혁재)
+//------------------0420 del ------------------------------최혁재
 //---------------------------------------------------------//
 
-$now = time();        // 현재 시간을 초단위로 구해줍니다. 
-$hour = date('H');    // 현재 몇시인지 구해줍니다. h는 12시간으로 표기 H는 24시간으로 표기해줍니다./
-$min = date('i');      // 현재 몇분인지 구해줍니다./  
-$sec = date('s');      // 현재 몇초인지 구해줍니다./
-$day = mktime($hour,$min,$sec,05,01,2012);//특정하게 지정된 날짜의 시간을 초단위로 구해줍니다
-$result_day = $now - $day;  //현재시간에서 특정날시간을 빼줍니다./
-$dog_day = $result_day/86400; //초단위결과값을 날짜로 환산해줍니다./
-// echo "똥개와 함께한지  $dog_day 일째"; //구해진 날짜값을 출력합니다./
+// $now = time();        // 현재 시간을 초단위로 구해줍니다. 
+// $hour = date('H');    // 현재 몇시인지 구해줍니다. h는 12시간으로 표기 H는 24시간으로 표기해줍니다./
+// $min = date('i');      // 현재 몇분인지 구해줍니다./  
+// $sec = date('s');      // 현재 몇초인지 구해줍니다./
+// $day = mktime($hour,$min,$sec,05,01,2012);//특정하게 지정된 날짜의 시간을 초단위로 구해줍니다
+// $result_day = $now - $day;  //현재시간에서 특정날시간을 빼줍니다./
+// $dog_day = $result_day/86400; //초단위결과값을 날짜로 환산해줍니다./
+// // echo "똥개와 함께한지  $dog_day 일째"; //구해진 날짜값을 출력합니다./
 
 
 //--------------------------------------------------------------------------
@@ -386,44 +387,44 @@ function pet_list_update( &$param_arr )
 }
 
 
-//------------------------------------------------ 신유진
+//------------------------------------------------ 신유진 0420 del(pet_list_listpaging함수와 겹침)
 // 함수명   : pet_list_list
 // 기능     :전체 리스트 정보가져오기
 // 파라미터 : Array
 // 리턴값   : Array/String     $result/errorMSG
 //------------------------------------------------
-function pet_list_list()
-{
-    //쿼리문
-    $sql =
-        " SELECT "
-        ." * "
-        ." FROM "
-        ." pet_list "
-        ;
+// function pet_list_list()
+// {
+//     //쿼리문
+//     $sql =
+//         " SELECT "
+//         ." * "
+//         ." FROM "
+//         ." pet_list "
+//         ;
     
-    //모든 글을 조건없이 배열로 가져온다
-    $arr_prepare =array();
+//     //모든 글을 조건없이 배열로 가져온다
+//     $arr_prepare =array();
 
-    // DB연결 부분
-    $conn = null;     
-    try
-    {
-        db_conn( $conn );
-        $stmt = $conn->prepare( $sql );
-        $stmt->execute( $arr_prepare );
-        $result = $stmt->fetchAll();
-    }
-    catch( Exception $e)
-    {
-        return $e->getMessage();
-    }
-    finally
-    {
-        $conn = null;   
-    }
-    return $result;
-}
+//     // DB연결 부분
+//     $conn = null;     
+//     try
+//     {
+//         db_conn( $conn );
+//         $stmt = $conn->prepare( $sql );
+//         $stmt->execute( $arr_prepare );
+//         $result = $stmt->fetchAll();
+//     }
+//     catch( Exception $e)
+//     {
+//         return $e->getMessage();
+//     }
+//     finally
+//     {
+//         $conn = null;   
+//     }
+//     return $result;
+// }
 
 
 // --------------------------------- 0418 백유정
@@ -607,7 +608,7 @@ function pet_list_listcnt()
     return $result[0]['cnt'];
 }
 
-// --------------------------------- 0419 add 신유진
+// --------------------------------- 0419 add 신유진 0420 add flgEndASC
 // 페이징 : 게시글 리스트에서 1페이지를 눌렀을때 1페이지 내용만, 2페이지를 눌렀을때 2페이지만 보여주는 것
 // 함수명	: pet_list_listpaging
 // 기능		: 페이징_게시판 정보 검색
@@ -621,7 +622,8 @@ function pet_list_listpaging( &$param_arr ) {
         ." FROM "
         ."      pet_list "
         ." ORDER BY "
-        ."      list_no DESC "
+        ."      list_comp_flg ASC "
+        ."      , list_end ASC "
         ." LIMIT :limit_num OFFSET :offset "
         ;
     $arr_prepare = 

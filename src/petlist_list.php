@@ -5,7 +5,7 @@
     // include_once( "C:/Apache24/htdocs/PHP-506-2-2/src/common/db_common.php" );
     
     // list 테이블 전체 정보 획득
-    $result_list = pet_list_list();
+    // $result_list = pet_list_list_endASC();   //0420 del_$result_paging랑 중복 필요없음!! 
     // var_dump(pet_list_list());
     
     // pet정보 테이블 전체 정보 획득
@@ -54,6 +54,8 @@
         // 페이징용 데이터 검색
         $result_paging = pet_list_listpaging( $arr_prepare ); //
     // ----------------------------------------------------------------
+
+    // 데이터를 오름차순(ASC)이나 내림차순(DESC)으로 정렬
 ?>
 
 <!DOCTYPE html>
@@ -63,6 +65,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pet_todolist</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="../img/favi.jpg">
+        <link rel="icon" type="image/png" sizes="96x96" href="../img/favi.jpg">
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favi.jpg">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#FFFFFF">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/petlist_list.css">
     <link rel="stylesheet" href="../css/pet_profile_bar.css">
@@ -87,8 +96,7 @@
             <!-- 리스트 아이템 -->
             <ul class="petlist_list_item_container">
                 <?php
-                    foreach ( $result_paging as $val ) // $result_list = pet_list_list() 의 배열값을 $val로 가져와서 배열값만큼 돌림
-                    { 
+                    foreach ( $result_paging as $val ) {// $result_list = pet_list_list() 의 배열값을 $val로 가져와서 배열값만큼 돌림
                 ?>
                 <li>
                     <!-- 체크박스 이미지로 할지 체크박스 기능으로 할지 -->
@@ -145,11 +153,11 @@
                 </li>
                 <?php
                     }
-                    ?>
+                ?>
             </ul>
             
         <!-- 페이징 번호 -->
-        <div class="petlist_bottom">
+            <div class="petlist_list_bottom">
             <!-- ◀ 앞페이지로 -->
             <!-- <div class="page_bar back">
                 <?php
@@ -161,13 +169,13 @@
                 ?>
             </div> -->
 
-            <div class="page_bar Number">
+            <div class="paging_bar">
                 <?php
                     for ($i = 1; $i <= $max_page_num ; $i++)
                     { 
                 ?>
-                    <a href='petlist_list.php?page_num=<?php echo $i ?> '>
-                        <?php echo $i ?> 
+                    <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $i ?> '>
+                        <?php echo $i?> 
                     </a>
                 <?php
                     }
