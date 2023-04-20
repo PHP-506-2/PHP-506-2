@@ -57,3 +57,6 @@ textarea {
 .progress{
     border: 2px solid rgb(52, 216, 147);
 }
+h1{
+    font-size: 60px;
+}
