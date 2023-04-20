@@ -70,7 +70,7 @@
         <div> 제목 :  <?php echo $result["list_title"]  ?></div> <br>
         <div> 시작일자 : <?php echo $result["list_start"]  ?></div> <br>
         <div> 기한일자 :  <?php echo $result["list_end"]  ?></div><br>
-        <div> <input class="input_1" type="text" value = "<?php echo $result["list_contents"]?>" readonly > </div> <br>
+        <div> <textarea class="input_1" readonly cols="48" rows="15"><?php echo $result["list_contents"]?></textarea> </div> <br>
     <div class="div_lk_1">
         <div class="lk_1">
         <a class="btn_1" href="petlist_comp.php?list_no=<?php echo $arr_prepare["list_no"] ?>">진행 완료</a> <!-- 0419 udt 이동호 -->
