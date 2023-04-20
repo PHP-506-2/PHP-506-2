@@ -58,7 +58,7 @@
     <form action="petlist_delete_ok.php" method="get">
         <button type="submit" title="삭제"><a href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제</a></button>
     </form>
-    <form action="petlist.php">
+    <form action="petlist_detail.php">
         <button type="button" title="삭제 취소"><a href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제 취소</a></button>
     </form>
     </div>
