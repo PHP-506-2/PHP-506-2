@@ -25,7 +25,7 @@
         <?php include_once( URL_HEADER ); ?>
     
         <div class = "div_big" >
-        <h1><?php echo "'".mb_substr($ee['pet_name'],1,2)."'이"; ?>의 TO DO LIST</h1><br><br>
+        <h1><?php echo mb_substr($ee['pet_name'],1,2)."'s"; ?> TO DO LIST</h1><br><br>
         <div > 
         <?php
         $arr_prepare = array("list_no" => $list_no); // 0419 udt 이동호
@@ -33,19 +33,19 @@
 
         if ( $result["list_comp_flg"] === 0 )
         {
-            echo "진행상태 : 진행 예정";
+            echo "진행 예정  ";
         }
         else if ( $result["list_comp_flg"] === 1 )
         {
-            echo "진행상태 : 진행 중";
+            echo "진행 중  ";
         }
         else if ( $result["list_comp_flg"] === 2 )
         {
-            echo "진행상태 : 진행 완료";
+            echo "진행 완료  ";
         }
         else if ( $result["list_comp_flg"] === 3 )
         {
-            echo "진행상태 : 기간 만료";
+            echo "기간 만료  ";
         } ?>
         <?php
                         // substr( string, start [, length ] )
@@ -54,16 +54,16 @@
                         if ( $end_date < $to_date ) 
                         {
                             $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400);
-                            echo "DAY + ".mb_substr($ddy, 1);
+                            echo "  DAY + ".mb_substr($ddy, 1);
                         } 
                         else if ( $end_date === $to_date ) 
                         {
-                            echo  "D - Day";
+                            echo  "  D - Day";
                         } 
                         else 
                         {
                             $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400;
-                            echo "DAY - ".$ddy;
+                            echo "  DAY - ".$ddy;
                         }
         ?>
         </div> <br>
