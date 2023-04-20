@@ -41,25 +41,10 @@
             <div class="container petlist_contents_container"> <!-- 내용 출력 -->
             <h1><?php pet_list_print_pet_name() ?></h1><br><br>
             <br>
-                <div><?php  $end_date = substr( $result["list_end"], 0 , 10 );
-                            $to_date = date("Y-m-d");
-                            if ( $end_date < $to_date ) 
-                            {
-                                $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400);
-                                echo "DAY + ".mb_substr($ddy, 1);
-                            } 
-                            else if ( $end_date === $to_date ) 
-                            {
-                                echo  "D - Day";
-                            } 
-                            else 
-                            {
-                                $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400;
-                                echo "DAY - ".$ddy;
-                            } ?></div>
-                <br>
-                <div><?php if ( $result["list_comp_flg"] === 0 ) { echo "진행 예정"; } else if ( $result["list_comp_flg"] === 1 ) { echo "진행 중"; } else if ( $result["list_comp_flg"] === 2 ) { echo "진행 완료"; } else if ( $result["list_comp_flg"] === 3 ) { echo "기간 만료"; }  ?></div>
-                <br>
+                <div class="pettodobutton dday"><?php $end_date = substr( $result["list_end"], 0 , 10 ); $to_date = date("Y-m-d"); if ( $end_date < $to_date ) { $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400); echo "DAY + ".mb_substr($ddy, 1); } else if ( $end_date === $to_date ) { echo  "D - Day"; } else { $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400; echo "DAY - ".$ddy; } ?>
+                </div>
+                <span class="pettodobutton progress"><?php if ( $result["list_comp_flg"] === 0 ) { echo "진행 예정"; } else if ( $result["list_comp_flg"] === 1 ) { echo "진행 중"; } else if ( $result["list_comp_flg"] === 2 ) { echo "진행 완료"; } else if ( $result["list_comp_flg"] === 3 ) { echo "기간 만료"; }  ?></span>
+                <br><br>
                 <div>제목 : <?php echo $result["list_title"] ?></div>
                 <br>
                 <div>시작일자 : <?php echo $result["list_start"] ?></div>
@@ -76,9 +61,9 @@
                     동의 하시면 확인을 눌러주세요.
                 </div>
                 <br>
-                <div> <!-- 버튼 -->
-                    <a class="petbutton" href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">취소</a></button>
-                    <a class="petbutton" href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제</a></button>
+                <div class="del_btns"> <!-- 버튼 -->
+                    <a class="petbutton" href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">취소</a>
+                    <a class="petbutton" href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제</a>
                 </div>
             </div>
         </div>
