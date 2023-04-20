@@ -38,7 +38,11 @@ a {
 {
     margin-top: 5px;
 }
-.btn_wrap .btn_fix
+.btn_wrap .petbutton
 {
     cursor: pointer;
+}
+.btn_wrap
+{
+    margin-top: 10px;
 }

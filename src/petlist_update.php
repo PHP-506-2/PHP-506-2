@@ -82,9 +82,9 @@ if( $http_method === "GET")
                 
                 <form class="update_form_put" method="post" action="petlist_update.php">
                     <!-- <div class="upput"> -->
-                        <label for="bno">번호 : </label>
+                        <!-- <label for="bno">번호 : </label>
                         <input type="text" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
-                        <br>
+                        <br> -->
                         <label for="title">제목 : </label>
                         <input type="text" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
                         value="<?php echo $result_info['list_title'] ?>">
@@ -106,13 +106,13 @@ if( $http_method === "GET")
                         <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="48" rows="15"><?php echo $result_info['list_contents'] ?></textarea>
                     <!-- </div>     -->
                     <div class="btn_wrap">
-                        <button class="btn_fix" type="submit">
+                        <a class="petbutton" type="submit">
                             수정
                         </button>
-                        <a class="trash" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
+                        <a class="petbutton" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
                             삭제
                         </a>
-                        <a class="btn_fix" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>
+                        <a class="petbutton" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>
                             취소
                         </a>
                     </div>

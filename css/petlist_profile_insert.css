@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+a {
+    text-decoration: none;
+}
+
+.petlist_main_border
+{
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.petlist_main_border input
+{
+    font-family: 'Cafe24Oneprettynight';
+    border: none;
+}
+#select
+{
+    font-family: 'Cafe24Oneprettynight';
+    font-size: 18px;
+}

@@ -24,11 +24,12 @@ if ( $http_method === "POST" ) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROFILE INSERT</title>
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/petlist_profile_insert.css">
 </head>
 <body>
     <div class="petlist_main_border">
-    <h1>Pet Profile</h1>
-    <form method="post" action="petlist_profile_insert.php">
+        <h1>PET PROFILE</h1>
+        <form method="post" action="petlist_profile_insert.php">
             <div class="con_main">
                 <label for="name">이름 : </label>
                 <input type="text" name="pet_name"  id="name" required placeholder="이름" autocomplete="off">
@@ -46,10 +47,10 @@ if ( $http_method === "POST" ) {
             <br>
             <br>
             <div class="btn_wrap">
-                <button class="btn_fix" type="submit">
-                    수정
-                </button>
-                <a href="petlist_list.php">
+                <a class="petbutton" type="submit">
+                    저장
+                </a>
+                <a class="petbutton" href="petlist_list.php">
                     취소
                 </a>
             </div>
