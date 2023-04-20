@@ -23,14 +23,14 @@ if ( $http_method === "POST" ) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/common.css">
-    <!-- <link rel="stylesheet" href="../css/petlist_update.css"> -->
     <link rel="stylesheet" href="../css/petlist_profile_insert.css">
+    <link rel="stylesheet" href="../css/pet_profile_bar.css">
 </head>
 <body>
     <div class="petlist_main_border">
         <? include_once( URL_HEADER ); ?>
         <div class="wrap_mian">
-            <div class="petlist_profile_container">
+            <div class="petlist_contents_container">
                 <?php 
                 include_once 'pet_profile_bar.php';
                 ?>
@@ -57,7 +57,7 @@ if ( $http_method === "POST" ) {
                     <br>
                     <br>
                     <div class="btn_wrap">
-                        <button class="petbutton" type="submit">
+                        <button class="petbutton erd_1 "  type="submit">
                             저장
                         </button>
                         <a class="petbutton" href="petlist_list.php">
