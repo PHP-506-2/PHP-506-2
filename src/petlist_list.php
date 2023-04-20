@@ -5,7 +5,7 @@
     // include_once( "C:/Apache24/htdocs/PHP-506-2-2/src/common/db_common.php" );
     
     // list 테이블 전체 정보 획득
-    // $result_list = pet_list_list_endASC();   //0420 del_$result_paging랑 중복 필요없음!! 
+    $result_pet_list_list = pet_list_list();   //0420 del_$result_paging랑 중복 필요없음!! 
     // var_dump(pet_list_list());
     
     // pet정보 테이블 전체 정보 획득
@@ -77,20 +77,15 @@
     <link rel="stylesheet" href="../css/pet_profile_bar.css">
 </head>
 <body>
-    <div class="petlist_main_border">
-        <!-- profile bar test -->
-
-        <div class="petlist_profile_container">
-            <? include_once( URL_HEADER ); ?>
+    <div class="petlist_main_border">   <!-- common.css의 전체contents부분의 border 통일부분 -->
+        <div class="petlist_profile_container">     <!-- 보기쉽게 프로필 부분을 묶음 -->
+            <? include_once( URL_HEADER ); ?>       
             <?php
-            include_once 'pet_profile_bar.php';
+            include_once 'pet_profile_bar.php';     //프로필바 php 가져옴_회면의 좌측부분
             ?> 
         </div>
-
         <div class="petlist_contents_container">
-            <h1><?pet_list_print_pet_name()?></h1>
-            <!-- **부분은 사용자 지정 이름으로 교체될 예정 -->
-            
+            <h1><?pet_list_print_pet_name()?></h1>      <!-- 사용자 지정 이름으로 변경가능한 반려동물 이름함수 사용 -->
             <a class="petlist_list_insertpagebutton" href="petlist_insert.php">+ 새로 작성하기</a>
 
             <!-- 리스트 아이템 -->
@@ -196,5 +191,17 @@
         <!-- class petlist_contents_container 부분마침 -->
     </div>
     <!-- class petlist_main_border 부분마침 -->
+
+    <!-- <p>test</p> -->
+    <!-- <ul>
+        <li> -->
+            <?
+            // foreach ($result_pet_list_list as $value) {
+            //     pet_list_print_list()
+            // };
+            
+            ?>
+        <!-- </li>
+    </ul> -->
 </body>
 </html>

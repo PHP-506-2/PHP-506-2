@@ -387,45 +387,44 @@ function pet_list_update( &$param_arr )
 }
 
 
-//------------------------------------------------ 신유진 0420 del(pet_list_listpaging함수와 겹침)
+//------------------------------------------------ 신유진
 // 함수명   : pet_list_list
 // 기능     :전체 리스트 정보가져오기
 // 파라미터 : Array
 // 리턴값   : Array/String     $result/errorMSG
 //------------------------------------------------
-// function pet_list_list()
-// {
-//     //쿼리문
-//     $sql =
-//         " SELECT "
-//         ." * "
-//         ." FROM "
-//         ." pet_list "
-//         ;
+function pet_list_list()
+{
+    //쿼리문
+    $sql =
+        " SELECT "
+        ." * "
+        ." FROM "
+        ." pet_list "
+        ;
     
-//     //모든 글을 조건없이 배열로 가져온다
-//     $arr_prepare =array();
+    //모든 글을 조건없이 배열로 가져온다
+    $arr_prepare =array();
 
-//     // DB연결 부분
-//     $conn = null;     
-//     try
-//     {
-//         db_conn( $conn );
-//         $stmt = $conn->prepare( $sql );
-//         $stmt->execute( $arr_prepare );
-//         $result = $stmt->fetchAll();
-//     }
-//     catch( Exception $e)
-//     {
-//         return $e->getMessage();
-//     }
-//     finally
-//     {
-//         $conn = null;   
-//     }
-//     return $result;
-// }
-
+    // DB연결 부분
+    $conn = null;     
+    try
+    {
+        db_conn( $conn );
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result = $stmt->fetchAll();
+    }
+    catch( Exception $e)
+    {
+        return $e->getMessage();
+    }
+    finally
+    {
+        $conn = null;   
+    }
+    return $result;
+}
 
 // --------------------------------- 0418 백유정
 // 함수명	: pet_profile_insert
@@ -608,10 +607,10 @@ function pet_list_listcnt()
     return $result[0]['cnt'];
 }
 
-// --------------------------------- 0419 add 신유진 0420 add flgEndASC
+// --------------------------------- 0419 add 신유진 / 0420 add flgEndASC 신유진 / 0421 change 전반적 수정
 // 페이징 : 게시글 리스트에서 1페이지를 눌렀을때 1페이지 내용만, 2페이지를 눌렀을때 2페이지만 보여주는 것
 // 함수명	: pet_list_listpaging
-// 기능		: 페이징_게시판 정보 검색
+// 기능		: 게시글 페이지에 맞는 리스트갯수와 정렬되어진 값을 출력
 // 파라미터	: Array		&$param_arr
 // 리턴값	: Array		$result
 //------------------------------------------------
@@ -691,3 +690,17 @@ function pet_list_print_pet_name() {
     $pet_info = pet_info();
     echo "<span class='petnametitle'>".mb_substr($pet_info['pet_name'],1,2)."</span>"."'s TO DO LIST";
 }
+
+// --------------------------------- 0421 add 신유진
+// 함수명	: pet_list_print_list
+// 기능		: 한개의 list 출력
+// 파라미터	: 없음		
+// 리턴값	: 없음
+//------------------------------------------------
+// function pet_list_print_list() {
+//     $pet_list_list = pet_list_list();
+//     echo
+//     " 체크박스 오는 부분 "
+//     
+//     ;
+// }
