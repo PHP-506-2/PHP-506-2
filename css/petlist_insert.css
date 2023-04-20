@@ -26,3 +26,6 @@
 select {
     font-size: 18px;
 }
+#title {
+    width: 460px;
+}
