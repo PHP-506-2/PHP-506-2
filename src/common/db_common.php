@@ -637,3 +637,35 @@ function pet_list_listpaging( &$param_arr ) {
 
     return $result;
 }
+
+// --------------------------------- 0420 add 이동호
+// 함수명	: pet_list_listno_inquiry
+// 기능		: 최신글번호 조회
+// 파라미터	: 없음		
+// 리턴값	: Int/String		$result[0]["MAX(list_no)"]/ErrMSG
+//------------------------------------------------
+function pet_list_listno_inquiry() {
+    $sql =
+        " SELECT "
+        ."      MAX(list_no) "
+        ." FROM "
+        ."      pet_list "
+        ;
+    $arr_prepare = array();
+
+    $conn = null;
+    try {
+        db_conn( $conn );
+        $stmt = $conn->prepare( $sql );
+        $stmt->execute( $arr_prepare );
+        $result = $stmt->fetchAll();
+    } 
+    catch ( Exception $e ) {
+        return $e->getMessage();
+    } 
+    finally {
+        $conn = null;
+    }
+
+    return $result[0]["MAX(list_no)"];
+}
