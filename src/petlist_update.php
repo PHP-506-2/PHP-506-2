@@ -83,7 +83,7 @@ if( $http_method === "GET")
                             <input type="hidden" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
                             <br> 
                             <label for="title">제목 : </label>
-                            <input type="text" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
+                            <input type="text" class="pet_tit" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
                             value="<?php echo $result_info['list_title'] ?>">
                             <br>
                             <label for="title">시작일자 : </label>
@@ -100,7 +100,7 @@ if( $http_method === "GET")
                             <br>
                             <br>
                             <label class="contents" for="contents">내용 : </label>
-                            <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="48" rows="15"><?php echo $result_info['list_contents'] ?></textarea>
+                            <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="70" rows="15"><?php echo $result_info['list_contents'] ?></textarea>
                         </div>    
                         <div class="btn_wrap">
                             <button class="petbutton" type="submit" >
