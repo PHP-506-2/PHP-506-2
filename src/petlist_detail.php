@@ -16,7 +16,14 @@
         <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DETAIL</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favi.jpg">
+        <link rel="icon" type="image/png" sizes="96x96" href="../img/favi.jpg">
+        <link rel="icon" type="image/png" sizes="16x16" href="../img/favi.jpg">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#FFFFFF">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#FFFFFF">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/pet_detail.css">
     <link rel="stylesheet" href="../css/pet_profile_bar.css">
