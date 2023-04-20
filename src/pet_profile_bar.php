@@ -38,8 +38,8 @@
                 </div>
                 <div class="profile_con">
                     <p class = "p_1" >이름 : <?php echo $ee["pet_name"]; ?> </p>
-                    <p class = "p_1" >입양일 :<?php echo $ee["pet_birth"]; ?> </p>
-                    <p class = "p_1" >성별 :<?php echo $ee["pet_gender"]; ?> </p>
+                    <p class = "p_1" >입양일 : <?php echo $ee["pet_birth"]; ?> </p>
+                    <p class = "p_1" >성별 : <?php if ($ee["pet_gender"] === "M" ) { echo "남자"; } else { echo "여자"; } ?> </p>
                 </div>
             </div>
         </div>
