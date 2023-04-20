@@ -67,57 +67,58 @@ if( $http_method === "GET")
             <div class="wrap_mian">
                 <div class="petlist_profile_container">
                     <?php 
-                include_once 'pet_profile_bar.php';
-                ?>
-            </div>
+                    include_once 'pet_profile_bar.php';
+                    ?>
+                </div>
             
-            <div class="update_form">
-                <h1><?php echo "'".mb_substr($result_pet_info['pet_name'],1,2)."'이"; ?>의 TO DO LIST</h1>
-                <select name="select" id="select">
-                    <option value="0" selected>진행예정</option>
-                    <option value="1">진행중</option>
-                    <option value="2">진행완료</option>
-                    <option value="3">진행실패</option>
-                </select>
-                
-                <form class="update_form_put" method="post" action="petlist_update.php">
-                    <!-- <div class="upput"> -->
-                        <!-- <label for="bno">번호 : </label>
-                        <input type="text" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
-                        <br> -->
-                        <label for="title">제목 : </label>
-                        <input type="text" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
-                        value="<?php echo $result_info['list_title'] ?>">
-                        <br>
-                        <label for="title">시작일자 : </label>
-                        <input type="datetime-local" name="list_start"  id="title" required 
-                        value="<?php echo $result_info['list_start'] ?>">
-                        <br>
-                        <label for="title">기한일자 : </label>
-                        <input type="datetime-local" name="list_end"  id="title" required
-                        value="<?php echo $result_info['list_end'] ?>">
-                        <br>
-                        <label for="title">장소 : </label>
-                        <input type="text" name="list_location"  id="title" required placeholder="장소" autocomplete="off"
-                        value="<?php echo $result_info['list_location'] ?>">
-                        <br>
-                        <br>
-                        <label class="contents" for="contents">내용 : </label>
-                        <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="48" rows="15"><?php echo $result_info['list_contents'] ?></textarea>
-                    <!-- </div>     -->
-                    <div class="btn_wrap">
-                        <a class="petbutton" type="submit">
-                            수정
-                        </button>
-                        <a class="petbutton" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
-                            삭제
-                        </a>
-                        <a class="petbutton" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>
-                            취소
-                        </a>
-                    </div>
-                </form>
-            </div>
+                <div class="update_form">
+                    <h1><?php echo mb_substr($result_pet_info['pet_name'],1,2)."'s"; ?> TO DO LIST</h1>
+                    <select name="select" id="select">
+                        <option value="0" selected>진행예정</option>
+                        <option value="1">진행중</option>
+                        <option value="2">진행완료</option>
+                        <option value="3">진행실패</option>
+                    </select>
+                    
+                    <form class="update_form_put" method="post" action="petlist_update.php">
+                     <div class="upput"> 
+                            <div class="upput">
+                            <input type="hidden" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
+                            <br> 
+                            <br> 
+                            <label for="title">제목 : </label>
+                            <input type="text" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
+                            value="<?php echo $result_info['list_title'] ?>">
+                            <br>
+                            <label for="title">시작일자 : </label>
+                            <input type="datetime-local" name="list_start"  id="title" required 
+                            value="<?php echo $result_info['list_start'] ?>">
+                            <br>
+                            <label for="title">기한일자 : </label>
+                            <input type="datetime-local" name="list_end"  id="title" required
+                            value="<?php echo $result_info['list_end'] ?>">
+                            <br>
+                            <label for="title">장소 : </label>
+                            <input type="text" name="list_location"  id="title" required placeholder="장소" autocomplete="off"
+                            value="<?php echo $result_info['list_location'] ?>">
+                            <br>
+                            <br>
+                            <label class="contents" for="contents">내용 : </label>
+                            <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="48" rows="15"><?php echo $result_info['list_contents'] ?></textarea>
+                         </div>    
+                        <div class="btn_wrap">
+                            <button class="petbutton" type="submit" >
+                                수정
+                            </button>
+                            <a class="petbutton" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
+                                삭제
+                            </a>
+                            <a class="petbutton" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>
+                                취소
+                            </a>
+                        </div>
+                    </form>
+                </div>
         </div>
     </div>
 </body>
