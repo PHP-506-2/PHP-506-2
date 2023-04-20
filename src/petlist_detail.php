@@ -19,6 +19,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/pet_detail.css">
+    <link rel="stylesheet" href="../css/pet_profile_bar.css">
 </head>
 <body>
 <div class = "petlist_main_border">
