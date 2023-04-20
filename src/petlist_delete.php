@@ -1,7 +1,7 @@
 <?php
     include_once( "./common/define.php" );
     include_once( URL_DB );
-    include_once( URL_HEADER );
+    // include_once( URL_HEADER );
 
     $arr_get = $_GET; // 0419 add 이동호
     $list_no = $arr_get['list_no'];
@@ -36,6 +36,9 @@
     <title>petlist_delete</title>
 </head>
 <body>
+    <div class="petlist_main_border">
+    <?include_once( URL_HEADER );?>
+    
     <div class="container"> <!-- 내용 출력 -->
         <div><?php echo $result["list_title"] ?></div>
         <br>
@@ -61,6 +64,7 @@
     <form action="petlist_detail.php">
         <button type="button" title="삭제 취소"><a href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제 취소</a></button>
     </form>
+    </div>
     </div>
 </body>
 </html>

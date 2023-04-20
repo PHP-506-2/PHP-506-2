@@ -26,6 +26,7 @@ if ( $http_method === "POST" ) {
     <link rel="stylesheet" href="../css/common.css">
 </head>
 <body>
+    <div class="petlist_main_border">
     <h1>Pet Profile</h1>
     <form method="post" action="petlist_profile_insert.php">
             <div class="con_main">
@@ -53,7 +54,7 @@ if ( $http_method === "POST" ) {
                 </button>
             </div>
         </form>
-
+    </div>
 
 
 

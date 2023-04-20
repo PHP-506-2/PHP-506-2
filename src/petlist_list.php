@@ -1,7 +1,7 @@
 <?php
     include_once( "./common/define.php" );
     include_once( URL_DB );
-    include_once( URL_HEADER );
+    // include_once( URL_HEADER );
     // include_once( "C:/Apache24/htdocs/PHP-506-2-2/src/common/db_common.php" );
     
     // list 테이블 전체 정보 획득
@@ -69,17 +69,17 @@
     <body>
         <div class="petlist_main_border">
             <!-- profile bar test -->
-            <!-- <? //include_once( URL_HEADER ); ?> -->
+            <? include_once( URL_HEADER ); ?>
             <div class="petlist_profile_container">
                 <?php
                 include_once 'pet_profile_bar.php';
                 ?>
             </div>
-            <div class="petlist_list_container">
+            <div class="petlist_contents_container">
                 <h1><?php echo "'".mb_substr($result_pet_info['pet_name'],1,2)."'이"; ?>의 TO DO LIST</h1>
                 <!-- **부분은 사용자 지정 이름으로 교체될 예정 -->
                 
-                <div class="button petlist_list_insert"><a href="petlist_insert.php">+ 새로 작성하기</a></div>
+                <div class="petbutton petlist_list_insert"><a href="petlist_insert.php">+ 새로 작성하기</a></div>
                 <!-- 리스트 아이템 -->
                 <ul class="petlist_list_item_container">
                     <?php

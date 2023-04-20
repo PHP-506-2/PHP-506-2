@@ -2,17 +2,17 @@
 h1{
     font-size: 60px;
 }
-.petlist_main_border{
+/* .petlist_main_border{ */
     /* display : inline-block;
     margin-top: 100px;
     margin-left : 30px; */
-    font-family: 'Cafe24Oneprettynight';
-    font-size : 18px;
-}
-a:hover {
+    /* font-family: 'Cafe24Oneprettynight'; */
+    /* font-size : 18px; */
+/* } */
+/* a:hover {
     color: #f190f5;
     background-color: #f6fd8e;
-}
+} */
 .div_lk_1{
     display: inline-block;
     margin-top: 70px;
@@ -24,11 +24,11 @@ a:hover {
     font-family: 'Cafe24Oneprettynight';
     font-size : 18px;
 }
-.div_big {
+/* .div_big {
     display: inline-block;
     margin-top: 100px;
     margin-left: 40px;
     font-family: 'Cafe24Oneprettynight';
     font-weight: bold;
     font-size : 18px;
-}
+} */

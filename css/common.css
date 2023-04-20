@@ -10,10 +10,36 @@
     font-weight: normal;
     font-style: normal;
 }
+*
+{
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f4;
+}
 .petlist_main_border {
     width : 100em;
     height : 60em;
     margin: 10px auto;
     border: 1px solid #000;
-
+}
+.petlist_contents_container {
+    display: inline-block;
+    margin-top: 100px;
+    margin-left: 40px;
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: bold;
+    font-size : 18px;
+}
+textarea {
+    resize: none;
+}
+.petbutton {
+    border: 2px solid rgb(52, 216, 147);
+    border-radius: 5px;
+    color: rgb(41, 226, 134);
+    padding: 10px;
+}
+.petbutton:hover {
+    color: #f190f5;
+    background-color: #f6fd8e;
 }
