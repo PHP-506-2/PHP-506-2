@@ -40,23 +40,23 @@
                     <option value="3">기간 만료</option>
                 </select>
                 <br>
-                <label class="label_title" for="title">제목</label>
+                <label class="label_title" for="title">제목 : </label>
                 <input class="input_title" type="text" maxlength="100" name="list_title" id="title" placeholder="제목을 입력하세요." required>
                 <br>
-                <label for="start_time">시작일자</label>
+                <label for="start_time">시작일자 : </label>
                 <input type="datetime-local" name="list_start" id="start_time" required>
                 <br>
-                <label for="end_time">기한일자</label>
+                <label for="end_time">기한일자 : </label>
                 <input type="datetime-local" name="list_end" id="end_time" required>
                 <br>
-                <label for="location">장소</label>
-                <input type="text" maxlength="100" name="list_location" id="location" required>
+                <label for="location" class="margin-bottom">장소 : </label>
+                <input type="text" maxlength="100" name="list_location" id="location" required  placeholder="장소를 입력하세요.">
                 <br>
-                <label for="contents" class="contents">내용</label>
-                <textarea class="input_contents" maxlength="250" name="list_contents" id="contents" placeholder="내용을 입력하세요." required cols="48" rows="15"></textarea>
+                <label for="contents" class="contents_1">내용 : </label>
+                <textarea class="input_contents contents_1" maxlength="250" name="list_contents" id="contents" placeholder="내용을 입력하세요." required cols="48" rows="15"></textarea>
                 <br>
                 <div class="insert_btns">
-                    <button type="submit" title="작성" class="petbutton"><a>작성</button>
+                    <button type="submit" title="작성" class="petbutton"><a class="submit_btn">작성</button>
                     <a class="petbutton" href="petlist_list.php">취소</a>
                 </div>
             </form>

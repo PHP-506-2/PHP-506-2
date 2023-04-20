@@ -8,6 +8,21 @@
     font-weight: bold;
     font-size: 18px;
 }
-.contents {
+.contents_1 {
     vertical-align: top;
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.submit_btn {
+    font-size : 18px;
+    background-color: rgba(204, 204, 204, 0);
+}
+.contents input {
+    margin-top: 10px;
+    border: none;
+    font-size: 18px;
+}
+select {
+    font-size: 18px;
 }

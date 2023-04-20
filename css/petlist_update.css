@@ -46,3 +46,15 @@ a {
 {
     margin-top: 10px;
 }
+button {
+    font-size : 18px;
+}
+.margin_right {
+    margin-right: 5px;
+}
+div input {
+    font-size : 18px;
+}
+textarea {
+    font-size : 18px;
+}

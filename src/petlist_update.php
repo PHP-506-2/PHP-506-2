@@ -72,19 +72,15 @@ if( $http_method === "GET")
             <h1><?php pet_list_print_pet_name() ?></h1><br><br>
             
                 <div class="update_form">
-
-                    <select name="select" id="select">
-                        <option value="0" selected>진행예정</option>
-                        <option value="1">진행중</option>
-                        <option value="2">진행완료</option>
-                        <option value="3">진행실패</option>
-                    </select>
-                    
                     <form class="update_form_put" method="post" action="petlist_update.php">
-                    <div class="upput"> 
-                            <div class="upput">
+                        <div class="upput"> 
+                            <select name="select" id="select">
+                                <option value="0" selected>진행예정</option>
+                                <option value="1">진행중</option>
+                                <option value="2">진행완료</option>
+                                <option value="3">진행실패</option>
+                            </select>
                             <input type="hidden" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
-                            <br> 
                             <br> 
                             <label for="title">제목 : </label>
                             <input type="text" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
@@ -105,12 +101,12 @@ if( $http_method === "GET")
                             <br>
                             <label class="contents" for="contents">내용 : </label>
                             <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="48" rows="15"><?php echo $result_info['list_contents'] ?></textarea>
-                         </div>    
+                        </div>    
                         <div class="btn_wrap">
                             <button class="petbutton" type="submit" >
                                 수정
                             </button>
-                            <a class="petbutton" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
+                            <a class="petbutton margin_right" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
                                 삭제
                             </a>
                             <a class="petbutton" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>
