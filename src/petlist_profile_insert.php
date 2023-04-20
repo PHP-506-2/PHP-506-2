@@ -49,9 +49,9 @@ if ( $http_method === "POST" ) {
                 <button class="btn_fix" type="submit">
                     수정
                 </button>
-                <button href="board_list.php">
+                <a href="petlist_list.php">
                     취소
-                </button>
+                </a>
             </div>
         </form>
     </div>
