@@ -10,20 +10,18 @@ a {
 
 .update_form
 {
-    font-family: 'Cafe24Oneprettynight';
-    font-weight: bold;
     font-size: 18px;
 }
 
 #select
 {
-    font-family: 'Cafe24Oneprettynight';
-    font-weight: bold;
     font-size: 18px;
 }
 .update_form_put input
 {
     border: none;
+    margin: 5px 0;
+    font-size: 18px;
 }
 .contents
 {
