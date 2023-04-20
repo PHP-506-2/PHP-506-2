@@ -21,7 +21,12 @@ if ( $http_method === "POST" ) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>pet to do list</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favi.jpg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/petlist_profile_insert.css">
     <link rel="stylesheet" href="../css/pet_profile_bar.css">
