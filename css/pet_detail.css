@@ -7,7 +7,6 @@ h1{
     margin-top: 100px;
     margin-left : 30px; */
     font-family: 'Cafe24Oneprettynight';
-    font-weight: bold;
     font-size : 18px;
 }
 a:hover {
@@ -29,4 +28,7 @@ a:hover {
     display: inline-block;
     margin-top: 100px;
     margin-left: 40px;
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: bold;
+    font-size : 18px;
 }
