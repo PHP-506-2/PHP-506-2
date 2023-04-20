@@ -1,0 +1,13 @@
+.insert_btns {
+    display: inline-block;
+    margin-top: 70px;
+    margin-left: 60px;
+}
+#select {
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: bold;
+    font-size: 18px;
+}
+.contents {
+    vertical-align: top;
+}
