@@ -1,5 +1,4 @@
-li
-{
+li{
     list-style-type: none;
 }
 
@@ -7,3 +6,10 @@ li
     background-color: #D3E7DD;
 }
 
+.petlist_bottom{
+    text-align: center;
+}
+.petlist_bottom:hover {
+    color: #f190f5;
+    background-color: #f6fd8e;
+}
