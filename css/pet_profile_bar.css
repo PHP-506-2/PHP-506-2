@@ -11,7 +11,7 @@
     position: relative;
     /* margin-top: 50px; */
     font-family: 'Cafe24Danjunghae';
-    background-color: #f9f9f4;
+    background-color: #f9f9f400;
     width: 320px;
     height : 60em;
     float: left;
@@ -33,6 +33,7 @@
     width: 250px;
     text-align: center;
     margin: 0 auto;
+    background-color: #f9f9f400;
 }
 img
 {
