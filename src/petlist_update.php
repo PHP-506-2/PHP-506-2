@@ -64,15 +64,15 @@ if( $http_method === "GET")
     <body>
         <div class="petlist_main_border">
             <? include_once( URL_HEADER ); ?>
-            <div class="wrap_mian">
-                <div class="petlist_profile_container">
+            
+            <div class="petlist_contents_container">
                     <?php 
                     include_once 'pet_profile_bar.php';
                     ?>
-                </div>
+            <h1><?php pet_list_print_pet_name() ?></h1><br><br>
             
                 <div class="update_form">
-                    <h1><?php echo mb_substr($result_pet_info['pet_name'],1,2)."'s"; ?> TO DO LIST</h1>
+
                     <select name="select" id="select">
                         <option value="0" selected>진행예정</option>
                         <option value="1">진행중</option>
@@ -81,7 +81,7 @@ if( $http_method === "GET")
                     </select>
                     
                     <form class="update_form_put" method="post" action="petlist_update.php">
-                     <div class="upput"> 
+                    <div class="upput"> 
                             <div class="upput">
                             <input type="hidden" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
                             <br> 
@@ -119,7 +119,7 @@ if( $http_method === "GET")
                         </div>
                     </form>
                 </div>
+            </div>
         </div>
-    </div>
 </body>
 </html>
