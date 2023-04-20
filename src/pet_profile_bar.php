@@ -17,7 +17,7 @@
                     $to_date = date("Y-m-d");
                     if ( $end_date < $to_date ) {
                         $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400);
-                        echo $ee["pet_name"]."와 함께한지 D + ".mb_substr($ddy, 1);
+                        echo $ee["pet_name"]."하고 함께한지 D + ".mb_substr($ddy, 1);
                     } else if ( $end_date === $to_date ) {
                         echo  "D - Day";
                     } 
@@ -29,7 +29,7 @@
                 </p>
                 <progress id="progress" value="<? echo round($chinmildo) ?>" max="100"></progress>
                 <p class="per"><? echo round($chinmildo)."%" ?></p>
-                <p>♥<?php echo $ee["pet_name"]; ?>와의 친밀도♥</p>
+                <p>♥<?php echo $ee["pet_name"]; ?>하고의 친밀도♥</p>
             </div>
 
             <div class="profile_main">
