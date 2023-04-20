@@ -111,10 +111,10 @@ if( $http_method === "GET")
                         <button class="btn_fix" type="submit">
                             수정
                         </button>
-                        <a class="trash" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> <!-- 0420 add 이동호 -->
+                        <a class="trash" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
                             삭제
                         </a>
-                        <a class="btn_fix" href='petlist_list.php'>
+                        <a class="btn_fix" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>
                             취소
                         </a>
                     </div>
