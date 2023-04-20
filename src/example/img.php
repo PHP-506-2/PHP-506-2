@@ -3,7 +3,7 @@ $a = $_POST;
 // var_dump( $a );
 // echo "<br>";
 $file = $_FILES;
-// var_dump( $file );
+var_dump( $file );
 
 $location = "./img"; // 상대주소로 해야 html에서 접근가능
 $filename = $location."/".$file["image"]["name"]; // $filename = "./img/업로드한 파일이름";
@@ -21,7 +21,7 @@ move_uploaded_file($_FILES['image']['tmp_name'], $filename); // 업로드한 파
     <title>Document</title>
 </head>
 <body>
-    <form action="img_1.php" method="post" enctype="multipart/form-data">
+    <form action="img.php" method="post" enctype="multipart/form-data">
         <input type="file" name="image" accept="image/*">
         <input type="submit" value="Upload">
         <br>

@@ -34,7 +34,7 @@
 
             <div class="profile_main">
                 <div class="profile_img">
-                <a href="petlist_profile_insert.php"><img class="two" src="../img/2100.jpg" alt=""></a>
+                <a href="petlist_profile_insert.php"><?php if (file_exists('../img/profile_img.jpg')) { ?><img class="two" src="../img/profile_img.jpg" alt="profile image"><?php } else { ?><span><? echo $ee["pet_name"]; ?>이의 사진을 설정해주세요</sapn><?php } ?></a>
                 </div>
                 <div class="profile_con">
                     <p class = "p_1" >이름 : <?php echo $ee["pet_name"]; ?> </p>
@@ -48,4 +48,3 @@
         <a class="btn_1" href="https://www.karma.or.kr/" target=_blank>동물구조관리협회</a>
         </div>
     </div>
-    
