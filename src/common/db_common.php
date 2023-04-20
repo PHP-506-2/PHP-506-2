@@ -33,11 +33,7 @@ function petlist_detail( &$param_arr )
 {
     $sql =
         " SELECT "
-        ." list_title "
-        ." ,list_contents "
-        ." ,list_start "
-        ." ,list_end "
-        ." ,list_comp_flg "
+        ." * "
         ." FROM " 
         ." pet_list "
         ." WHERE "
