@@ -30,7 +30,7 @@
 
             <div class="profile_main">
                 <div class="profile_img">
-                <img class="two" src="../img/2100.jpg" alt="">
+                <a href="petlist_profile_insert.php"><img class="two" src="../img/2100.jpg" alt=""></a>
                 </div>
                 <div class="profile_con">
                     <p class = "p_1" >이름 : <?php echo $ee["pet_name"]; ?> </p>
