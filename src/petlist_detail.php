@@ -25,7 +25,7 @@
         <?php include_once( URL_HEADER ); ?>
     
         <div class = "div_big" >
-        <h1>'이백'이의 TO DO LIST</h1><br><br>
+        <h1><?php echo "'".mb_substr($ee['pet_name'],1,2)."'이"; ?>의 TO DO LIST</h1><br><br>
         <div > 
         <?php
         $arr_prepare = array("list_no" => $list_no); // 0419 udt 이동호
