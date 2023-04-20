@@ -1,13 +1,9 @@
-*
-{
-    padding: 0;
-    margin: 0;
-}
 li
 {
     list-style-type: none;
 }
-.todo_item
-{
-    display: inline-block;
+
+.petlist_list_insertpagebutton{
+    background-color: #D3E7DD;
 }
+

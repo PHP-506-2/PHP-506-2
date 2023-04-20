@@ -76,10 +76,11 @@
                 ?>
             </div>
             <div class="petlist_contents_container">
-                <h1><?php echo "'".mb_substr($result_pet_info['pet_name'],1,2)."'이"; ?>의 TO DO LIST</h1>
+                <h1><?pet_list_print_pet_name()?></h1>
                 <!-- **부분은 사용자 지정 이름으로 교체될 예정 -->
                 
-                <div class="petbutton petlist_list_insert"><a href="petlist_insert.php">+ 새로 작성하기</a></div>
+                <a class="petlist_list_insertpagebutton" href="petlist_insert.php">+ 새로 작성하기</a>
+
                 <!-- 리스트 아이템 -->
                 <ul class="petlist_list_item_container">
                     <?php
@@ -92,8 +93,9 @@
                         <!-- 제목표시의 오류가 빈번함 -->
                         <div class="todo_item title"><a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a></div>
                         <!-- <button class="delBtn">x</button> -->
-                        <!-- DAY-* 표시 -->
-                        <div class="todo_item dday">
+
+                    <!-- DAY-* 표시 -->
+                        <div class="pettodobutton todo_item dday">
                             <?php
                             // substr( string, start [, length ] )
                             $end_date = substr($val['list_end'], 0 , 10 );
@@ -114,8 +116,9 @@
                             }
                             ?>
                         </div>
-                        <!-- 진행상황표시 -->
-                        <div class="todo_item ">
+
+                    <!-- 진행상황표시 -->
+                        <div class="pettodobutton todo_item progress">
                             <?php 
                                 if ( $val["list_comp_flg"] === 0 )
                                 {

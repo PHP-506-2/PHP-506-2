@@ -30,6 +30,9 @@
     font-weight: bold;
     font-size : 18px;
 }
+.petnametitle{
+    color: #469457;
+}
 textarea {
     resize: none;
 }
@@ -42,4 +45,15 @@ textarea {
 .petbutton:hover {
     color: #f190f5;
     background-color: #f6fd8e;
+}
+.pettodobutton {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 2px 5px ;
+}
+.dday {
+    background-color: #a3d39c;
+}
+.progress{
+    border: 2px solid rgb(52, 216, 147);
 }
