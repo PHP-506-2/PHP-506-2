@@ -682,3 +682,14 @@ function pet_list_listno_inquiry() {
 
     return $result[0]["MAX(list_no)"];
 }
+
+// --------------------------------- 0420 add 이동호
+// 함수명	: pet_list_print_pet_name
+// 기능		: petname_title 출력
+// 파라미터	: 없음		
+// 리턴값	: 없음
+//------------------------------------------------
+function pet_list_print_pet_name() {
+    $pet_info = pet_info();
+    echo "<span class='petnametitle'>".mb_substr($pet_info['pet_name'],1,2)."</span>"."'s TO DO LIST";
+}
