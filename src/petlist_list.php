@@ -97,8 +97,19 @@
                 ?>
                 <li>
                 <!-- 체크박스 이미지로 할지 체크박스 기능으로 할지 -->
-                    <span class="todo_item checkbox">☆</span>
-
+                <?
+                    if ( $val["list_comp_flg"] === 0 || $val["list_comp_flg"] === 1 ) 
+                    {
+                ?>
+                        <img src="../img/checkbox.png" alt="no_checked" class="check_img">
+                <?
+                    }
+                    else {
+                ?>
+                        <img src="../img/checkbox_check.png" alt="checked" class="check_img">
+                <?
+                    }
+                ?>
                     <?php
                 // 리스트 마감임박 하이라이트(.list_highlight) : end날짜 정보를 불러와서 d-1 일때 ( = 오늘날짜 +1 = end날짜 일때 )
                 // 리스트 수행완료 취소선(.list_cancel_line) : $val["list_comp_flg"] === 2 인 진행 완료 리스트 취소선
