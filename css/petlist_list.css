@@ -63,6 +63,7 @@ li {
 }
 li a:visited{
     text-decoration: none;
+    color: black;
 }
 li a:link{
     color: black;
