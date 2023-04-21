@@ -58,7 +58,15 @@ input{
 {
     margin-top: 30px;
 }
-.file
-{
-    border: 1px solid #333;
+input[type="file"]::file-selector-button {
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px 1px #A7A8AA;
+    font-family: 'Cafe24Oneprettynight';
+    font-weight: bold;
+}
+input[type="file"]::file-selector-button:hover{
+    box-shadow: 1px 1px 3px 1px #A7A8AA inset;
 }
