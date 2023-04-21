@@ -109,7 +109,6 @@
                     <?
                         }
                         else if ( substr($val['list_end'], 0 , 10 ) ===  date("Y-m-d", strtotime("+1 day", strtotime(date("Y-m-d"))))) //리스트 마감임박 하이라이트
-                        {.
                     ?>
                             <span class="todo_item title">
                                 <a class="list_highlight" href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
