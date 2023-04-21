@@ -46,7 +46,6 @@ a {
 }
 .paging_number {
     margin: 20px;
-    padding: 10px;
     text-align: center;
     font-size: 20px;
 }
@@ -78,6 +77,8 @@ li {
 .petlist_list_bottom{
     position: absolute;
     bottom : 160px;
-    left : 650px;
+    left : 550px;
 }
-
+.hidden {
+    visibility: hidden;
+}

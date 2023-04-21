@@ -208,16 +208,49 @@
             </div> -->
 
             <div class="paging_bar">
+                <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo 1 ?> '>
+                            <?php echo "처음으로" ?> 
+                <?php 
+                if ($page_num > 1)
+                {
+                    ?>
+                <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $page_num - 1?> '>
+                <?php echo "앞으로"?> 
+                </a>
+                <?php
+                }else{?>
+                    <a class="paging_bar paging_number hidden " href='petlist_list.php?page_num=<?php echo $page_num + 1?> '>
+                    <?php echo "앞으로"?> 
+                    </a><?php
+                }
+                ?>
                 <?php
                     for ($i = 1; $i <= $max_page_num ; $i++)
                     { 
                 ?>
+                    </a>
                     <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $i ?> '>
                         <?php echo $i?> 
                     </a>
                 <?php
                     }
                 ?>
+            <?php 
+                if ($page_num < $max_page_num)
+                {
+                    ?>
+                <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $page_num + 1?> '>
+                <?php echo "뒤로"?> 
+                </a>
+                <?php
+                }else{?>
+                    <a class="paging_bar paging_number hidden " href='petlist_list.php?page_num=<?php echo $page_num + 1?> '>
+                    <?php echo "뒤로"?> 
+                    </a><?php
+                }
+                ?>
+                <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $max_page_num ?> '>
+                <?php echo "마지막으로" ?> 
             </div>
 
             <!-- ▶ 뒷페이지로 -->
