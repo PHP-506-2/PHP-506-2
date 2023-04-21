@@ -50,8 +50,8 @@
 }
 .petlist_contents_container {
     display: inline-block;
-    margin-top: 100px;
-    margin-left: 40px;
+    margin-top: 30px;
+    margin-left: 130px;
     font-size : 18px;
 }
 .petnametitle{
@@ -82,7 +82,9 @@ textarea {
     border: 2px solid rgb(52, 216, 147);
 }
 h1{
+    margin-right: 50px;
     font-size: 60px;
+    margin-top: 70px;
 }
 html{
     height: 900px;

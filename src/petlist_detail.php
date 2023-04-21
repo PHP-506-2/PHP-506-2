@@ -32,8 +32,8 @@
 <div class = "petlist_main_border">
         <?php include_once( URL_HEADER ); ?>
     
-    <div class = "petlist_contents_container" >
         <h1><?php pet_list_print_pet_name() ?></h1><br><br>
+    <div class = "petlist_contents_container" >
         
         <div class="pettodobutton dday">
         <?php

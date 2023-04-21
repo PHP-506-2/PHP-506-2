@@ -65,12 +65,8 @@ if( $http_method === "GET")
         <div class="petlist_main_border">
             <? include_once( URL_HEADER ); ?>
             
-            <div class="petlist_contents_container">
-                    <?php 
-                    include_once 'pet_profile_bar.php';
-                    ?>
             <h1><?php pet_list_print_pet_name() ?></h1><br><br>
-            
+            <div class="petlist_contents_container">
                 <div class="update_form">
                     <form class="update_form_put" method="post" action="petlist_update.php">
                         <div class="upput"> 
