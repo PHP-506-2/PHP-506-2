@@ -22,7 +22,7 @@
     // 페이징 기능을 위한 쿼리--------------------------------------------
         $arr_get = $_GET;
         
-        $limit_num = 5;
+        $limit_num = 8;
         
         // list 테이블 전체 카운트 획득
         $listallcnt = pet_list_listcnt();
