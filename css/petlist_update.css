@@ -42,7 +42,9 @@ a {
 }
 .btn_wrap
 {
-    margin-top: 10px;
+        display: inline-block;
+        margin-top: 78px;
+        margin-left: 80px;
 }
 button {
     font-size : 18px;

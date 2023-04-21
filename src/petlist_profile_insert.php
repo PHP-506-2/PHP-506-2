@@ -42,7 +42,7 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
 <body>
     <div class="petlist_main_border">
         <? include_once( URL_HEADER ); ?>
-        <div class="wrap_mian">
+        
             <div class="petlist_contents_container">
                 <?php 
                 include_once 'pet_profile_bar.php';
@@ -85,7 +85,7 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
                     <a class="petbutton" href="petlist_profile_img_delete.php">프로필 사진 지우기</a>
                 </form>
             </div>
-        </div>
+        
     </div>
 </body>
 </html>

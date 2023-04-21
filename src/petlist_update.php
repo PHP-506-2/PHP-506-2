@@ -96,7 +96,7 @@ if( $http_method === "GET")
                             <br>
                             <br>
                             <label class="contents" for="contents">내용 : </label>
-                            <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="70" rows="15"><?php echo $result_info['list_contents'] ?></textarea>
+                            <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="60" rows="12"><?php echo $result_info['list_contents'] ?></textarea>
                         </div>    
                         <div class="btn_wrap">
                             <button class="petbutton" type="submit" >
