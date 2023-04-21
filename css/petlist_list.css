@@ -5,10 +5,32 @@ a {
     text-decoration: none;
 }
 
-.petlist_list_insertpagebutton{
-    display: inline-block;
-    background-color: #D3E7DD;
+.petlist_main_border{
+    position: relative;
+}
+
+.petlist_item_container{
+    position: absolute;
+    /* top: 0; */
+    right: 0;
+    /* padding: 20px; */
+    background-color: aqua;
+    width: 80%;
     margin-right: 0;
+}
+
+.petlist_list_insertpagebutton{
+    width: 120px;
+    background-color: #D3E7DD;
+    padding: 10px;
+    margin-top: 0;
+    position:absolute ;
+    right: 0;
+    /* float: right; */
+    margin-right: 100px;
+    /* position: relative;
+    top: 0;
+    right: 0; */
 }
 .petlist_list_insertpagebutton:hover {
     color: #f190f5;
@@ -49,6 +71,9 @@ li {
 .list_cancel_line{
     text-decoration: line-through;
 }
-
+.check_img {
+    width: 25px;
+    height: 25px;
+}
 
 
