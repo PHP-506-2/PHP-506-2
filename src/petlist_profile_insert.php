@@ -78,12 +78,15 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
                         </a>
                     </div>
                 </form>
-                <form action="petlist_profile_insert.php" method="POST" enctype="multipart/form-data">
-                    <label for="profile_img">프로필 사진 선택</label>
-                    <input type="file" name="image" accept="image/*">
-                    <button class="petbutton a_btn" type="submit">프로필 사진 업로드</button>
-                    <a class="petbutton" href="petlist_profile_img_delete.php">프로필 사진 지우기</a>
-                </form>
+                <div class="picture">
+                    <form action="petlist_profile_insert.php" method="POST" enctype="multipart/form-data">
+                        <label for="profile_img">프로필 사진 선택 :</label>
+                        <input class="file" type="file" name="image" accept="image/*">
+                        <br>
+                        <button class="petbutton a_btn" type="submit">프로필 사진 업로드</button>
+                        <a class="petbutton a_btn" href="petlist_profile_img_delete.php">프로필 사진 지우기</a>
+                    </form>
+                </div>
             </div>
         
     </div>
