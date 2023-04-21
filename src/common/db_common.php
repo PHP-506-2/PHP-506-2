@@ -607,7 +607,7 @@ function pet_list_listcnt()
     return $result[0]['cnt'];
 }
 
-// --------------------------------- 0419 add 신유진 / 0420 add flgEndASC 신유진 / 0421 change 전반적 수정
+// --------------------------------- 0419 add 신유진 / 0420 add flgEndASC 신유진 / 0421 change 전반적 수정 / 0421 change 0420으로 롤백
 // 페이징 : 게시글 리스트에서 1페이지를 눌렀을때 1페이지 내용만, 2페이지를 눌렀을때 2페이지만 보여주는 것
 // 함수명	: pet_list_listpaging
 // 기능		: 게시글 페이지에 맞는 리스트갯수와 정렬되어진 값을 출력
@@ -690,17 +690,3 @@ function pet_list_print_pet_name() {
     $pet_info = pet_info();
     echo "<span class='petnametitle'>".mb_substr($pet_info['pet_name'],1,2)."</span>"."'s TO DO LIST";
 }
-
-// --------------------------------- 0421 add 신유진
-// 함수명	: pet_list_print_list
-// 기능		: 한개의 list 출력
-// 파라미터	: 없음		
-// 리턴값	: 없음
-//------------------------------------------------
-// function pet_list_print_list() {
-//     $pet_list_list = pet_list_list();
-//     echo
-//     " 체크박스 오는 부분 "
-//     
-//     ;
-// }

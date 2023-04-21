@@ -79,7 +79,7 @@
 <body>
     <div class="petlist_main_border">   <!-- common.css의 전체contents부분의 border 통일부분 -->
         <div class="petlist_profile_container">     <!-- 보기쉽게 프로필 부분을 묶음 -->
-            <? include_once( URL_HEADER ); ?>       
+            <? include_once( URL_HEADER ); ?>
             <?php
             include_once 'pet_profile_bar.php';     //프로필바 php 가져옴_회면의 좌측부분
             ?> 
@@ -91,16 +91,50 @@
             <!-- 리스트 아이템 -->
             <ul class="petlist_list_item_container">
                 <?php
-                    foreach ( $result_paging as $val ) {// $result_list = pet_list_list() 의 배열값을 $val로 가져와서 배열값만큼 돌림
+                    foreach ( $result_paging as $val ) {        // $result_list = pet_list_list() 의 배열값을 $val로 가져와서 배열값만큼 돌림
                 ?>
                 <li>
-                    <!-- 체크박스 이미지로 할지 체크박스 기능으로 할지 -->
+                <!-- 체크박스 이미지로 할지 체크박스 기능으로 할지 -->
                     <span class="todo_item checkbox">☆</span>
 
-                    <!-- 제목표시의 오류가 빈번함 -->
-                    <span class="todo_item title"><a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a></span>
-                    <!-- <button class="delBtn">x</button> -->
+                    <?php
+                // 리스트 마감임박 하이라이트(.list_highlight) : end날짜 정보를 불러와서 d-1 일때 ( = 오늘날짜 +1 = end날짜 일때 )
+                // 리스트 수행완료 취소선(.list_cancel_line) : $val["list_comp_flg"] === 2 인 진행 완료 리스트 취소선
+                        if ( $val["list_comp_flg"] === 2 ) //리스트 수행완료 취소선
+                        {
+                    ?>
+                            <span class="todo_item title list_cancel_line">
+                                <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
+                            </span>
+                    <?
+                        }
+                        else if ( substr($val['list_end'], 0 , 10 ) ===  date("Y-m-d", strtotime("+1 day", strtotime(date("Y-m-d"))))) //리스트 마감임박 하이라이트
+                        {.
+                    ?>
+                            <span class="todo_item title">
+                                <a class="list_highlight" href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
+                            </span>
+                    <?
+                        }
+                        else if ( $val["list_comp_flg"] === 3 ) //리스트 기간만료 취소선
+                        {
+                    ?>
+                            <span class="todo_item title list_cancel_line">
+                                <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
+                            </span>
+                    <?
+                        }
+                        else {
+                    ?>
 
+                <!-- 제목표시의 오류가 빈번함 -->
+                    <span class="todo_item title">
+                        <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
+                    </span>
+                    <!-- <button class="delBtn">x</button> -->
+                    <?
+                        }
+                    ?>
                 <!-- DAY-* 표시 -->
                     <span class="pettodobutton todo_item dday">
                         <?php

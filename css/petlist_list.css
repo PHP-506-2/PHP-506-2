@@ -1,5 +1,8 @@
 li{
-    list-style-type: none;
+    list-style: none;
+}
+a {
+    text-decoration: none;
 }
 
 .petlist_list_insertpagebutton{
@@ -34,6 +37,12 @@ ul {
 li {
     padding-top: 20px;
     font-size: 25px;
+}
+.list_highlight{
+    color: red;
+}
+.list_cancel_line{
+    text-decoration: line-through;
 }
 
 
