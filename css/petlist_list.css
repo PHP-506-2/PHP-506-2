@@ -61,8 +61,14 @@ li {
     padding-top: 20px;
     font-size: 25px;
 }
+li a:visited{
+    text-decoration: none;
+}
+li a:link{
+    color: black;
+}
 .list_highlight{
-    color: red;
+    color: red !important; 
 }
 .list_highlight:hover{
     text-shadow: 3px 2px 2px rgba(128, 128, 128, 0.5);
