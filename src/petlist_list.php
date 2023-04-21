@@ -84,8 +84,10 @@
             include_once 'pet_profile_bar.php';     //프로필바 php 가져옴_회면의 좌측부분
             ?> 
         </div>
+        
+        <h1><?pet_list_print_pet_name()?></h1>      <!-- 사용자 지정 이름으로 변경가능한 반려동물 이름함수 사용 -->
+
         <div class="petlist_contents_container">
-            <h1><?pet_list_print_pet_name()?></h1>      <!-- 사용자 지정 이름으로 변경가능한 반려동물 이름함수 사용 -->
             <a class="petlist_list_insertpagebutton" href="petlist_insert.php">+ 새로 작성하기</a>
 
             <!-- 리스트 아이템 -->
