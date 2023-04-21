@@ -349,6 +349,7 @@ function pet_list_update( &$param_arr )
         ." , list_end = :list_end "
         ." , list_location = :list_location "
         ." , list_contents = :list_contents "
+        ." , list_comp_flg = :list_comp_flg "
         ." WHERE "
         ." list_no = :list_no "
         ;
@@ -362,6 +363,7 @@ function pet_list_update( &$param_arr )
             ,":list_location" => $param_arr["list_location"]
             ,":list_contents" => $param_arr["list_contents"]
             ,":list_no" => $param_arr["list_no"]
+            ,":list_comp_flg" => $param_arr["list_comp_flg"]
         );
 
     $conn = null;        

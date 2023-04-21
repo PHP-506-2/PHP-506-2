@@ -30,6 +30,7 @@ if( $http_method === "GET")
             ,"list_end" => $arr_post["list_end"]
             ,"list_location" => $arr_post["list_location"]
             ,"list_contents" => $arr_post["list_contents"]
+            ,"list_comp_flg" => $arr_post["list_comp_flg"]
         );
         
         
@@ -70,7 +71,7 @@ if( $http_method === "GET")
                 <div class="update_form">
                     <form class="update_form_put" method="post" action="petlist_update.php">
                         <div class="upput"> 
-                            <select name="select" id="select">
+                            <select name="list_comp_flg" id="select">
                                 <option value="0" selected>진행예정</option>
                                 <option value="1">진행중</option>
                                 <option value="2">진행완료</option>
