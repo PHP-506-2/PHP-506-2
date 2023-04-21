@@ -86,7 +86,7 @@
         <div class="div_lk_1">
             <div class="lk_1">
             <a class="btn_1" href="petlist_comp.php?list_no=<?php echo $arr_prepare["list_no"] ?>">진행 완료</a> <!-- 0419 udt 이동호 -->
-            <a class="btn_1" href="petlist_update.php?list_no=<?php echo $arr_prepare["list_no"] ?>">수정하기</a> <!-- 0419 udt 이동호 -->
+            <a class="btn_1" href="petlist_update.php?list_no=<?php echo $arr_prepare["list_no"] ?>">수정 하기</a> <!-- 0419 udt 이동호 -->
             <a class="btn_1" href="petlist_list.php">리스트</a>
             </div>
         </div>

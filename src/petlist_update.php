@@ -75,7 +75,6 @@ if( $http_method === "GET")
                                 <option value="0" selected>진행예정</option>
                                 <option value="1">진행중</option>
                                 <option value="2">진행완료</option>
-                                <option value="3">진행실패</option>
                             </select>
                             <input type="hidden" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
                             <br> 
@@ -101,10 +100,10 @@ if( $http_method === "GET")
                         </div>    
                         <div class="btn_wrap">
                             <button class="petbutton" type="submit" >
-                                수정
+                                수정 완료
                             </button>
                             <a class="petbutton margin_right" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
-                                삭제
+                                삭제 하기
                             </a>
                             <a class="petbutton" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>
                                 취소

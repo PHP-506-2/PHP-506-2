@@ -68,8 +68,8 @@
                 </div>
                 <br>
                 <div class="del_btns"> <!-- 버튼 -->
-                    <a class="petbutton" href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">취소</a>
-                    <a class="petbutton" href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제</a>
+                    <a class="petbutton" href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">취소 하기</a>
+                    <a class="petbutton" href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제 완료</a>
                 </div>
             </div>
         </div>

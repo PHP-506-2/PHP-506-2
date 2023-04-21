@@ -9,7 +9,7 @@
         $arr_post = $_POST;
         pet_list_insert( $arr_post );
         $list_no = pet_list_listno_inquiry();
-        header( "Location: petlist_detail.php?list_no=$list_no" ); 
+        header( "Location: petlist_detail.php?list_no=$list_no" ); // 작성완료 후, 상세 페이지로 이동
         exit();
     }
     // -------------------------------------------------------
@@ -43,7 +43,6 @@
                     <option value="0">진행 예정</option>
                     <option value="1">진행 중</option>
                     <option value="2">진행 완료</option>
-                    <option value="3">기간 만료</option>
                 </select>
                 <br>
                 <label class="label_title" for="title">제목 : </label>
@@ -62,8 +61,8 @@
                 <textarea class="input_contents contents_1" maxlength="250" name="list_contents" id="contents" placeholder="내용을 입력하세요." required cols="70" rows="15"></textarea>
                 <br>
                 <div class="insert_btns">
-                    <button type="submit" title="작성" class="petbutton"><a class="submit_btn">작성</button>
-                    <a class="petbutton" href="petlist_list.php">취소</a>
+                    <button type="submit" title="작성" class="petbutton"><a class="submit_btn">작성 하기</button>
+                    <a class="petbutton" href="petlist_list.php">취소 하기</a>
                 </div>
             </form>
         </div>
