@@ -169,13 +169,9 @@
                             {
                                 echo "진행 중";
                             }
-                            else if ( $val["list_comp_flg"] === 2 )
+                            else
                             {
                                 echo "진행 완료";
-                            }
-                            else if ( $val["list_comp_flg"] === 3 )
-                            {
-                                echo "기간 만료";
                             }
                             ?>
                     </span>
