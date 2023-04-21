@@ -41,10 +41,12 @@
 }
 .petlist_main_border {
     width : 100em;
-    height : 60em;
-    margin: 10px auto;
+    height : 55em;
+    margin: 30px auto;
     border: 1px solid #000;
     border-radius: 50px;
+    /* position: relative;
+    top: 30px; */
 }
 .petlist_contents_container {
     display: inline-block;
@@ -81,4 +83,7 @@ textarea {
 }
 h1{
     font-size: 60px;
+}
+html{
+    height: 900px;
 }

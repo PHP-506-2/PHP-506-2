@@ -13,7 +13,7 @@
     font-family: 'Cafe24Danjunghae';
     background-color: #f9f9f400;
     width: 320px;
-    height : 60em;
+    height : 50em;
     float: left;
     margin-right: 50px;
     /* border-right: 1px solid #ccc; */
@@ -22,9 +22,9 @@
     content: '';
     position : absolute;
     width: 20px;
-    height : 55em;
+    height : 50em;
     left: 300px;
-    top : 3em;
+    top : 2.6em;
     border-right: 1px solid rgba(204, 204, 204, 0.568);
     display: inline-block;
 }
