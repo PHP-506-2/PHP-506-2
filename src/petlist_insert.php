@@ -61,7 +61,7 @@
                 <textarea class="input_contents contents_1" maxlength="250" name="list_contents" id="contents" placeholder="내용을 입력하세요." required cols="70" rows="15"></textarea>
                 <br>
                 <div class="insert_btns">
-                    <button type="submit" title="작성" class="petbutton"><a class="submit_btn">작성 하기</button>
+                    <button type="submit" title="작성" class="petbutton" style="cursor : pointer;"><a class="submit_btn">작성 하기</button>
                     <a class="petbutton" href="petlist_list.php">취소 하기</a>
                 </div>
             </form>
