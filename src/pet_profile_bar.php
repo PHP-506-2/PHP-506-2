@@ -41,6 +41,8 @@
                         
                     </a>
                 </div>
+                <p>프로필 수정은 프로필사진을 클릭해 주세요</p>
+                <br>
                 <div class="profile_con">
                     <p class = "p_1" >이름 : <?php echo $pet_information["pet_name"]; ?> </p>
                     <p class = "p_1" >입양일 : <?php echo $pet_information["pet_birth"]; ?> </p>
