@@ -7,7 +7,7 @@
     // $result = petlist_detail( $arr_prepare["list_no"]);
 
     $arr_get = $_GET; // 0419 add 이동호
-    $list_no = $arr_get['list_no'];
+    // $list_no = $arr_get['list_no']; //0424 del 최혁재
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +37,8 @@
         
         <div class="pettodobutton dday">
             <?php
-            $arr_prepare = array("list_no" => $list_no); // 0419 udt 이동호
-            $result = petlist_detail( $arr_prepare["list_no"]);
+            // $arr_prepare = array("list_no" => $list_no); // 0419 udt 이동호 // 0424 del 최혁재
+            $result = petlist_detail($arr_get['list_no']); //0424 udt 최혁재
         
             // substr( string, start [, length ] )
             $end_date = substr($result['list_end'], 0 , 10 );
@@ -85,8 +85,8 @@
         <div> <label class="er1" for="er1">내용 :</label> <textarea class="input_1" id="er1" readonly cols="48" rows="15"><?php echo $result["list_contents"]?></textarea> </div> <br>
         <div class="div_lk_1">
             <div class="lk_1">
-            <a class="btn_1" href="petlist_comp.php?list_no=<?php echo $arr_prepare["list_no"] ?>">진행 완료</a> <!-- 0419 udt 이동호 -->
-            <a class="btn_1" href="petlist_update.php?list_no=<?php echo $arr_prepare["list_no"] ?>">수정 하기</a> <!-- 0419 udt 이동호 -->
+            <a class="btn_1" href="petlist_comp.php?list_no=<?php echo $arr_get['list_no'] ?>">진행 완료</a> <!-- 0419 udt 이동호 --> <!-- 0424 udt 최혁재 -->
+            <a class="btn_1" href="petlist_update.php?list_no=<?php echo $arr_get['list_no']?>">수정 하기</a> <!-- 0419 udt 이동호 --> <!-- 0424 udt 최혁재 -->
             <a class="btn_1" href="petlist_list.php">리스트</a>
             </div>
         </div>
