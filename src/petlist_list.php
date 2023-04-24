@@ -80,12 +80,10 @@
     <div class="petlist_main_border">   <!-- common.css의 전체contents부분의 border 통일부분 -->
         <div class="petlist_profile_container">     <!-- 보기쉽게 프로필 부분을 묶음 -->
             <? include_once( URL_HEADER ); ?>
-            <?php
-            include_once 'pet_profile_bar.php';     //프로필바 php 가져옴_회면의 좌측부분
-            ?> 
+            <? include_once 'pet_profile_bar.php'; ?>     <!--프로필바 php 가져옴_회면의 좌측부분 -->
         </div>
         
-        <h1><?pet_list_print_pet_name()?></h1>      <!-- 사용자 지정 이름으로 변경가능한 반려동물 이름함수 사용 -->
+        <h1><? pet_list_print_pet_name() ?></h1>      <!-- 사용자 지정 이름으로 변경가능한 반려동물 이름함수 사용 -->
 
         <div class="petlist_contents_container">
             <a class="petlist_list_insertpagebutton" href="petlist_insert.php">+ 새로 작성하기</a>
@@ -95,130 +93,119 @@
                 <?php
                     foreach ( $result_paging as $val ) {        // $result_list = pet_list_list() 의 배열값을 $val로 가져와서 배열값만큼 돌림
                 ?>
-                <li>
-                <!-- 체크박스 이미지로 할지 체크박스 기능으로 할지 -->
-                <?
-                    if ( $val["list_comp_flg"] === 0 || $val["list_comp_flg"] === 1 ) 
-                    {
-                ?>
-                        <img src="../img/checkbox.png" alt="no_checked" class="check_img">
-                <?
-                    }
-                    else {
-                ?>
-                        <img src="../img/checkbox_check.png" alt="checked" class="check_img">
-                <?
-                    }
-                ?>
-                    <?php
-                // 리스트 마감임박 하이라이트(.list_highlight) : end날짜 정보를 불러와서 d-1 일때 ( = 오늘날짜 +1 = end날짜 일때 )
-                // 리스트 수행완료 취소선(.list_cancel_line) : $val["list_comp_flg"] === 2 인 진행 완료 리스트 취소선
-                        if ( $val["list_comp_flg"] === 2 ) //리스트 수행완료 취소선
-                        {
-                    ?>
+
+                    <li>
+                    <!-- 체크박스 이미지 -->
+                        <?
+                            if ( $val["list_comp_flg"] === 0 || $val["list_comp_flg"] === 1 ) 
+                            {
+                        ?>
+                            <img src="../img/checkbox.png" alt="no_checked" class="check_img">
+                        <?
+                            }
+                            else {
+                        ?>
+                            <img src="../img/checkbox_check.png" alt="checked" class="check_img">
+                        <?
+                            }
+                        ?>
+
+                        <?php
+                    // 리스트 마감임박 하이라이트(.list_highlight) : end날짜 정보를 불러와서 d-1 일때 ( = 오늘날짜 +1 = end날짜 일때 )
+                    // 리스트 수행완료 취소선(.list_cancel_line) : $val["list_comp_flg"] === 2 인 진행 완료 리스트 취소선
+                            if ( $val["list_comp_flg"] === 2 ) //리스트 수행완료 취소선
+                            {
+                        ?>
                             <span class="todo_item title list_cancel_line">
                                 <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
                             </span>
-                    <?
-                        }
-                        else if ( substr($val['list_end'], 0 , 10 ) ===  date("Y-m-d", strtotime("+1 day", strtotime(date("Y-m-d"))))) //리스트 마감임박 하이라이트
-                        {
-                    ?>
+                        <?
+                            }
+                            else if ( substr($val['list_end'], 0 , 10 ) ===  date("Y-m-d", strtotime("+1 day", strtotime(date("Y-m-d"))))) //리스트 마감임박 하이라이트
+                            {
+                        ?>
                             <span class="todo_item title">
                                 <a class="list_highlight" href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
                             </span>
-                    <?
-                        }
-                        else if ( $val["list_comp_flg"] === 3 ) //리스트 기간만료 취소선
-                        {
-                    ?>
+                        <?
+                            }
+                            else if ( $val["list_comp_flg"] === 3 ) //리스트 기간만료 취소선
+                            {
+                        ?>
                             <span class="todo_item title list_cancel_line">
                                 <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
                             </span>
-                    <?
-                        }
-                        else {
-                    ?>
-
-                <!-- 제목표시의 오류가 빈번함 -->
-                    <span class="todo_item title">
-                        <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
-                    </span>
-                    <!-- <button class="delBtn">x</button> -->
-                    <?
-                        }
-                    ?>
-                <!-- DAY-* 표시 -->
-                    <span class="pettodobutton todo_item dday">
-                        <?php
-                        // substr( string, start [, length ] )
-                        $end_date = substr($val['list_end'], 0 , 10 );
-                        $to_date = date("Y-m-d");
-                        if ( $end_date < $to_date ) 
-                        {
-                            $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400);
-                            echo "DAY + ".mb_substr($ddy, 1);
-                        } 
-                        else if ( $end_date === $to_date ) 
-                        {
-                            echo  "D - Day";
-                        } 
-                        else 
-                        {
-                            $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400;
-                            echo "DAY - ".$ddy;
-                        }
+                        <?
+                            }
+                            else {
                         ?>
-                    </span>
 
-                <!-- 진행상황표시 -->
-                    <span class="pettodobutton todo_item progress">
-                        <?php 
-                            if ( $val["list_comp_flg"] === 0 )
-                            {
-                                echo "진행 예정";
+                    <!-- 제목표시 -->
+                        <span class="todo_item title">
+                            <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
+                        </span>
+                        <?
                             }
-                            else if ( $val["list_comp_flg"] === 1 )
+                        ?>
+                    <!-- DAY-* 표시 -->
+                        <span class="pettodobutton todo_item dday">
+                            <?php
+                            $end_date = substr($val['list_end'], 0 , 10 );
+                            $to_date = date("Y-m-d");
+                            if ( $end_date < $to_date ) 
                             {
-                                echo "진행 중";
-                            }
-                            else
+                                $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400);
+                                echo "DAY + ".mb_substr($ddy, 1);
+                            } 
+                            else if ( $end_date === $to_date ) 
                             {
-                                echo "진행 완료";
+                                echo  "D - Day";
+                            } 
+                            else 
+                            {
+                                $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400;
+                                echo "DAY - ".$ddy;
                             }
                             ?>
-                    </span>
-                </li>
+                        </span>
+
+                    <!-- 진행상황표시 -->
+                        <span class="pettodobutton todo_item progress">
+                            <?php 
+                                if ( $val["list_comp_flg"] === 0 )
+                                {
+                                    echo "진행 예정";
+                                }
+                                else if ( $val["list_comp_flg"] === 1 )
+                                {
+                                    echo "진행 중";
+                                }
+                                else
+                                {
+                                    echo "진행 완료";
+                                }
+                                ?>
+                        </span>
+                    </li>
                 <?php
-                    }
+                    } //foreach close
                 ?>
             </ul>
             
         <!-- 페이징 번호 -->
-            <div class="petlist_list_bottom">
-            <!-- ◀ 앞페이지로 -->
-            <!-- <div class="page_bar back">
-                <?php
-                    //if ( $page_num > 1 ) {
-                ?>
-                    
-                <?php
-                    //}
-                ?>
-            </div> -->
-
+        <div class="petlist_list_bottom">
             <div class="paging_bar">
                 <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo 1 ?> '>
-                            <?php echo "처음으로" ?> 
+                    <?php echo "처음으로" ?> 
                 <?php 
                 if ($page_num > 1)
                 {
                     ?>
-                <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $page_num - 1?> '>
+                <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $page_num - 1 ?> '>
                 <?php echo "앞으로"?> 
                 </a>
                 <?php
-                }else{?>
+                } else{ ?>
                     <a class="paging_bar paging_number hidden " href='petlist_list.php?page_num=<?php echo $page_num + 1?> '>
                     <?php echo "앞으로"?> 
                     </a><?php
@@ -251,33 +238,8 @@
                 ?>
                 <a class="paging_bar paging_number" href='petlist_list.php?page_num=<?php echo $max_page_num ?> '>
                 <?php echo "마지막으로" ?> 
-            </div>
-
-            <!-- ▶ 뒷페이지로 -->
-            <!-- <div class="page_bar back">
-                <?php
-                    //if ( $page_num > 1 ) {
-                ?>
-                    
-                <?php
-                    //}
-                ?>
-            </div> -->
-        </div>
-        <!-- class petlist_contents_container 부분마침 -->
-    </div>
-    <!-- class petlist_main_border 부분마침 -->
-
-    <!-- <p>test</p> -->
-    <!-- <ul>
-        <li> -->
-            <?
-            // foreach ($result_pet_list_list as $value) {
-            //     pet_list_print_list()
-            // };
-            
-            ?>
-        <!-- </li>
-    </ul> -->
+            </div>    <!-- class petlist_list_bottom 부분마침  -->
+        </div>        <!-- class petlist_contents_container 부분마침 -->
+    </div>            <!-- class petlist_main_border 부분마침 -->
 </body>
 </html>
