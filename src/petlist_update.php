@@ -9,7 +9,7 @@ $list_no = $arr_get['list_no'];
 
 if( $http_method === "GET")
 {
-    // $list_no = 1;
+    $list_no = 1;
     if ( array_key_exists( "list_no", $_GET ) ) 
     {
         $list_no = $_GET["list_no"];
