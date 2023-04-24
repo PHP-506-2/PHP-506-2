@@ -9,7 +9,7 @@ $list_no = $arr_get['list_no'];
 
 if( $http_method === "GET")
 {
-    $list_no = 1;
+    // $list_no = 1;
     if ( array_key_exists( "list_no", $_GET ) ) 
     {
         $list_no = $_GET["list_no"];
@@ -38,9 +38,9 @@ if( $http_method === "GET")
         header( "Location: petlist_detail.php?list_no=".$arr_post["list_no"] );
         exit();
     }
-    // pet정보 테이블 전체 정보 획득
-    $a = 1; //함수가 pet_info( &$param_arr )라서 pet_no = 1의 값을 가져오기 위해
-    $result_pet_info = pet_info( $a ); //숫자 넣으면 error
+    // // pet정보 테이블 전체 정보 획득
+    // $a = 1; //함수가 pet_info( &$param_arr )라서 pet_no = 1의 값을 가져오기 위해
+    // $result_pet_info = pet_info( $a ); //숫자 넣으면 error
     
     
     ?>
