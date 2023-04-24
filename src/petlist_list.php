@@ -5,7 +5,7 @@
     // include_once( "C:/Apache24/htdocs/PHP-506-2-2/src/common/db_common.php" );
     
     // list 테이블 전체 정보 획득
-    $result_pet_list_list = pet_list_list();   //0420 del_$result_paging랑 중복 필요없음!! 
+    // $result_pet_list_list = pet_list_list();   //0420 del_$result_paging랑 중복 필요없음!! 
     // var_dump(pet_list_list());
     
     // pet정보 테이블 전체 정보 획득
