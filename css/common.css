@@ -65,6 +65,7 @@ textarea {
     border-radius: 5px;
     color: rgb(41, 226, 134);
     padding: 10px;
+    cursor : pointer;
 }
 .petbutton:hover {
     color: #f190f5;
