@@ -148,6 +148,8 @@
                             }
                         ?>
                     <!-- DAY-* 표시 -->
+                    <? if ( $val["list_comp_flg"] != 2 ) { // 진행 완료 시 D - Day 표시 삭제
+                    ?>
                         <span class="pettodobutton todo_item dday">
                             <?php
                             $end_date = substr($val['list_end'], 0 , 10 );
@@ -168,6 +170,9 @@
                             }
                             ?>
                         </span>
+                    <?
+                        }
+                    ?>
 
                     <!-- 진행상황표시 -->
                         <span class="pettodobutton todo_item progress">
