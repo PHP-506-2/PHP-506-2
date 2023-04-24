@@ -12,7 +12,7 @@
             <div class = "v-line"></div>
             <a class="home" href="petlist_list.php"> <img src="../img/pet.png" alt=""></a>
             <div class ="sp_1">
-            <p class="day">
+                <p class="day">
                 <?php 
                     $end_date = $ee["pet_birth"];
                     $to_date = date("Y-m-d");
@@ -28,14 +28,18 @@
                     }
                 ?>
                 </p>
-                <progress id="progress" value="<? echo round($chinmildo) ?>" max="100"></progress>
-                <p class="per"><? echo round($chinmildo)."%" ?></p>
+                <progress id="progress" value="<? echo round($dog_love_percent) ?>" max="100"></progress>
+                <p class="per"><? echo round($dog_love_percent)."%" ?></p>
                 <p>♥<?php echo $ee["pet_name"]; ?>하고의 친밀도♥</p>
             </div>
 
             <div class="profile_main">
                 <div class="profile_img">
-                <a href="petlist_profile_insert.php"><?php if (file_exists('../img/profile_img.jpg')) { ?><img class="two" src="../img/profile_img.jpg" alt="profile image"><?php } else { ?><img class="two" src="../img/default_profile_img.jpg" alt="default profile image"><?php } ?></a>
+                    <a href="petlist_profile_insert.php">
+                    <?php if (file_exists('../img/profile_img.jpg')) { ?><img class="two" src="../img/profile_img.jpg" alt="profile image"><?php } 
+                        else { ?><img class="two" src="../img/default_profile_img.jpg" alt="default profile image"><?php } ?>
+                        
+                    </a>
                 </div>
                 <div class="profile_con">
                     <p class = "p_1" >이름 : <?php echo $ee["pet_name"]; ?> </p>

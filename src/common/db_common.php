@@ -231,7 +231,8 @@ if(empty($all_count))
 //     $comp_count = 1;
 // }
 
-$chinmildo =  ($comp_count/$all_count)*100;
+//(진행완료 / 전체리스트)*100 소수첫째자리 반올림해서 퍼센트 구해서 $dog_love_percent 에 저장
+$dog_love_percent =  ($comp_count/$all_count)*100;
 
 
 //------------------------------------------------ 최혁재
