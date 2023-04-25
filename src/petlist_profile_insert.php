@@ -43,11 +43,7 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
     <div class="petlist_main_border">
         <? include_once( URL_HEADER ); ?>
         
-            <div class="petlist_contents_container">
-                <?php 
-                include_once 'pet_profile_bar.php';
-                ?>
-            </div>
+
         
             <div class="profile_insert_form">
                 <h1>PET PROFILE</h1>
