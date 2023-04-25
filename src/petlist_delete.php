@@ -1,12 +1,13 @@
 <?php
-    include_once( "./common/define.php" );
-    include_once( URL_DB );
 
-    $arr_get = $_GET; // 0419 add 이동호
-    $list_no = $arr_get['list_no'];
-    $result = petlist_detail( $arr_get['list_no'] );
+include_once( "./common/define.php" );
+include_once( URL_DB );
+
+$arr_get = $_GET; // 0419 add 이동호
+$result = petlist_detail( $arr_get['list_no'] ); // 삭제할 글 정보 출력
 
 ?>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -25,15 +26,19 @@
 </head>
 <body>
     <div class="petlist_main_border">
-        <?include_once( URL_HEADER );?>
+        <?include_once( URL_HEADER );?> <!-- 헤더 -->
         <div>
-            <h1><?php pet_list_print_pet_name() ?></h1><br><br>
+            <h1><?php pet_list_print_pet_name() ?></h1> <!-- 반려동물 이름' to do list 출력 -->
+            <br>
+            <br>
             <div class="container petlist_contents_container"> <!-- 내용 출력 -->
             <br>
                 <div class="pettodobutton dday">
-                    <?php d_day_count( $result["list_end"] ) ?>
+                    <?php d_day_count( $result["list_end"] ) ?> <!-- D - day 출력 -->
                 </div>
-                <span class="pettodobutton progress"><?php progress( $result ) ?></span>
+                <span class="pettodobutton progress">
+                    <?php progress( $result ) ?> <!-- 진행상황 출력 -->
+                </span>
                 <br>
                 <br>
                 <div>제목 : <?php echo $result["list_title"] ?></div>
@@ -47,12 +52,12 @@
                 <div>내용 : <?php echo $result["list_contents"] ?></div>
                 <br>
                 <div class="del_btns"> 
-                <div> <!-- 경고 메세지 -->
-                    정보를 완전히 삭제합니다.
-                    <br>
-                    동의 하시면 삭제를 눌러주세요.
-                </div>
-                <br> <!-- 버튼 -->
+                    <p> <!-- 경고 메세지 -->
+                        정보를 완전히 삭제합니다.
+                        <br>
+                        동의 하시면 삭제를 눌러주세요.
+                    </p>
+                    <br> <!-- 버튼 -->
                     <a class="petbutton" href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">취소 하기</a>
                     <a class="petbutton" href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제 완료</a>
                 </div>

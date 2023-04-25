@@ -15,9 +15,10 @@ if ( $http_method === "POST" && isset($_FILES["image"]) === false ) {
 }
 
 // 이미지 업로드
+// 반려동물 정보입력과 프로필 이미지 업로드가 모두 POST방식이기 때문에, 구분 지어주기위한 조건문
 if ($http_method === "POST" && isset($_FILES["image"])) {
-    $image_path = "../img/profile_img.jpg";
-    move_uploaded_file($_FILES["image"]["tmp_name"], $image_path);
+    $image_path = "../img/profile_img.jpg"; // 이미지 경로 지정
+    move_uploaded_file($_FILES["image"]["tmp_name"], $image_path); // 사용자가 업로드한 이미지파일을 지정한 이미지 경로에 복사
 }
 
 
@@ -72,11 +73,14 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
                     </div>
                 </form>
                 <div class="picture"> <!-- 사진 폼 DIV -->
+                    <!-- enctype="multipart/form-data" : 주로 파일이나 이미지를 전송할때 사용, 모든 문자를 인코딩(코드화) 하지않음, 인코딩 한다면 디코딩 처리를 따로 해줘야함 -->
                     <form action="petlist_profile_insert.php" method="POST" enctype="multipart/form-data">
                         <label for="profile_img">프로필 사진 선택 :</label>
+                        <!-- accept="image/*" : 이미지 파일(.jpg, .png, ...)만 선택 가능하게 설정 -->
                         <input class="file" type="file" name="image" accept="image/*">
                         <br>
                         <button class="petbutton a_btn" type="submit">프로필 사진 업로드</button>
+                        <!-- petlist_profile_img_delete.php을 실행하게 설정함 -->
                         <a class="petbutton a_btn" href="petlist_profile_img_delete.php">프로필 사진 지우기</a>
                     </form>
                 </div>
