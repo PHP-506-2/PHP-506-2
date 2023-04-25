@@ -41,41 +41,13 @@
             $result = petlist_detail($arr_get['list_no']); //0424 udt 최혁재 // $result에  $arr_get['list_no']가 포함된 디테일 정보 저장
         
             // substr( string, start [, length ] )
-            $end_date = substr($result['list_end'], 0 , 10 ); //$end_date 에다가 $result['list_end']를 불러와서 10번째 자리까지 저장
-            $to_date = date("Y-m-d"); //현재날짜를 $to_date에 저장
             
-            if ( $end_date < $to_date ) 
-            {
-                $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400);
-                echo "  DAY + ".$ddy ; // 
-            } 
-            else if ( $end_date === $to_date ) 
-            {
-                echo  "  D - Day";
-            } 
-            else 
-            {
-                $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400;
-                echo "  DAY - ".$ddy;
-            }
+            d_day_count( $result["list_end"] )
         ?>
         </div>
 
         <div class="pettodobutton progress">
-        <?php
-            if ( $result["list_comp_flg"] === 0 )
-            {
-                echo "진행 예정  ";
-            }
-            else if ( $result["list_comp_flg"] === 1 )
-            {
-                echo "진행 중  ";
-            }
-            else
-            {
-                echo "진행 완료  ";
-            }
-            ?>
+        <?php progress( $result ) ?>
         </div>
         
         <br>

@@ -702,3 +702,41 @@ function pet_list_print_pet_name() {
     $pet_info = pet_info();
     echo "<span class='petnametitle'>".mb_substr($pet_info['pet_name'],1,2)."</span>"."'s TO DO LIST";
 }
+// --------------------------------- 0425 add 이동호
+// 함수명	: d_day_count
+// 기능		: D - day 출력
+// 파라미터	: String            $param		
+// 리턴값	: 없음
+//------------------------------------------------
+function d_day_count( $param ) {
+    $end_date = substr( $param, 0 , 10 ); 
+    $to_date = date("Y-m-d"); 
+    if ( $end_date < $to_date ) { 
+        $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); echo "DAY + ".$ddy; 
+        } else if ( $end_date === $to_date ) { 
+            echo  "D - Day"; 
+        } else { 
+            $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400; echo "DAY - ".$ddy; 
+        }
+}
+// --------------------------------- 0425 add 이동호
+// 함수명	: progress
+// 기능		: 진행상황 출력
+// 파라미터	: Array                   $param_arr		
+// 리턴값	: 없음
+//------------------------------------------------
+function progress( $param_arr ) {
+    if ( $param_arr["list_comp_flg"] === 0 )
+    {
+        echo "진행 예정  ";
+    }
+    else if ( $param_arr["list_comp_flg"] === 1 )
+    {
+        echo "진행 중  ";
+    }
+    else
+    {
+        echo "진행 완료  ";
+    }
+}
+?>
