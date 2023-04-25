@@ -38,11 +38,6 @@ if( $http_method === "GET")
         header( "Location: petlist_detail.php?list_no=".$arr_post["list_no"] );
         exit();
     }
-    // // pet정보 테이블 전체 정보 획득
-    // $a = 1; //함수가 pet_info( &$param_arr )라서 pet_no = 1의 값을 가져오기 위해
-    // $result_pet_info = pet_info( $a ); //숫자 넣으면 error
-    
-    
     ?>
 <!DOCTYPE html>
 <html lang="ko">

@@ -4,7 +4,6 @@
     include_once( URL_DB );
 
     $pet_information = pet_info() ; // 최신 펫 정보목록을 $pet_information에 저장
-    usleep(20000);
 ?>
 
     <div class="wrap">
@@ -28,9 +27,14 @@
             <div class="profile_main">
                 <div class="profile_img">
                     <a href="petlist_profile_insert.php">
-                    <?php if (file_exists('../img/profile_img.jpg')) { ?><img class="two" src="../img/profile_img.jpg" alt="profile image"><?php } 
-                        else { ?><img class="two" src="../img/default_profile_img.jpg" alt="default profile image"><?php } ?>
-                        
+                    <?php 
+                        if (file_exists('../img/profile_img.jpg')) { ?>
+                            <img class="two" src="../img/profile_img.jpg" alt="profile image">
+                    <?php } 
+                        else { ?>
+                            <img class="two" src="../img/default_profile_img.jpg" alt="default profile image">
+                    <?php } 
+                    ?>    
                     </a>
                 </div>
                 <p>프로필 수정은 프로필사진을 클릭해 주세요</p>

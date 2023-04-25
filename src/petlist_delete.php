@@ -29,7 +29,16 @@
             <h1><?php pet_list_print_pet_name() ?></h1><br><br>
             <div class="container petlist_contents_container"> <!-- 내용 출력 -->
             <br>
-                <div class="pettodobutton dday"><?php $end_date = substr( $result["list_end"], 0 , 10 ); $to_date = date("Y-m-d"); if ( $end_date < $to_date ) { $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); echo "DAY + ".$ddy; } else if ( $end_date === $to_date ) { echo  "D - Day"; } else { $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400; echo "DAY - ".$ddy; } ?>
+                <div class="pettodobutton dday">
+                    <?php 
+                        $end_date = substr( $result["list_end"], 0 , 10 ); $to_date = date("Y-m-d"); 
+                        if ( $end_date < $to_date ) { 
+                            $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); echo "DAY + ".$ddy; 
+                            } else if ( $end_date === $to_date ) { 
+                                echo  "D - Day"; 
+                            } else { 
+                                $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400; echo "DAY - ".$ddy; 
+                            } ?>
                 </div>
                 <span class="pettodobutton progress"><?php if ( $result["list_comp_flg"] === 0 ) { echo "진행 예정"; } else if ( $result["list_comp_flg"] === 1 ) { echo "진행 중"; } else { echo "진행 완료"; }  ?></span>
                 <br>
