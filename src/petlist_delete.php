@@ -1,28 +1,10 @@
 <?php
     include_once( "./common/define.php" );
     include_once( URL_DB );
-    // include_once( URL_HEADER );
 
     $arr_get = $_GET; // 0419 add 이동호
     $list_no = $arr_get['list_no'];
     $result = petlist_detail( $arr_get['list_no'] );
-    // if ( $result["list_comp_flg"] === 0 ) 
-    // {
-    //     echo "진행 예정";
-    // } 
-    // else if ( $result["list_comp_flg"] === 1 ) 
-    // {
-    //     echo "진행 중";
-    // } 
-    // else if ( $result["list_comp_flg"] === 2 ) 
-    // {
-    //     echo "진행 완료";
-    // } 
-    // else if ( $result["list_comp_flg"] === 3 ) 
-    // {
-    //     echo "기간 만료";
-    // } 
-
 ?>
 <!DOCTYPE html>
 <html lang="ko">

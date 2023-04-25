@@ -4,7 +4,6 @@
     
     $http_method = $_SERVER["REQUEST_METHOD"];
     
-    // -------------------------------------------------------
     if ( $http_method === "POST" ) {
         $arr_post = $_POST;
         pet_list_insert( $arr_post );
@@ -12,9 +11,7 @@
         header( "Location: petlist_detail.php?list_no=$list_no" ); // 작성완료 후, 상세 페이지로 이동
         exit();
     }
-    // -------------------------------------------------------
-
-    ?>
+?>
 
 <!DOCTYPE html>
 <html lang="ko">
