@@ -702,6 +702,7 @@ function pet_list_print_pet_name() {
     $pet_info = pet_info();
     echo "<span class='petnametitle'>".mb_substr($pet_info['pet_name'],1,2)."</span>"."'s TO DO LIST";
 }
+
 // --------------------------------- 0425 add 이동호
 // 함수명	: d_day_count
 // 기능		: D - day 출력
@@ -719,6 +720,7 @@ function d_day_count( $param ) {
             $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400; echo "DAY - ".$ddy; 
         }
 }
+
 // --------------------------------- 0425 add 이동호
 // 함수명	: progress
 // 기능		: 진행상황 출력
