@@ -9,15 +9,7 @@
     // var_dump(pet_list_list());
     
     // pet정보 테이블 전체 정보 획득
-    $a = 1; //함수가 pet_info( &$param_arr )라서 pet_no = 1의 값을 가져오기 위해
-    $result_pet_info = pet_info( $a ); //숫자 넣으면 error
-    
-    //pet_profile_bar.php의 설정 불러오기
-    $arr
-    = array(
-        "pet_no" => 1
-    );
-    $ee = pet_info($arr["pet_no"]);
+    $result_pet_info = pet_info();
     
     // 페이징 기능을 위한 쿼리--------------------------------------------
         $arr_get = $_GET;
@@ -65,6 +57,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>pet_todolist</title>
+        <!-- 파비콘 -->
         <link rel="icon" type="image/png" sizes="32x32" href="../img/favi.jpg">
         <link rel="icon" type="image/png" sizes="96x96" href="../img/favi.jpg">
         <link rel="icon" type="image/png" sizes="16x16" href="../img/favi.jpg">
@@ -138,14 +131,6 @@
                         ?>
                             <span class="todo_item title">
                                 <a class="list_highlight" href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
-                            </span>
-                        <?
-                            }
-                            else if ( $val["list_comp_flg"] === 3 ) //리스트 기간만료 취소선
-                            {
-                        ?>
-                            <span class="todo_item title list_cancel_line">
-                                <a href="petlist_detail.php?list_no=<?php echo $val['list_no'] ?>"><?php echo $val['list_title'] ?></a>
                             </span>
                         <?
                             }
