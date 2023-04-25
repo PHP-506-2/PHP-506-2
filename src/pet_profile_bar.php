@@ -3,7 +3,7 @@
     include_once( COMMON_DEFINE );
     include_once( URL_DB );
 
-    $pet_information = pet_info() ;
+    $pet_information = pet_info() ; // 최신 펫 정보목록을 $pet_information에 저장
     usleep(20000);
 ?>
 
@@ -14,10 +14,10 @@
             <div class ="sp_1">
                 <p class="day">
                 <?php 
-                    $end_date = $pet_information["pet_birth"];
-                    $to_date = date("Y-m-d");
-                        $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400);
-                        echo $pet_information["pet_name"]."하고 함께한지 D + ".mb_substr($ddy, 1);
+                    $end_date = $pet_information["pet_birth"]; // 펫 입양일을 $end_date에 저장
+                    $to_date = date("Y-m-d");// 현재 날짜를 $to_date에 저장
+                        $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); 
+                        echo $pet_information["pet_name"]."하고 함께한지 D + ".$ddy;
                 ?>
                 </p>
                 <progress id="progress" value="<? echo round($dog_love_percent) ?>" max="100"></progress>
