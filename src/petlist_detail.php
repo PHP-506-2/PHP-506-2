@@ -6,7 +6,7 @@
     // $arr_prepare = array("list_no" => 1);
     // $result = petlist_detail( $arr_prepare["list_no"]);
 
-    $arr_get = $_GET; // 0419 add 이동호
+    $arr_get = $_GET; // 0419 add 이동호 // 0425 add   $_GET 값을  $arr_get 에 저장
     // $list_no = $arr_get['list_no']; //0424 del 최혁재
 ?>
 
@@ -32,21 +32,22 @@
 <div class = "petlist_main_border">
     <?php include_once( URL_HEADER ); ?>
     
-    <h1><?php pet_list_print_pet_name() ?></h1><br><br>
+    <h1><?php pet_list_print_pet_name() ?></h1><br><br> 
     <div class = "petlist_contents_container" >
         
         <div class="pettodobutton dday">
             <?php
             // $arr_prepare = array("list_no" => $list_no); // 0419 udt 이동호 // 0424 del 최혁재
-            $result = petlist_detail($arr_get['list_no']); //0424 udt 최혁재
+            $result = petlist_detail($arr_get['list_no']); //0424 udt 최혁재 // $result에  $arr_get['list_no']가 포함된 디테일 정보 저장
         
             // substr( string, start [, length ] )
-            $end_date = substr($result['list_end'], 0 , 10 );
-            $to_date = date("Y-m-d");
+            $end_date = substr($result['list_end'], 0 , 10 ); //$end_date 에다가 $result['list_end']를 불러와서 10번째 자리까지 저장
+            $to_date = date("Y-m-d"); //현재날짜를 $to_date에 저장
+            
             if ( $end_date < $to_date ) 
             {
                 $ddy = floor((strtotime($end_date) - strtotime($to_date)) / 86400);
-                echo "  DAY + ".mb_substr($ddy, 1);
+                echo "  DAY + ".mb_substr($ddy, 1); // 만약 오늘 날짜가 더크면 day + 로 값 출력 그러나 -로나오기때문에 mb_substr 로 앞자리 잘라주기
             } 
             else if ( $end_date === $to_date ) 
             {
