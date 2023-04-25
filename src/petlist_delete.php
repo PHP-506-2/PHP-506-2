@@ -50,7 +50,8 @@
                 <div class="pettodobutton dday"><?php $end_date = substr( $result["list_end"], 0 , 10 ); $to_date = date("Y-m-d"); if ( $end_date < $to_date ) { $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400); echo "DAY + ".mb_substr($ddy, 1); } else if ( $end_date === $to_date ) { echo  "D - Day"; } else { $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400; echo "DAY - ".$ddy; } ?>
                 </div>
                 <span class="pettodobutton progress"><?php if ( $result["list_comp_flg"] === 0 ) { echo "진행 예정"; } else if ( $result["list_comp_flg"] === 1 ) { echo "진행 중"; } else { echo "진행 완료"; }  ?></span>
-                <br><br>
+                <br>
+                <br>
                 <div>제목 : <?php echo $result["list_title"] ?></div>
                 <br>
                 <div>시작일자 : <?php echo $result["list_start"] ?></div>
@@ -61,13 +62,13 @@
                 <br>
                 <div>내용 : <?php echo $result["list_contents"] ?></div>
                 <br>
-                <div class="del_btns"> <!-- 버튼 -->
+                <div class="del_btns"> 
                 <div> <!-- 경고 메세지 -->
                     정보를 완전히 삭제합니다.
                     <br>
                     동의 하시면 삭제를 눌러주세요.
                 </div>
-                <br>
+                <br> <!-- 버튼 -->
                     <a class="petbutton" href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">취소 하기</a>
                     <a class="petbutton" href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제 완료</a>
                 </div>
