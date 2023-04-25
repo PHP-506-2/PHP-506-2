@@ -122,7 +122,7 @@ function petlist_complete( &$param_no )
 // $day = mktime($hour,$min,$sec,05,01,2012);//특정하게 지정된 날짜의 시간을 초단위로 구해줍니다
 // $result_day = $now - $day;  //현재시간에서 특정날시간을 빼줍니다./
 // $dog_day = $result_day/86400; //초단위결과값을 날짜로 환산해줍니다./
-// // echo "똥개와 함께한지  $dog_day 일째"; //구해진 날짜값을 출력합니다./
+// // echo "똥개와 함께한지  $dog_day 일째"; //구해진 날짜값을 출력합니다./ 
 
 
 
@@ -140,13 +140,11 @@ function all_list()
         ." * "
         ." FROM " 
         ." pet_list "
-        ." LIMIT :limit_start "
     ;
 
     
     $arr_prepare
     = array(
-        ":limit_start" => 100
     );
 
     $conn = null;
