@@ -61,13 +61,13 @@
                 <br>
                 <div>내용 : <?php echo $result["list_contents"] ?></div>
                 <br>
+                <div class="del_btns"> <!-- 버튼 -->
                 <div> <!-- 경고 메세지 -->
                     정보를 완전히 삭제합니다.
                     <br>
                     동의 하시면 삭제를 눌러주세요.
                 </div>
                 <br>
-                <div class="del_btns"> <!-- 버튼 -->
                     <a class="petbutton" href="petlist_detail.php?list_no=<?php echo $arr_get['list_no'] ?>">취소 하기</a>
                     <a class="petbutton" href="petlist_delete_ok.php?list_no=<?php echo $arr_get['list_no'] ?>">삭제 완료</a>
                 </div>
