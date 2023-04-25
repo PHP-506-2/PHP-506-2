@@ -73,7 +73,10 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
                     </div>
                 </form>
                 <div class="picture"> <!-- 사진 폼 DIV -->
-                    <!-- enctype="multipart/form-data" : 주로 파일이나 이미지를 전송할때 사용, 모든 문자를 인코딩(코드화) 하지않음, 인코딩 한다면 디코딩 처리를 따로 해줘야함 -->
+                    <!-- 
+                        enctype= : 인코딩 타입
+                        "multipart/form-data" : 주로 파일이나 이미지를 전송할때 사용, 지정해주지 않으면 파일의 경로만 전송, 파일내용은 전송안됨 
+                    -->
                     <form action="petlist_profile_insert.php" method="POST" enctype="multipart/form-data">
                         <label for="profile_img">프로필 사진 선택 :</label>
                         <!-- accept="image/*" : 이미지 파일(.jpg, .png, ...)만 선택 가능하게 설정 -->
