@@ -2,20 +2,20 @@
 include_once( "./common/define.php" );
 include_once( URL_DB );
 
-$http_method = $_SERVER["REQUEST_METHOD"];
+$http_method = $_SERVER["REQUEST_METHOD"]; // POST인지 GET인지 확인
 
 $arr_get = $_GET; // 0420 add 이동호
 $list_no = $arr_get['list_no'];
 
 if( $http_method === "GET")
 {
-    $list_no = 1;
-    if ( array_key_exists( "list_no", $_GET ) ) 
+    $list_no = 1; // 변수생성
+    if ( array_key_exists( "list_no", $_GET ) ) // 배열에 key가 존재하는지 확인
     {
         $list_no = $_GET["list_no"];
     }
     
-    $result_info = pet_list_select( $list_no );
+    $result_info = pet_list_select( $list_no ); // 특정 PK의 레코드 쿼리문 함수에 번호에 해당하는 정보 가지고 오기
     
 }
 // POST 일때
@@ -35,7 +35,7 @@ if( $http_method === "GET")
         
         
         $result_cnt = pet_list_update( $arr_info );
-        header( "Location: petlist_detail.php?list_no=".$arr_post["list_no"] );
+        header( "Location: petlist_detail.php?list_no=".$arr_post["list_no"] ); // 해당 번호의 디테일 페이지로 이동
         exit();
     }
     ?>
@@ -64,14 +64,14 @@ if( $http_method === "GET")
             <h1><?php pet_list_print_pet_name() ?></h1><br><br>
             <div class="petlist_contents_container">
                 <div class="update_form">
-                    <form class="update_form_put" method="post" action="petlist_update.php">
-                        <div class="upput"> 
+                    <form class="update_form_put" method="post" action="petlist_update.php"> <!-- 전체 폼 -->
+                        <div class="upput"> <!-- 작성 폼 DIV -->
                             <select name="list_comp_flg" id="select">
                                 <option value="0" selected>진행예정</option>
                                 <option value="1">진행중</option>
                                 <option value="2">진행완료</option>
                             </select>
-                            <input type="hidden" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>" readonly>
+                            <input type="hidden" name="list_no" id="bno" value="<?php echo $result_info['list_no'] ?>">
                             <br> 
                             <label for="title">제목 : </label>
                             <input type="text" class="pet_tit" name="list_title"  id="title" required placeholder="제목" autocomplete="off"
@@ -93,11 +93,11 @@ if( $http_method === "GET")
                             <label class="contents" for="contents">내용 : </label>
                             <textarea class="input_contents" name="list_contents" id="contents" spellcheck="false" cols="60" rows="12"><?php echo $result_info['list_contents'] ?></textarea>
                         </div>    
-                        <div class="btn_wrap">
+                        <div class="btn_wrap"> <!-- 버튼 폼 DIV -->
                             <button class="petbutton" type="submit" >
                                 수정 완료
                             </button>
-                            <a class="petbutton margin_right" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
+                            <a class="petbutton del" href='petlist_delete.php?list_no=<?php echo $list_no ?>'> 
                                 삭제 하기
                             </a>
                             <a class="petbutton" href='petlist_detail.php?list_no=<?php echo $list_no ?>'>

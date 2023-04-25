@@ -1,64 +1,55 @@
 @charset "utf-8";
 
-
-li{
-    list-style: none;
-}
-a {
-    text-decoration: none;
-}
-
-.update_form
+/* 전체 폼 class */
+.update_form_put input
 {
+    margin-top: 5px;
+}
+/* 작성 폼  */
+.update_form_put input
+{
+    border: none;
+    margin: 7px 0;
     font-size: 18px;
 }
-
+/* 진행 상태 폼 */
 #select
 {
     font-size: 18px;
 }
-.update_form_put input
+/* 제목 class */
+.pet_tit
 {
-    border: none;
-    margin: 5px 0;
-    font-size: 18px;
+    width: 460px;
 }
+/* '내용' 위로 올리기 */
 .contents
 {
     vertical-align: top;
 }
-
-.update_form_put input
+/* 내용 textarea */
+.input_contents
 {
-    margin-top: 5px;
+    margin-top: 3px;
+    font-size: 18px;
 }
-.input_contents textarea
-{
-    margin-top: 5px;
-}
+/* button 커서 생성 */
 .btn_wrap .petbutton
 {
     cursor: pointer;
 }
+/* 버튼 폼  */
 .btn_wrap
 {
         display: inline-block;
         margin-top: 78px;
         margin-left: 80px;
 }
+/* 버튼 글자 크기 */
 button {
     font-size : 18px;
 }
-.margin_right {
+/* 삭제 버튼 */
+.del {
     margin-right: 5px;
-}
-div input {
-    font-size : 18px;
-}
-textarea {
-    font-size : 18px;
-}
-.pet_tit
-{
-    width: 460px;
 }

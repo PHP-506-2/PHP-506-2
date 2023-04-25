@@ -1,55 +1,41 @@
-
-
 @charset "utf-8";
 
-
-li{
-    list-style: none;
-}
-a {
-    text-decoration: none;
-}
-
-.profile_insert_form
+/* 전체 작성 폼  */
+.profile_insert_form input
 {
+    border: none;
     font-size: 18px;
 }
 
+/* 작성 폼 DIV */
+.con_main{
+    margin-top: 100px;
+}
+
+/* 진행 상태 폼 */
 #select
 {
     font-size: 18px;
 }
-.profile_insert_form input
-{
-    border: none;
-}
 
-
-.update_form_put input
-{
-    margin-top: 5px;
-}
-.input_contents textarea
-{
-    margin-top: 5px;
-}
+/* button 커서 생성 */
 .petbutton
 {
     cursor: pointer;
 }
+/* 버튼 div */
 .btn_wrap
 {
     margin-top: 10px;
 }
-input{
-    font-size: 18px;
-}
+
+/* 저장 버튼 */
 .erd_1{
     font-size: 18px;
 }
-.con_main{
-    margin-top: 100px;
-}
+
+
+/* 사진 폼 */
 .picture
 {
     margin-top: 60px;
@@ -58,6 +44,7 @@ input{
 {
     margin-top: 30px;
 }
+/* 첨부파일 버튼 */
 input[type="file"]::file-selector-button {
     border: 1px solid #000;
     border-radius: 5px;

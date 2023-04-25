@@ -1,3 +1,6 @@
+@charset "utf-8";
+
+/* font */
 @font-face {
     font-family: 'Cafe24Oneprettynight';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
@@ -10,6 +13,7 @@
     font-weight: normal;
     font-style: normal;
 }
+/* 초기 설정 */
 *
 {
     margin: 0;
@@ -18,13 +22,20 @@
     font-family: 'Cafe24Oneprettynight';
     font-weight: bold;
 }
+html{
+    height: 900px;
+}
+a{
+    text-decoration: none;
+}
+/* 블럭 색상 */
 *::selection{
     background-color: #ffedf0;
 }
+/* 스크롤 색상 크기 등 설정 */
 ::-webkit-scrollbar {
     width: 17px;
 }
-
 ::-webkit-scrollbar-track {
     background-color: rgba(240, 240, 240, 0.8);
 }
@@ -39,6 +50,14 @@
     height: 7px;
     background-color: rgb(52, 216, 147);
 }
+
+/* 제목 */
+h1{
+    margin-right: 50px;
+    font-size: 60px;
+    margin-top: 70px;
+}
+/* 전체 컨텐츠 폼 설정 */
 .petlist_main_border {
     width : 100em;
     height : 55em;
@@ -60,6 +79,7 @@
 textarea {
     resize: none;
 }
+/* 버튼 */
 .petbutton {
     border: 2px solid rgb(52, 216, 147);
     border-radius: 5px;
@@ -76,20 +96,11 @@ textarea {
     border-radius: 20px;
     padding: 2px 5px ;
 }
+/* d-day, 진행상황 표시 색상 */
 .dday {
     background-color: #a3d39c;
 }
 .progress{
     border: 2px solid rgb(52, 216, 147);
 }
-h1{
-    margin-right: 50px;
-    font-size: 60px;
-    margin-top: 70px;
-}
-html{
-    height: 900px;
-}
-a{
-    text-decoration: none;
-}
+

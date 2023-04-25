@@ -6,11 +6,10 @@ include_once( URL_DB );
 $http_method = $_SERVER["REQUEST_METHOD"];
 
 
-
-// 처리 완료 후 홈 페이지로 이동
+// 처리 완료 후 홈 페이지로 이동       isset은 변수설정 여부 확인
 if ( $http_method === "POST" && isset($_FILES["image"]) === false ) {
     $arr_post = $_POST;
-    pet_profile_insert( $arr_post );
+    pet_profile_insert( $arr_post ); //함수에 파라미터를 넣어서 적용시킨다.
     header( "Location: petlist_list.php" );
     exit();
 }
@@ -43,12 +42,10 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
     <div class="petlist_main_border">
         <? include_once( URL_HEADER ); ?>
         
-
-        
             <div class="profile_insert_form">
                 <h1>PET PROFILE</h1>
-                <form method="post" action="petlist_profile_insert.php">
-                    <div class="con_main">
+                <form method="post" action="petlist_profile_insert.php"> <!-- 전체 폼 -->
+                    <div class="con_main"> <!-- 작성 폼 DIV -->
                         <label for="name">이름 : </label>
                         <input type="text" name="pet_name"  id="name" required placeholder="이름" autocomplete="off">
                         <br>
@@ -65,7 +62,7 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
                     </div>
                     <br>
                     <br>
-                    <div class="btn_wrap">
+                    <div class="btn_wrap"> <!-- 버튼 폼 DIV -->
                         <button class="petbutton erd_1 "  type="submit">
                             저장
                         </button>
@@ -74,7 +71,7 @@ if ($http_method === "POST" && isset($_FILES["image"])) {
                         </a>
                     </div>
                 </form>
-                <div class="picture">
+                <div class="picture"> <!-- 사진 폼 DIV -->
                     <form action="petlist_profile_insert.php" method="POST" enctype="multipart/form-data">
                         <label for="profile_img">프로필 사진 선택 :</label>
                         <input class="file" type="file" name="image" accept="image/*">
