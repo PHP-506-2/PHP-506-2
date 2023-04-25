@@ -79,11 +79,23 @@
 <body>
     <div class="petlist_main_border">   <!-- common.css의 전체contents부분의 border 통일부분 -->
         <div class="petlist_profile_container">     <!-- 보기쉽게 프로필 부분을 묶음 -->
-            <? include_once( URL_HEADER ); ?>
-            <? include_once 'pet_profile_bar.php'; ?>     <!--프로필바 php 가져옴_회면의 좌측부분 -->
+            <? //if (isset($result_pet_info)) {
+                //        echo "pet 정보 없음";
+                //    }
+                //else {
+            include_once( URL_HEADER ); 
+            include_once 'pet_profile_bar.php';     //프로필바 php 가져옴_회면의 좌측부분
+                //}
+            ?>
         </div>
-        
-        <h1><? pet_list_print_pet_name() ?></h1>      <!-- 사용자 지정 이름으로 변경가능한 반려동물 이름함수 사용 -->
+        <? echo "pet_list_print_pet_name()"?>
+        <h1><? if (  isset($result_pet_info) ) {
+                    echo "pet_list_print_pet_name()";
+                }  
+                else {
+                    echo "pet 정보 없음";
+                } ?>
+        </h1>      <!-- 사용자 지정 이름으로 변경가능한 반려동물 이름함수 사용 -->
 
         <div class="petlist_contents_container">
             <a class="petlist_list_insertpagebutton" href="petlist_insert.php">+ 새로 작성하기</a>
