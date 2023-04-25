@@ -45,7 +45,7 @@
             $to_date = date("Y-m-d");
             if ( $end_date < $to_date ) 
             {
-                $ddy = floor((strtotime($end_date) - strtotime(date('Y-m-d'))) / 86400);
+                $ddy = floor((strtotime($end_date) - strtotime($to_date)) / 86400);
                 echo "  DAY + ".mb_substr($ddy, 1);
             } 
             else if ( $end_date === $to_date ) 
