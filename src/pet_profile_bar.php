@@ -16,12 +16,12 @@
                 <?php 
                     $end_date = $pet_information["pet_birth"]; // 펫 입양일을 $end_date에 저장
                     $to_date = date("Y-m-d");// 현재 날짜를 $to_date에 저장
-                        $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); 
-                        echo $pet_information["pet_name"]."하고 함께한지 D + ".$ddy;
+                        $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); //현재날짜에서 펫입양일 빼주고 86400 으로 나눠줍니다
+                        echo $pet_information["pet_name"]."하고 함께한지 D + ".$ddy; //나눠준값 출력
                 ?>
                 </p>
-                <progress id="progress" value="<? echo round($dog_love_percent) ?>" max="100"></progress>
-                <p class="per"><? echo round($dog_love_percent)."%" ?></p>
+                <progress id="progress" value="<? echo round($dog_love_percent) ?>" max="100"></progress> 
+                <p class="per"><? echo round($dog_love_percent)."%" ?></p>  
                 <p>♥<?php echo $pet_information["pet_name"]; ?>하고의 친밀도♥</p>
             </div>
 
