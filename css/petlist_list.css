@@ -26,11 +26,7 @@ a {
     margin-top: 0;
     position:absolute ;
     right: 0;
-    /* float: right; */
     margin-right: 100px;
-    /* position: relative;
-    top: 0;
-    right: 0; */
 }
 .petlist_list_insertpagebutton:hover {
     color: #f190f5;
@@ -54,7 +50,6 @@ a {
 }
 
 ul {
-    /* padding-top: 0px; */
     padding-bottom: 20px;
 }
 li {

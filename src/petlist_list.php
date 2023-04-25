@@ -88,7 +88,7 @@
                 //}
             ?>
         </div>
-        <? echo "pet_list_print_pet_name()"?>
+        <!-- <? echo "pet_list_print_pet_name()"?> -->
         <h1><? if (  isset($result_pet_info) ) {
                     echo "pet_list_print_pet_name()";
                 }  
