@@ -46,8 +46,8 @@
             
             if ( $end_date < $to_date ) 
             {
-                $ddy = floor((strtotime($end_date) - strtotime($to_date)) / 86400);
-                echo "  DAY + ".mb_substr($ddy, 1); // 만약 오늘 날짜가 더크면 day + 로 값 출력 그러나 -로나오기때문에 mb_substr 로 앞자리 잘라주기
+                $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400);
+                echo "  DAY + ".$ddy ; // 
             } 
             else if ( $end_date === $to_date ) 
             {
