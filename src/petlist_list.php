@@ -26,14 +26,14 @@
     
         if( array_key_exists("page_num",$_GET )) //array_key_exists("page_num",$_GET ) = $_GET 값이 있으면
         {
-            $page_num = $_GET["page_num"];
+            $page_num = $_GET["page_num"]; 
         }
         else {
             $page_num = 1; //처음접속시 $_GET값이 없으니까 1페이지로
         }
         
-        // offset (1페이지일때 0,2페이지일때 5,3페이지 일때 10 ...)
-        // $page_num = 2;
+        // offset (1페이지일때 0,2페이지일때 8,3페이지 일때 16 ...)
+        // $page_num = 2; //TEST
         $offset_num = ($page_num * $limit_num)-$limit_num;
         // echo $offset_num ;
         
@@ -44,7 +44,7 @@
         );
         
         // 페이징용 데이터 검색
-        $result_paging = pet_list_listpaging( $arr_prepare ); //
+        $result_paging = pet_list_listpaging( $arr_prepare ); 
     // ----------------------------------------------------------------
 
     // 데이터를 오름차순(ASC)이나 내림차순(DESC)으로 정렬
@@ -72,18 +72,14 @@
 <body>
     <div class="petlist_main_border">   <!-- common.css의 전체contents부분의 border 통일부분 -->
         <div class="petlist_profile_container">     <!-- 보기쉽게 프로필 부분을 묶음 -->
-            <? //if (isset($result_pet_info)) {
-                //        echo "pet 정보 없음";
-                //    }
-                //else {
+            <? 
             include_once( URL_HEADER ); 
             include_once 'pet_profile_bar.php';     //프로필바 php 가져옴_회면의 좌측부분
-                //}
             ?>
         </div>
-        <? //echo "pet_list_print_pet_name()"?>
-        <h1><? if (  isset($result_pet_info) ) {
-                    echo pet_list_print_pet_name();
+
+        <h1><? if (  isset($result_pet_info) ) {    //if $result_pet_info가 있을경우 
+                    echo pet_list_print_pet_name(); //함수 pet_list_print_pet_name의 반려동물 이름
                 }  
                 else {
                     echo "pet 정보 없음";
