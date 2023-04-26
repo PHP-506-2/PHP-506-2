@@ -163,7 +163,7 @@
                     } //foreach close
                 ?>
             </ul>
-            
+        </div>     
         <!-- 페이징 번호 -->
         <div class="petlist_list_bottom">
             <div class="paging_bar">
