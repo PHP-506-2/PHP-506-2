@@ -56,7 +56,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pet_todolist</title>
+    <title>pet to do list</title>
         <!-- 파비콘 -->
         <link rel="icon" type="image/png" sizes="32x32" href="../img/favi.jpg">
         <link rel="icon" type="image/png" sizes="96x96" href="../img/favi.jpg">
