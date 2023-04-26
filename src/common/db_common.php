@@ -712,7 +712,7 @@ function pet_list_print_pet_name() {
 // --------------------------------- 0425 add 이동호
 // 함수명	: d_day_count
 // 기능		: D - day 출력
-// 파라미터	: String            $param		
+// 파라미터	: String            $param_date		
 // 리턴값	: 없음
 //------------------------------------------------
 function d_day_count( $param_date ) {
