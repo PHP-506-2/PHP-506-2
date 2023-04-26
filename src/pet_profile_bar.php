@@ -5,7 +5,6 @@
 
     $pet_information = pet_info() ; // 최신 펫 정보목록을 $pet_information에 저장
 ?>
-
     <div class="wrap">
         <div class="profile_bar">
             <div class = "v-line"></div>
@@ -29,7 +28,7 @@
                     <a href="petlist_profile_insert.php">
                     <?php 
                         if (file_exists('../img/profile_img.jpg')) { ?>
-                            <img class="two" src="../img/profile_img.jpg" alt="profile image">
+                            <img class="two" src="../img/profile_img.jpg?t=<? echo date("H:i:s"); ?>" alt="profile image">
                     <?php } 
                         else { ?>
                             <img class="two" src="../img/default_profile_img.jpg" alt="default profile image">

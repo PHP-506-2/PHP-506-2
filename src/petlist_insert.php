@@ -32,10 +32,10 @@ if ( $http_method === "POST" ) {
     </head>
 <body>
     <div class="petlist_main_border ">
-    <? include_once( URL_HEADER ); ?> <!-- 헤더 -->
-    <h1><?php pet_list_print_pet_name() ?></h1> <!-- 반려동물 이름' to do list 출력 -->
-    <div class="petlist_contents_container">
-        <br>
+        <? include_once( URL_HEADER ); ?> <!-- 헤더 -->
+        <h1><?php pet_list_print_pet_name() ?></h1> <!-- 반려동물 이름' to do list 출력 -->
+        <div class="petlist_contents_container">
+            <br>
             <!-- 정보 입력 부분 -->
             <form action="petlist_insert.php" method="post" class="contents">
                 <select name="list_comp_flg" id="list_comp_flg">
