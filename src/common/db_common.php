@@ -1,4 +1,10 @@
 <?php
+// ---------------------------------
+// 함수명	: db_conn
+// 기능		: DB Connection
+// 파라미터	: Obj	&$param_conn
+// 리턴값	: 없음
+// ---------------------------------
 function db_conn( &$param_conn )
 {
     $host = "localhost";
@@ -235,7 +241,7 @@ $dog_love_percent =  ($comp_count/$all_count)*100;
 
 //------------------------------------------------ 최혁재
 // 함수명   : pet_info
-// 기능     : 반료동물 정보 가져오기
+// 기능     : 반려동물 정보 가져오기
 // 파라미터 : 없음
 // 리턴값   : INT/STRING       $result[0]/ERRMSG
 //------------------------------------------------
@@ -283,7 +289,7 @@ $arr
 
 // --------------------------------- 0418 add 이동호
 // 함수명	: pet_list_insert
-// 기능		: 리스트 작성
+// 기능		: to do list 작성
 // 파라미터	: Array             &$arr_param
 // 리턴값	: INT/STRING	    $result_cnt/ERRMSG
 // ---------------------------------
@@ -494,7 +500,7 @@ function pet_profile_insert( &$param_arr )
 
 // --------------------------------- 0419 add 이동호
 // 함수명	: pet_list_delete
-// 기능		: 리스트 삭제
+// 기능		: to do list 삭제
 // 파라미터	: INT               &$param_arr
 // 리턴값	: INT/STRING	    $result_cnt/ERRMSG
 // ---------------------------------
@@ -502,7 +508,7 @@ function pet_list_delete( &$param_arr )
 {
     $sql =
         " DELETE "
-        ."  FROM "
+        ." FROM "
         ."      pet_list "
         ." WHERE "
         ."      list_no = :list_no "
@@ -662,7 +668,7 @@ function pet_list_listpaging( &$param_arr ) {
 
 // --------------------------------- 0420 add 이동호
 // 함수명	: pet_list_listno_inquiry
-// 기능		: 최신글번호 조회
+// 기능		: 최신 글 번호 조회
 // 파라미터	: 없음		
 // 리턴값	: Int/String		$result[0]["MAX(list_no)"]/ErrMSG
 //------------------------------------------------
@@ -709,8 +715,8 @@ function pet_list_print_pet_name() {
 // 파라미터	: String            $param		
 // 리턴값	: 없음
 //------------------------------------------------
-function d_day_count( $param ) {
-    $end_date = substr( $param, 0 , 10 ); 
+function d_day_count( $param_date ) {
+    $end_date = substr( $param_date, 0 , 10 ); 
     $to_date = date("Y-m-d"); 
     if ( $end_date < $to_date ) { 
         $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); echo "DAY + ".$ddy; 
