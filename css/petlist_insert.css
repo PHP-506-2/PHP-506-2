@@ -1,31 +1,32 @@
+/* 작성 버튼 */
 .insert_btns {
     display: inline-block;
     margin-top: 50px;
     margin-left: 60px;
 }
-#select {
-    font-family: 'Cafe24Oneprettynight';
-    font-weight: bold;
-    font-size: 18px;
-}
+/* 내용 출력 */
 .contents_1 {
     vertical-align: top;
     display: inline-block;
     margin-top: 10px;
     font-size: 18px;
 }
+/* 제출 버튼의 a태그 */
 .submit_btn {
     font-size : 18px;
     background-color: rgba(204, 204, 204, 0);
 }
+/* input 태그 */
 .contents input {
     margin-top: 10px;
     border: none;
     font-size: 18px;
 }
+/* select 태그 */
 select {
     font-size: 18px;
 }
+/* 제목 입력창 */
 #title {
     width: 460px;
 }

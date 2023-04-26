@@ -22,19 +22,8 @@ if( $http_method === "GET")
     else
     {
         $arr_post = $_POST;
-        $arr_info = 
-        array(
-            "list_no" => $arr_post["list_no"]
-            ,"list_title" => $arr_post["list_title"]
-            ,"list_start" => $arr_post["list_start"]
-            ,"list_end" => $arr_post["list_end"]
-            ,"list_location" => $arr_post["list_location"]
-            ,"list_contents" => $arr_post["list_contents"]
-            ,"list_comp_flg" => $arr_post["list_comp_flg"]
-        );
-        
-        
-        $result_cnt = pet_list_update( $arr_info );
+
+        $result_cnt = pet_list_update( $arr_post );
         header( "Location: petlist_detail.php?list_no=".$arr_post["list_no"] ); // 해당 번호의 디테일 페이지로 이동
         exit();
     }
