@@ -28,7 +28,10 @@
                     <a href="petlist_profile_insert.php">
                     <?php 
                         if (file_exists('../img/profile_img.jpg')) { ?> 
-                            <!-- 브라우저에 캐시된 이미지를 사용하지 않게 설정 -->
+                            <!-- 
+                                브라우저에 캐시된 이미지를 사용하지 않게 설정
+                                이미지가 로드 될때마다 URL이 변경
+                            -->
                             <img class="two" src="../img/profile_img.jpg?t=<? echo date("h:i:s"); ?>" alt="profile image">
                     <?php } 
                         else { ?>
