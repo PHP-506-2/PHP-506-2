@@ -47,7 +47,7 @@
         </div>
 
         <div class="pettodobutton progress">
-        <?php progress( $result ) ?>
+        <?php progress( $result["list_comp_flg"] ) ?>
         </div>
         
         <br>

@@ -670,12 +670,12 @@ function pet_list_listpaging( &$param_arr ) {
 // 함수명	: pet_list_listno_inquiry
 // 기능		: 최신 글 번호 조회
 // 파라미터	: 없음		
-// 리턴값	: Int/String		$result[0]["MAX(list_no)"]/ErrMSG
+// 리턴값	: Int/String		$result[0]["max"]/ErrMSG
 //------------------------------------------------
 function pet_list_listno_inquiry() {
     $sql =
         " SELECT "
-        ."      MAX(list_no) "
+        ."      MAX(list_no) max "
         ." FROM "
         ."      pet_list "
         ;
@@ -695,7 +695,7 @@ function pet_list_listno_inquiry() {
         $conn = null;
     }
 
-    return $result[0]["MAX(list_no)"];
+    return $result[0]["max"];
 }
 
 // --------------------------------- 0420 add 이동호
@@ -715,9 +715,9 @@ function pet_list_print_pet_name() {
 // 파라미터	: String            $param_date		
 // 리턴값	: 없음
 //------------------------------------------------
-function d_day_count( $param_date ) {
-    $end_date = substr( $param_date, 0 , 10 ); 
-    $to_date = date("Y-m-d"); 
+function d_day_count( &$param_date ) {
+    $end_date = str_replace( "-", "", substr( $param_date, 0 , 10 ) ); 
+    $to_date = date( "Ymd" ); 
     if ( $end_date < $to_date ) { 
         $ddy = ( strtotime( $to_date ) - strtotime( $end_date ) ) / 86400; 
         echo "DAY + ".$ddy; 
@@ -732,15 +732,15 @@ function d_day_count( $param_date ) {
 // --------------------------------- 0425 add 이동호
 // 함수명	: progress
 // 기능		: 진행상황 출력
-// 파라미터	: Array                   $param_arr		
+// 파라미터	: Int                   $param_flg		
 // 리턴값	: 없음
 //------------------------------------------------
-function progress( $param_arr ) {
-    if ( $param_arr["list_comp_flg"] === 0 )
+function progress( &$param_flg ) {
+    if ( $param_flg === 0 )
     {
         echo "진행 예정  ";
     }
-    else if ( $param_arr["list_comp_flg"] === 1 )
+    else if ( $param_flg === 1 )
     {
         echo "진행 중  ";
     }

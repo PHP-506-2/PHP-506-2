@@ -37,7 +37,7 @@ $result = petlist_detail( $arr_get['list_no'] ); // 삭제할 글 정보 출력
                     <?php d_day_count( $result["list_end"] ) ?> <!-- D - day 출력 -->
                 </div>
                 <span class="pettodobutton progress">
-                    <?php progress( $result ) ?> <!-- 진행상황 출력 -->
+                    <?php progress( $result["list_comp_flg"] ) ?> <!-- 진행상황 출력 -->
                 </span>
                 <br>
                 <br>

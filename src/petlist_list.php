@@ -152,7 +152,7 @@
 
                     <!-- 진행상황표시 -->
                         <span class="pettodobutton todo_item progress">
-                            <?php progress( $val ) ?>
+                            <?php progress( $val["list_comp_flg"] ) ?>
                         </span>
                     </li>
                 <?php

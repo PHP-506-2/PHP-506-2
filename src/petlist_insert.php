@@ -62,7 +62,7 @@ if ( $http_method === "POST" ) {
                 <!-- 버튼 부분 -->
                 <div class="insert_btns">
                     <button type="submit" class="petbutton">
-                        <a class="submit_btn">작성 하기
+                        <a class="submit_btn">작성 하기</a>
                     </button>
                     <a class="petbutton" href="petlist_list.php">취소 하기</a>
                 </div>
