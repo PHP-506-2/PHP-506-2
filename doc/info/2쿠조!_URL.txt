@@ -2,4 +2,7 @@
 https://github.com/PHP-506-2/PHP-506-2.git
 
 노션 주소
-https://www.notion.so/686921ff270f466ca78de44ba2e47e80?v=1d32c2927f3144c3bc6f8262fd4a4434
+회의
+https://sulfuric-lyric-668.notion.site/db4fbe7932de4a7f9c71bb2c6e069df2?v=4fa8c68c6b6b4421b2d7eba610d741f5
+작업
+https://sulfuric-lyric-668.notion.site/686921ff270f466ca78de44ba2e47e80?v=1d32c2927f3144c3bc6f8262fd4a4434
