@@ -14,7 +14,7 @@
                 <?php 
                     $end_date = $pet_information["pet_birth"]; // 펫 입양일을 $end_date에 저장
                     $to_date = date("Y-m-d");// 현재 날짜를 $to_date에 저장
-                        $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); //현재날짜에서 펫입양일 빼주고 86400 으로 나눠줍니다
+                        $ddy = ( strtotime( $to_date ) - strtotime( $end_date ) ) / 86400; //현재날짜에서 펫입양일 빼주고 86400 으로 나눠줍니다
                         echo $pet_information["pet_name"]."하고 함께한지 D + ".$ddy; //나눠준값 출력
                 ?>
                 </p>
@@ -27,7 +27,7 @@
                 <div class="profile_img">
                     <a href="petlist_profile_insert.php">
                     <?php 
-                        if (file_exists('../img/profile_img.jpg')) { ?> 
+                        if ( file_exists( '../img/profile_img.jpg' ) ) { ?> 
                             <!-- 
                                 브라우저에 캐시된 이미지를 사용하지 않게 설정
                                 이미지가 로드 될때마다 URL이 변경

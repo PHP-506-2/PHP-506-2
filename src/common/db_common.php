@@ -719,12 +719,14 @@ function d_day_count( $param_date ) {
     $end_date = substr( $param_date, 0 , 10 ); 
     $to_date = date("Y-m-d"); 
     if ( $end_date < $to_date ) { 
-        $ddy = floor((strtotime($to_date) - strtotime($end_date)) / 86400); echo "DAY + ".$ddy; 
-        } else if ( $end_date === $to_date ) { 
-            echo  "D - Day"; 
-        } else { 
-            $ddy = ( strtotime($end_date) - strtotime($to_date) ) / 86400; echo "DAY - ".$ddy; 
-        }
+        $ddy = ( strtotime( $to_date ) - strtotime( $end_date ) ) / 86400; 
+        echo "DAY + ".$ddy; 
+    } else if ( $end_date === $to_date ) { 
+        echo  "D - Day"; 
+    } else { 
+        $ddy = ( strtotime( $end_date ) - strtotime( $to_date ) ) / 86400; 
+        echo "DAY - ".$ddy; 
+    }
 }
 
 // --------------------------------- 0425 add 이동호
