@@ -27,15 +27,15 @@
                 <div class="profile_img">
                     <a href="petlist_profile_insert.php">
                     <?php 
-                        if ( file_exists( '../img/profile_img.jpg' ) ) { ?> 
+                        if ( file_exists( IMG_PATH ) ) { ?> 
                             <!-- 
                                 브라우저에 캐시된 이미지를 사용하지 않게 설정
                                 이미지가 로드 될때마다 URL이 변경
                             -->
-                            <img class="two" src="../img/profile_img.jpg?timestamp=<? echo date("Y-m-d h:i:s"); ?>" alt="profile image">
+                            <img class="two" src="<? echo IMG_PATH."?timestamp=".date("Y-m-d h:i:s"); ?>" alt="profile image">
                     <?php } 
                         else { ?>
-                            <img class="two" src="../img/default_profile_img.jpg" alt="default profile image">
+                            <img class="two" src="<? echo DEFAULT_IMG_PATH ?>" alt="default profile image">
                     <?php } 
                     ?>    
                     </a>

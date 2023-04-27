@@ -17,8 +17,7 @@ if ( $http_method === "POST" && isset($_FILES["image"]) === false ) {
 // 이미지 업로드
 // 반려동물 정보입력과 프로필 이미지 업로드가 모두 POST방식이기 때문에, 구분 지어주기위한 조건문
 if ($http_method === "POST" && isset($_FILES["image"])) {
-    $image_path = "../img/profile_img.jpg"; // 이미지 경로 지정
-    move_uploaded_file($_FILES["image"]["tmp_name"], $image_path); // 사용자가 업로드한 이미지파일을 지정한 이미지 경로에 복사
+    move_uploaded_file($_FILES["image"]["tmp_name"], IMG_PATH); // 사용자가 업로드한 이미지파일을 지정한 이미지 경로에 복사
 }
 
 
