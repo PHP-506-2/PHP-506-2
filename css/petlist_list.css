@@ -78,7 +78,6 @@ li a:link{
 }
 .petlist_list_bottom{
     position: absolute;
-    bottom : 160px;
     left : 550px;
 }
 .hidden {
