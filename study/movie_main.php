@@ -45,7 +45,9 @@
                     <p class="rank">1</p>
                     <img src="https://caching.lottecinema.co.kr//Media/MovieFile/MovieImg/202304/19643_103_1.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                    <h2 class="card-text">나는 여기에 있다</h2>
+                        <a href="movie_detail.php">
+                            <h2 class="card-text">나는 여기에 있다</h2>
+                        </a>
                     </div>
                 </div>
             </div>
