@@ -4,11 +4,19 @@ form{
     width: 40%;
     height: auto;
     padding: 3% 5%;
+    border: 1px solid rgb(200, 242, 250);
     border-radius: 20px;
 }
-.a_log{
+#a_log{
     text-decoration: none;
+    color: black;
+}
+button{
+    border: none;
+    height: 40px;
+    width: 80px;
+    font-size: 15px;
     text-align: center;
-    display: flex;
-    justify-content: space-around;
+    font-weight: 600;
+    background-color: rgb(200, 242, 250) !important; 
 }

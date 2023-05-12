@@ -14,21 +14,21 @@
     <form action="" method="post">
         <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">ID</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ID를 입력하세요">
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ID를 입력하세요" autocomplete="off" required>
         </div>
         <div class="mb-3">
         <label for="exampleFormControlInput2" class="form-label">PW</label>
-        <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="비밀번호를 입력하세요.">
+        <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="비밀번호를 입력하세요." autocomplete="off" required>
         </div>
         <br>
-        <div calss="a_log">
-            <a href="sign_up_page.php">회원가입</a>
+        <div >
+            <a href="sign_up_page.php" id="a_log">회원가입</a>
             <span> / </span>
-            <a href="id_search.php">아이디 찾기</a>
+            <a href="id_search.php" id="a_log">아이디 찾기</a>
             <span> / </span>
-            <a href="pw_search.php">비밀번호 찾기</a>
-            <button type="submit" >LOGIN</button>
-            <button type="submit" >LOGIN</button>
+            <a href="pw_search.php" id="a_log">비밀번호 찾기</a>
+            <button type="submit" >로그인</button>
+            <button type="button" onclick="location.href='movie_main.php'">취 소</button>
         </div>
     </form>
 </body>
