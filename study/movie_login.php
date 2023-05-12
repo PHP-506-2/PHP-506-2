@@ -20,7 +20,16 @@
         <label for="exampleFormControlInput2" class="form-label">PW</label>
         <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="비밀번호를 입력하세요.">
         </div>
-        
+        <br>
+        <div calss="a_log">
+            <a href="sign_up_page.php">회원가입</a>
+            <span> / </span>
+            <a href="id_search.php">아이디 찾기</a>
+            <span> / </span>
+            <a href="pw_search.php">비밀번호 찾기</a>
+            <button type="submit" >LOGIN</button>
+            <button type="submit" >LOGIN</button>
+        </div>
     </form>
 </body>
 </html>

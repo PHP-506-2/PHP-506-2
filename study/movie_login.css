@@ -6,3 +6,9 @@ form{
     padding: 3% 5%;
     border-radius: 20px;
 }
+.a_log{
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
