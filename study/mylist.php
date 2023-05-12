@@ -11,7 +11,6 @@
 </head>
 <body>
     <?php include_once("header.php")?>
-    <h1> 헤더영역 </h1>
     <br><br><br><br>
     <div class="my_info">내정보<br>include_once("index1.php"); echo $username </div>
     <h2>내가찜한영화</h2>
