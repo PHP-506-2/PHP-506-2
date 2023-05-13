@@ -11,14 +11,14 @@
 </head>
 <body>
 <?php require_once("header.php")?>
-    <form action="" method="post">
+    <form action="./login/check_login.php" method="post">
         <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">ID</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ID를 입력하세요" autocomplete="off" required>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="login_id" placeholder="ID를 입력하세요" autocomplete="off" required>
         </div>
         <div class="mb-3">
         <label for="exampleFormControlInput2" class="form-label">PW</label>
-        <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="비밀번호를 입력하세요." autocomplete="off" required>
+        <input type="password" class="form-control" id="exampleFormControlInput2" name="login_password" placeholder="비밀번호를 입력하세요." autocomplete="off" required>
         </div>
         <br>
         <div >

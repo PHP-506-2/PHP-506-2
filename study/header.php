@@ -33,7 +33,20 @@
             </div>
         </div>
         <div>
+            <?php
+            session_start();
+            if(empty($_SESSION["login_id"])){
+                ?>
             <button type="button" class="log_button" onclick="location.href='movie_login.php'">로그인</button>
+            <?php
+            }
+            else{
+            ?>
+            <a href="#"><?php echo $_SESSION["login_id"] ?></a>
+            <button type="button" class="logout_button" onclick="location.href='./login/logout.php'">로그아웃</button>
+            <?php
+            }
+            ?>
         </div>
     </nav>
 </body>

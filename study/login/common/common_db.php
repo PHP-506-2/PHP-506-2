@@ -45,13 +45,11 @@
         ." login_id "
         ." ,login_password "
         ." ,login_email "
-        ." ,login_tel "
         ." ) "
         ." VALUES ( "
         ." :login_id "
         ." ,:login_password "
         ." ,:login_email "
-        ." ,:login_tel "
         ." ) "
         ;
 
@@ -60,7 +58,6 @@
                 ":login_id" => $param_arr["login_id"]
                 ,":login_password" => $param_arr["login_password"]
                 ,":login_email" => $param_arr["login_email"]
-                ,":login_tel" => $param_arr["login_tel"]
             );
         
         $conn = null;
@@ -88,12 +85,12 @@
                 ." login_id "
                 ." FROM login "
                 ." WHERE "
-                ." login_tel = :login_tel "
+                ." login_email = :login_email "
                 ;
     
                 $arr_prepare =
                 array(
-                    ":login_tel"  => $param["login_tel"]
+                    ":login_email"  => $param["login_email"]
                 );
     
             $conn = null;

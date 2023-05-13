@@ -11,10 +11,10 @@
 </head>
 <body>
 <?php require_once("header.php")?>
-    <form action="" method="post">
+    <form action="./login/search.php" method="post">
         <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">ID</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email을 입력하세요" autocomplete="off" required>
+        <label for="exampleFormControlInput1" class="form-label">Email</label>
+        <input type="email" class="form-control" name="login_email" id="exampleFormControlInput1" placeholder="Email을 입력하세요" autocomplete="off" required>
         </div>
         <br>
         <div >

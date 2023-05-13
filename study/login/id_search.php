@@ -1,5 +1,5 @@
 <?php
-define("DB_CON",$_SERVER["DOCUMENT_ROOT"]."/practice/login");
+define("DB_CON",$_SERVER["DOCUMENT_ROOT"]."/study/login");
 define("URL",DB_CON."/common/common_db.php");
 include_once(URL);
 ?>

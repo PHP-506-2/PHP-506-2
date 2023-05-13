@@ -1,3 +1,22 @@
+<?php
+define("DB_CON",$_SERVER["DOCUMENT_ROOT"]."/study/login");
+define("URL",DB_CON."/common/common_db.php");
+include_once(URL);
+$rqs_method = $_SERVER["REQUEST_METHOD"];
+if($rqs_method === "POST"){
+$arr_post = $_POST;
+$hpw = password_hash($arr_post["login_password"],PASSWORD_DEFAULT);
+$arr_prepare = 
+        array(
+            "login_id" => $arr_post["login_id"]
+            ,"login_password" => $hpw
+            ,"login_email" => $arr_post["login_email"]
+        );
+sign_up($arr_prepare);
+header("Location: movie_login.php");
+exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,15 +33,15 @@
     <form action="" method="post">
         <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">ID</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ID를 입력하세요" autocomplete="off" required>
+        <input type="text" class="form-control" name="login_id" id="exampleFormControlInput1" placeholder="ID를 입력하세요" autocomplete="off" required>
         </div>
         <div class="mb-3">
         <label for="exampleFormControlInput2" class="form-label">PW</label>
-        <input type="password" class="form-control" id="exampleFormControlInput2" placeholder="비밀번호를 입력하세요." autocomplete="off" required>
+        <input type="password" class="form-control" name="login_password" id="exampleFormControlInput2" placeholder="비밀번호를 입력하세요." autocomplete="off" required>
         </div>
         <div class="mb-3">
         <label for="exampleFormControlInput3" class="form-label">PW</label>
-        <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="Email을 입력하세요." autocomplete="off" required>
+        <input type="email" class="form-control" name="login_email" id="exampleFormControlInput3" placeholder="Email을 입력하세요." autocomplete="off" required>
         </div>
         <br>
         <div >

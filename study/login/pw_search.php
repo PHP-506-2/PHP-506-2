@@ -1,5 +1,5 @@
 <?php
-define("DB_CON",$_SERVER["DOCUMENT_ROOT"]."/practice/login");
+define("DB_CON",$_SERVER["DOCUMENT_ROOT"]."/study/login");
 define("URL",DB_CON."/common/common_db.php");
 include_once(URL);
 ?>
@@ -20,7 +20,7 @@ include_once(URL);
     <input type="email" id="email" name="login_email" placeholder="Email을 입력하세요" autocomplete="off" required>
     <br>
     <button type="submit">조회</button>
-    <button type="button" onclick="location.href='login_page.php'">취소</button>
+    <button type="button" onclick="location.href='../movie_login.php'">취소</button>
 </form>
 </body>
 </html>

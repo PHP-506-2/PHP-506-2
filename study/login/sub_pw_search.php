@@ -1,5 +1,5 @@
 <?php
-define("DB_CON",$_SERVER["DOCUMENT_ROOT"]."/practice/login");
+define("DB_CON",$_SERVER["DOCUMENT_ROOT"]."/study/login");
 define("URL",DB_CON."/common/common_db.php");
 include_once(URL);
 
@@ -22,6 +22,6 @@ if($result === []){
 <body>
     <p>PW는 <b><?php echo $result[0]["login_password"] ?></b>입니다.</p>
     <br>
-    <button type="button" onclick="location.href='login_page.php'">확인</button>
+    <button type="button" onclick="location.href='../movie_login.php'">확인</button>
 </body>
 </html>

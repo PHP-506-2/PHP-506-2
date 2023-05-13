@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION['login_id'])) {
-    echo "<script>location.replace('login_page.php');</script>";            
+    echo "<script>location.replace('movie_login.php');</script>";            
 }
 
 else {
