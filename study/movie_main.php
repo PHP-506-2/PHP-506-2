@@ -34,7 +34,10 @@
         </button>
     </div>
     <div class="search">
-        <input type="text" placeholder="검색어 입력" class="input_search">
+        <form action="movie_search.php" method = "post" >
+        <input type="text" name="search_word" placeholder="검색어 입력" class="input_search">
+        <button type="submit" >검색</button>
+        </form>
         <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png" class="img_search">
     </div>
     <div class="container">
